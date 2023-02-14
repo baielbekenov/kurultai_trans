@@ -16,35 +16,38 @@
                                 <li>
                                     <a href="{% url 'home' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Лента</h4>
+                                        <h4>{% translate 'Newsline' %}</h4>
                                     </a>
                                 </li>
+                                {% if user.is_delegat %}
                                 <li>
                                     <a href="{% url 'chats' %}">
                                         <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Сообщения</h4>
+                                        <h4>{% translate 'Messages' %}</h4>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                <li class="listActive">
+                                    <a href="{% url 'delegats' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Delegates' %}</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'delegats' %}">
-                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Делегаты</h4>
-                                    </a>
-                                </li>
-                                <li class="listActive">
                                     <a href="{% url 'rubrics' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Рубрики</h4>
+                                        <h4>{% translate 'Rubrics' %}</h4>
                                     </a>
                                 </li>
                                 {% if user.is_authenticated %}
                                 <li>
                                     <a href="{% url 'profile' user.pk %}">
                                         <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
-                                        <h4>Профиль</h4>
+                                        <h4>{% translate 'Profile' %}</h4>
                                     </a>
                                 </li>
                                 {% endif %}
+
                             </ul>
                         </div>
                         {% if user.is_superuser %}
@@ -78,6 +81,7 @@
                             </ul>
                         </div>
                         {% endif %}
+                        {% if user.is_authenticated %}
                         <div class="profileSettings">
                             <h3>{% translate 'Settings' %}</h3>
                             <ul>
@@ -101,65 +105,37 @@
                                 </li>
                             </ul>
                         </div>
+                        {% endif %}
                     </section>
 
                     <section class="rubrics">
                         <div class="component">
-                            <h2>Люди</h2>
+                            <h2>Рубрики</h2>
                             <div class="lists">
+                                {% for i in rubrics %}
                                 <ul>
-                                    <li>Делегаты</li>
-                                    <li>Тор Ага</li>
-                                    <li>Заместител</li>
-                                    <li>Катчы</li>
+                                    <a href="?rubric={{ i.id }}"><li>{{ i.title }}</li></a>
                                 </ul>
-                                <ul>
-                                    <li>Делегаты</li>
-                                    <li>Тор Ага</li>
-                                    <li>Заместител</li>
-                                    <li>Катчы</li>
-                                </ul>
-                                <ul>
-                                    <li>Делегаты</li>
-                                    <li>Тор Ага</li>
-                                    <li>Заместител</li>
-                                    <li>Катчы</li>
-                                </ul>
-                                <ul>
-                                    <li>Делегаты</li>
-                                    <li>Тор Ага</li>
-                                    <li>Заместител</li>
-                                    <li>Катчы</li>
-                                </ul>
-                                <ul>
-                                    <li>Делегаты</li>
-                                    <li>Тор Ага</li>
-                                    <li>Заместител</li>
-                                    <li>Катчы</li>
-                                </ul>
-                                <ul>
-                                    <li>Делегаты</li>
-                                    <li>Тор Ага</li>
-                                    <li>Заместител</li>
-                                    <li>Катчы</li>
-                                </ul>
+                                {% endfor %}
+
                             </div>
                         </div>
-                        <div class="component">
-                            <h2>Делегаты</h2>
-                        </div>
+
                         <div class="rubricsBody">
                             <div class="rubricsNews">
+                                {% for i in news %}
                                 <div class="news">
+                                    {% if i.image %}
                                     <div class="newsImage">
-                                        <img src="{% static 'images/news/choice.png' %}" alt="news">
+                                        <img src="{{ i.image.url }}" alt="news">
                                         <div class="newsText">
-                                            <h2>Что выбирает народ для себя голосование на выбор недвижимости</h2>
-                                            <p>Title titleTitle titleTitle titleTitle tittle titleTitle titleTitltle titleTitle titleTitltle titleTitle titleTitlle</p>
+                                            <h2>{{ i.title }}</h2>
+                                            <p>{{ i.preview }}</p>
                                         </div>
                                     </div>
+                                    {% endif %}
                                     <!-- <button class="btnYellow">Обсуждение</button> -->
-                                    <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                                    <div class="text"><p>{{ i.preview }}</p></div>
                                     
                                     <div class="prevEnd"></div>
                                     <div class="newsEnd">
@@ -178,111 +154,22 @@
                                     </div>
                                     
                                 </div >
-                                <div class="news">   
-                                    <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
-                                    <div class="prevEnd"></div>
-                                    <div class="newsEnd">
-                                        <div class="like">
-                                            <img src="{% static 'images/news/likeN.svg' %}" alt="">
-                                            <img class="likeActive" src="{% static 'images/news/like.svg' %}" alt="">
-                                            <!-- <span>Понравилось</span> -->
-                                            <div class="likeCount">
-                                                <span>34k людям понравилось</span>
-                                            </div>
-                                        </div>
-                                        <div class="share">
-                                            <img src="{% static 'images/news/share.svg' %}" alt="">
-                                            <span>Поделиться</span>
-                                        </div>
-                                    </div>
-                                </div >
-                                <div class="news">
-                                    <div class="newsImage">
-                                        <img src="{% static 'images/news/choice.png' %}" alt="news">
-                                        <div class="newsText">
-                                            <h2>Что выбирает народ для себя голосование на выбор недвижимости</h2>
-                                            <p>Title titleTitle titleTitle titleTitle tittle titleTitle titleTitltle titleTitle titleTitltle titleTitle titleTitlle</p>
-                                        </div>
-                                    </div>
-                                    <!-- <button class="btnYellow">Обсуждение</button> -->
-                                    <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
-                                    
-                                    <div class="prevEnd"></div>
-                                    <div class="newsEnd">
-                                        <div class="like">
-                                            <img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt="">
-                                            <img src="{% static 'images/news/like.svg' %}" alt="">
-                                            <!-- <span>Понравилось</span> -->
-                                            <div class="likeCount">
-                                                <span>34k людям понравилось</span>
-                                            </div>
-                                        </div>
-                                        <div class="share">
-                                            <img src="{% static 'images/news/share.svg' %}" alt="">
-                                            <span>Поделиться</span>
-                                        </div>
-                                    </div>
-                                    
-                                </div >
-                                <div class="news">   
-                                    <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
-                                    <div class="prevEnd"></div>
-                                    <div class="newsEnd">
-                                        <div class="like">
-                                            <img src="{% static 'images/news/likeN.svg' %}" alt="">
-                                            <img class="likeActive" src="{% static 'images/news/like.svg' %}" alt="">
-                                            <!-- <span>Понравилось</span> -->
-                                            <div class="likeCount">
-                                                <span>34k людям понравилось</span>
-                                            </div>
-                                        </div>
-                                        <div class="share">
-                                            <img src="{% static 'images/news/share.svg' %}" alt="">
-                                            <span>Поделиться</span>
-                                        </div>
-                                    </div>
-                                </div >
+                                {% endfor %}
                             </div>
 
                             <div class="rubricsRight">
                                 <div class="reitings">
                                     <h3>Рейтинговые обсуждения</h3>
                                     <div class="infoDiscus">
-                                        <a href="chat1.html" class="chatsBlockE">
-                                            <div class="foto"><img src="{% static 'images/chats/chat1.svg' %}" alt="chat"></div>
-                                            <div class="title">
-                                                <h3>Обсуждение (Политика)</h3>
-                                                <p>Дастан: <span>Подключитесь</span></p>
-                                            </div>
-                                        </a>
-                                        <a href="chat1.html" class="chatsBlockE">
-                                            <div class="foto"><img src="{% static 'images/chats/chatBlue.svg' %}" alt="chat"></div>
-                                            <div class="title">
-                                                <h3>Обсуждение (Политика)</h3>
-                                                <p>Дастан: <span>Подключитесь</span></p>
-                                            </div>
-                                        </a>
-                                        <a href="chat1.html" class="chatsBlockE">
-                                            <div class="foto"><img src="{% static 'images/chats/chat4.svg' %}" alt="chat"></div>
-                                            <div class="title">
-                                                <h3>Обсуждение (Политика)</h3>
-                                                <p>Дастан: <span>Подключитесь</span></p>
-                                            </div>
-                                        </a>
-                                        <a href="chat1.html" class="chatsBlockE">
-                                            <div class="foto"><img src="{% static 'images/delegats/chatPink.svg' %}" alt="chat"></div>
-                                            <div class="title">
-                                                <h3>Обсуждение (Политика)</h3>
-                                                <p>Дастан: <span>Подключитесь</span></p>
-                                            </div>
-                                        </a>
-                                        <a href="chat1.html" class="chatsBlockE">
-                                            <div class="foto"><img src="{% static 'images/delegats/chatGreen.svg' %}" alt="chat"></div>
-                                            <div class="title">
-                                                <h3>Обсуждение (Политика)</h3>
-                                                <p>Дастан: <span>Подключитесь</span></p>
-                                            </div>
-                                        </a>
+                                        {% for i in chats %}
+
+                                        <div class="foto"><img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'images/chats/chat2.svg' %}{% endif %}" alt="chat"></div>
+                                        <div class="title">
+                                            <h3>{{ i.title }}</h3>
+
+                                        </div>
+
+                                    {% endfor %}
                                     </div>
                                 </div>
                                 <div class="question">

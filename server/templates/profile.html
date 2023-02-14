@@ -16,33 +16,38 @@
                                 <li>
                                     <a href="{% url 'home' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Лента</h4>
+                                        <h4>{% translate 'Newsline' %}</h4>
                                     </a>
                                 </li>
+                                {% if user.is_delegat %}
                                 <li>
                                     <a href="{% url 'chats' %}">
                                         <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Сообщения</h4>
+                                        <h4>{% translate 'Messages' %}</h4>
                                     </a>
                                 </li>
-                                <li>
+                                {% endif %}
+                                <li class="listActive">
                                     <a href="{% url 'delegats' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Делегаты</h4>
+                                        <h4>{% translate 'Delegates' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'rubrics' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Рубрики</h4>
+                                        <h4>{% translate 'Rubrics' %}</h4>
                                     </a>
                                 </li>
-                                <li class="listActive">
+                                {% if user.is_authenticated %}
+                                <li>
                                     <a href="{% url 'profile' user.pk %}">
                                         <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
-                                        <h4>Профиль</h4>
+                                        <h4>{% translate 'Profile' %}</h4>
                                     </a>
                                 </li>
+                                {% endif %}
+
                             </ul>
                         </div>
                         {% if user.is_superuser %}
@@ -76,6 +81,7 @@
                             </ul>
                         </div>
                         {% endif %}
+                        {% if user.is_authenticated %}
                         <div class="profileSettings">
                             <h3>{% translate 'Settings' %}</h3>
                             <ul>
@@ -99,6 +105,7 @@
                                 </li>
                             </ul>
                         </div>
+                        {% endif %}
                     </section>
                     <section class="mainProf">
                         <div class="mainProfHead">
@@ -121,87 +128,56 @@
                         </div>
 
                         <div class="news">
-                            <a class="newsImage" id="introJs">
-                                <img src="{% static 'images/news/choice.png' %}" alt="news">
-                                <div class="newsText">
-                                    <h2>Что выбирает народ для себя голосование на выбор недвижимости</h2>
-                                    <p>Title titleTitle titleTitle titleTitle tittle titleTitle titleTitltle titleTitle titleTitltle titleTitle titleTitlle</p>
-                                </div>
-                            </a>
-                            <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
-                            
-                            <div class="prevEnd"></div>
-                            <div class="newsEnd">
-                                <div class="like">
-                                    <img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt="">
-                                    <img src="{% static 'images/news/like.svg' %}" alt="">
-                                  
-                                    <div class="likeCount">
-                                        <span>34k людям понравилось</span>
-                                    </div>
-                                </div>
-                                <div class="share">
-                                    <img src="{% static 'images/news/share.svg' %}" alt="">
-                                    <span>Поделиться</span>
-                                </div>
-                            </div>
-                            
+
+                            <div class="text"><p>{{ account.description }}</p></div>
+
+
+
                         </div >
-                        <div class="news">   
-                            <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
-                            <div class="prevEnd"></div>
-                            <div class="newsEnd">
-                                <div class="like">
-                                    <img src="{% static 'images/news/likeN.svg' %}" alt="">
-                                    <img class="likeActive" src="{% static 'images/news/like.svg' %}" alt="">
-                                    <!-- <span>Понравилось</span> -->
-                                    <div class="likeCount">
-                                        <span>34k людям понравилось</span>
-                                    </div>
-                                </div>
-                                <div class="share">
-                                    <img src="{% static 'images/news/share.svg' %}" alt="">
-                                    <span>Поделиться</span>
-                                </div>
-                            </div>
-                        </div >
+
                     </section>
                     <section class="RegistrPop hide">
                         <div id="modalReg" class="modal">
-                            <div class="close"><img src="{% static 'images/people/plus.svg" alt=""></div>
+                            <div class="close"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
                             <div id="backReg" class="back hide"><img src="{% static 'images/security/back1.svg' %}" alt=""></div>
                             <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
-                            <form action="" class="right">
+                            <form action="{% url 'register' %}" class="right" method="post">
                                 <h2>Регистрация</h2>
                                 <div class="formDate">
                                     <div class="pole">
+                                        {% csrf_token %}
+                                        <label for="firstName">Логин</label>
+                                        {{ register_form.username }}
+                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
                                         <label for="firstName">Имя</label>
-                                        <input required placeholder="Введите ваше имя" id="firstName" name="firstName" type="text">
+                                        {{ register_form.first_name }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
                                         <label for="lastName">Фамилия</label>
-                                        <input required placeholder="Введите вашу фамилию" id="lastName" name="lastName" type="text">
+                                        {{ register_form.last_name }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
                                         <label for="dateTime">Дата рождения</label>
-                                        <input required id="dateTime" name="dateTime" type="date">
+                                        {{ register_form.birth_of_date }}
                                     </div>
                                     <div class="pole">
                                         <label for="email">Email почта</label>
-                                        <input required placeholder="Введите вашу почту" id="email" name="email" type="email">
+                                        {{ register_form.email }}
                                         <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
                                         <label for="new">Пароль</label>
-                                        <input required id="new" placeholder="Введите ваш пароль" name="new" type="password">
+                                        {{ register_form.password1 }}
                                         <span class="eyeForNew"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                     </div>
                                     <div class="pole">
                                         <label for="pass">Подтверждение</label>
-                                        <input required id="pass" placeholder="Повторите пароль" name="pass" type="password">
-                                        <span class="eyeForPass"><img src="i{% static 'mages/security/eye.svg' %}" alt=""></span>
+                                        {{ register_form.password2 }}
+                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>
                                     </div>
                                 </div>
                                 <input class="submitBtn" type="submit" value="Зарегестрироваться">
@@ -209,26 +185,27 @@
                             </form>
                             <div class="regMob1">
                                 <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
-                                <form action="" class="mobForm1">
+                                <form action="{% url 'register' %}" class="mobForm1" method="post">
                                     <h2>Регистрация</h2>
                                     <div class="formDate">
                                         <div class="pole">
                                             <label for="mob1firstName">Имя</label>
-                                            <input required placeholder="Введите ваше имя" id="mob1firstName" name="firstName" type="text">
+                                            {{ register_form.first_name }}
+                                            {% csrf_token %}
                                             <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                         </div>
                                         <div class="pole">
                                             <label for="mob1lastName">Фамилия</label>
-                                            <input required placeholder="Введите вашу фамилию" id="mob1lastName" name="lastName" type="text">
+                                            {{ register_form.first_name }}
                                             <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                         </div>
                                         <div class="pole">
                                             <label for="mob1dateTime">Дата рождения</label>
-                                            <input required id="mob1dateTime" name="dateTime" type="date">
+                                            {{ register_form.first_name }}
                                         </div>
                                         <div class="pole">
                                             <label for="mob1email">Email почта</label>
-                                            <input required placeholder="Введите вашу почту" id="mob1email" name="email" type="email">
+                                            {{ register_form.first_name }}
                                             <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
                                         </div>
                                     </div>
@@ -242,12 +219,12 @@
                                     <div class="formDate">
                                         <div class="pole">
                                             <label for="newMob">Пароль</label>
-                                            <input required id="newMob" placeholder="Введите ваш пароль" name="new" type="password">
+                                            {{ register_form.first_name }}
                                             <span class="eyeForMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                         </div>
                                         <div class="pole">
                                             <label for="passMob">Подтверждение</label>
-                                            <input required id="passMob" placeholder="Повторите пароль" name="pass" type="password">
+                                            {{ register_form.first_name }}
                                             <span class="eyeForPassMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                         </div>
                                         <p>У вас есть аккаунт? <span id="voiti1">Войти</span></p>
@@ -257,51 +234,52 @@
                             </div>
                         </div>
                     </section>
-                    <section class="AftorizPop hide">
+                   <section class="AftorizPop hide">
                         <div id="modalAftoriz" class="modal">
                             <div class="close2"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
-                            <a href="index.html" class="back"><img src="{% static 'images/security/back1.svg' %}" alt=""></a>
                             <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
-                            <form action="" class="aftorizRight">
+                            <form action="{% url 'login' %}" class="aftorizRight" method="post">
                                 <h2>Авторизация</h2>
                                 <div class="formDatas">
                                     <div class="pole">
-                                        <label for="email2">Email почта</label>
-                                        <input required placeholder="Введите вашу почту" id="email2" name="email2" type="email">
+                                        <label for="das">Логин</label>
+                                        {{ login_form.username }}
+                                        {% csrf_token %}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
                                         <label for="password">Пароль</label>
-                                        <input required id="password" placeholder="Введите ваш пароль" name="new" type="password">
+                                        {{ login_form.password }}
                                         <span class="eyeForpasword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
                                     </div>
-                                    <a href="resetPassword.html">Забыли пароль?</a>
+                                    <a href="{% url 'reset_password' %}">Забыли пароль?</a>
                                 </div>
                                 <input class="submitBtn" type="submit" value="Войти">
                                 <p>У вас нет аккаунта? <span id="registracia">Регистрация</span></p>
                             </form>
                             <div class="AMob2">
                                 <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
-                                <form id="formAmobail" action="" class="formDate">
+                                <form id="formAmobail" action="{% url 'login' %}" method="post" class="formDate">
                                     <h2>Авторизация</h2>
+                                    {% csrf_token %}
                                     <div class="pole">
-                                        <label for="Mobemail2">Email почта</label>
-                                        <input required placeholder="Введите вашу почту" id="Mobemail2" name="email2" type="email">
+                                        <label for="das">Ваш логин</label>
+                                        {{ login_form.username }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
                                         <label for="password">Пароль</label>
-                                        <input required id="Mobpassword" placeholder="Введите ваш пароль" name="new" type="password">
+                                        {{ login_form.password }}
                                         <span class="eyeMobpassword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
                                     </div>
-                                    <a href="resetPassword.html">Забыли пароль?</a>
+                                    <a href="{% url 'reset_password' %}">Забыли пароль?</a>
                                     <p class="notAc">У вас нет аккаунта? <span id="registracia2">Регистрация</span></p>
                                     <input class="submitBtn" type="submit" value="Войти">
 
                                 </form>
                             </div>
                             <div class="error hide">
-                                <div class="img"><img src="images/security/error.svg' %}" alt=""></div>
+                                <div class="img"><img src="{% static 'images/security/error.svg' %}" alt=""></div>
                                 <p>Данного аккаунта не существует</p>
                                 <div class="closeRed"><img src="{% static 'images/security/closeRed.svg' %}" alt=""></div>
                             </div>
@@ -311,35 +289,23 @@
                         <h2>Информация</h2>
                         <div class="infoAbout">
                             <ul>
-                                <li><div><img src="{% static 'images/profile/firstS.svg' %}" alt=""></div><span>Депутат</span></li>
-                                <li><div><img src="{% static 'images/profile/secondS.svg' %}" alt=""></div><span>34.5к Людей следят</span></li>
-                                <li><div><img src="{% static 'images/profile/thirdS.svg' %}" alt=""></div><span>12мл просмотров</span></li>
-                                <li><div><img src="{% static 'images/profile/lastS.svg' %}" alt=""></div><a href="#">bakyt_saultanov.com</a></li>
+                                <li><div><img src="{% static 'images/profile/firstS.svg' %}" alt=""></div><span>Профессия: {{ account.occupation }}</span></li>
+                                <li><div><img src="{% static 'images/profile/secondS.svg' %}" alt=""></div><span>Нация: {{ account.nation }}</span></li>
+                                <li><div><img src="{% static 'images/profile/thirdS.svg' %}" alt=""></div><span>Регион: {{ account.region }}</span></li>
+<!--                                <li><div><img src="{% static 'images/profile/lastS.svg' %}" alt=""></div><a href="#">bakyt_saultanov.com</a></li>-->
                             </ul>
                         </div>
                         <h2>Обсуждения</h2>
                         <div class="infoDiscus">
-                            <a href="chat1.html" class="chatsBlockE">
-                                <div class="foto"><img src="{% static 'images/chats/chat1.svg' %}" alt="chat"></div>
-                                <div class="title">
-                                    <h3>Обсуждение (Политика)</h3>
-                                    <p>Дастан: <span>Подключитесь</span></p>
-                                </div>
-                            </a>
-                            <a href="chat1.html" class="chatsBlockE">
-                                <div class="foto"><img src="{% static 'images/chats/chatBlue.svg' %}" alt="chat"></div>
-                                <div class="title">
-                                    <h3>Обсуждение (Политика)</h3>
-                                    <p>Дастан: <span>Подключитесь</span></p>
-                                </div>
-                            </a>
-                            <a href="chat1.html" class="chatsBlockE">
-                                <div class="foto"><img src="{% static 'images/chats/chat4.svg' %}" alt="chat"></div>
-                                <div class="title">
-                                    <h3>Обсуждение (Политика)</h3>
-                                    <p>Дастан: <span>Подключитесь</span></p>
-                                </div>
-                            </a>
+                            {% for i in chats %}
+
+                                        <div class="foto"><img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'images/chats/chat2.svg' %}{% endif %}" alt="chat"></div>
+                                        <div class="title">
+                                            <h3>{{ i.title }}</h3>
+
+                                        </div>
+
+                                    {% endfor %}
                         </div>
                     </section>
                 </div>
