@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+<link rel="stylesheet" href="{% static 'css/success.css' %}">
+{% endblock %}
+        <main>
+            <div class="container">
+                <div class="main">
+                    <section class="success">
+                        <div class="galka"><img src="{% static 'images/security/Icon.png' %}" alt="galka"></div>
+                        <h1>Письмо с подтверждением было отправлено на вашу почту</h1>
+                        <a href="{% url 'home' %}">Назад в главную</a>
+                    </section>
+                </div>
+            </div>
+        </main>
+{% endblock %}

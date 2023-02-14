@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-14 17:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: server/models.py:19
+msgid "Место рождения"
+msgstr ""
+
+#: server/models.py:20
+msgid "Дата рождения"
+msgstr ""
+
+#: server/models.py:21
+msgid "Место проживания"
+msgstr ""
+
+#: server/models.py:22
+msgid "Нация"
+msgstr ""
+
+#: server/models.py:23
+msgid "Профессия"
+msgstr ""
+
+#: server/models.py:24
+msgid "Номер телефона"
+msgstr ""
+
+#: server/models.py:25
+msgid "Тор Ага"
+msgstr ""
+
+#: server/models.py:26
+msgid "Заместитель Тор Ага"
+msgstr ""
+
+#: server/models.py:27
+msgid "Катчы"
+msgstr ""
+
+#: server/models.py:28
+msgid "Делегат"
+msgstr ""
+
+#: server/models.py:29
+msgid "Аватар"
+msgstr ""
+
+#: server/templates/indexActive.html:25
+msgid "Newsline"
+msgstr ""
+
+#: server/templates/indexActive.html:31
+msgid "Messages"
+msgstr ""
+
+#: server/templates/indexActive.html:37
+msgid "Delegates"
+msgstr ""
+
+#: server/templates/indexActive.html:43
+msgid "Rubrics"
+msgstr ""
+
+#: server/templates/indexActive.html:50
+msgid "Profile"
+msgstr ""
+
+#: server/templates/indexActive.html:58
+msgid "Comments"
+msgstr ""
+
+#: server/templates/indexActive.html:65 server/templates/indexActive.html:70
+msgid "Settings"
+msgstr ""
+
+#: server/templates/indexActive.html:76
+msgid "Security"
+msgstr ""
+
+#: server/templates/indexActive.html:82
+msgid "Logout"
+msgstr ""
+
+#: server/templates/indexActive.html:112
+msgid "Share"
+msgstr ""
+
+#: server/templates/indexActive.html:132
+msgid "Поделиться"
+msgstr ""
+
+#: server/views.py:40
+msgid "Dastan"
+msgstr ""
+
+#: server/views.py:188
+msgid "привет"
+msgstr ""

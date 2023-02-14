@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+
+
+{% endblock %}
+
+        {% block content %}
+        <div class="container my-5">
+            <table class="table table-secondary" >
+                <thead>
+                <tr>
+                    <th scope="col">Пост</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Дата</th>
+                    <th scope="col">Статус</th>
+                </tr>
+                {% for comment in comment_list %}
+                <tr class="table-warning">
+                    <td>{{ comment.post }}</td>
+                    <td>{{ comment.name }}</td>
+                    <td>{{ comment.email }}</td>
+                    <td>{{ comment.created_on }}</td>
+                    <td>{{ comment.active }}</td>
+                    <td><a href="{% url 'updatecomment' comment.id %}"><button class="btn btn-warning" type="button">Модерация</button></a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+{% endblock %}

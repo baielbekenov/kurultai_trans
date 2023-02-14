@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CreateRubrics</title>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>Title: {{ form.title }}</div>
+        <div>Content: {{ form.content }}</div>
+        <input type="submit" value="Создать">
+    </form>
+</body>
+</html>

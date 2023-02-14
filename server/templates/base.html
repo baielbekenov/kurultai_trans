@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'fonts/Segoe/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/Sora/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aftorizHeader.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">-->
+
+    {% block links %}
+    {% endblock %}
+    <title>Kurultai beta</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header id="headerJs">
+            <div class="container">
+                <div class="menuInner">
+                    <a href="{% url 'home' %}"><div class="menuLogo"><img src="{% static 'images/header/logo.svg' %}" alt="logo"></div></a>
+                    <div class="search">
+                        <img src="{% static 'images/header/logotext.svg' %}" alt="">
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div class="menuRight">
+                        <div class="ava">
+                            {% if user.image %}
+                            <a href="{% url 'profile' user.pk %}" class="avaImg"><img src="{{ user.image.url }}" alt="image"></a>
+                            {% else %}
+                            <a href="{% url 'profile' user.pk %}" class="avaImg"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="image"></a>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+                    {% else %}
+                    <div class="menuAftoriz">
+                        <button class="avtorizBtn">Войти</button>
+                        <button class="registrBtn">Зарегистрироваться</button>
+                    </div>
+
+                    {% endif %}
+                    {% load i18n %}
+
+<!--                    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}-->
+<!--                        <input name="next" type="hidden" value="{{ redirect_to }}">-->
+<!--                        <select class="form-control" name="language">-->
+<!--                            {% get_current_language as LANGUAGE_CODE %}-->
+<!--                            {% get_available_languages as LANGUAGES %}-->
+<!--                            {% get_language_info_list for LANGUAGES as languages %}-->
+<!--                            {% for language in languages %}-->
+<!--                                <option  value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>-->
+<!--                                    {{ language.name_local }} ({{ language.code }})-->
+<!--                                </option>-->
+<!--                            {% endfor %}-->
+<!--                        </select>-->
+<!--                        <input class="form-control" type="submit" value="Go">-->
+<!--                    </form>-->
+                </div>
+            </div>
+        </header>
+                    <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
+                        <select name="select">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option  value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                    {{ language.name_local }} ({{ language.code }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="go">
+                    </form>
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+</body>
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+</html>

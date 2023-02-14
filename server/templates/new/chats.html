@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="fonts/Segoe/stylesheet.css">
+    <link rel="stylesheet" href="fonts/Sora/stylesheet.css">
+    <link rel="stylesheet" href="css/bundle.css">
+    <link rel="stylesheet" href="css/chats.css">
+    <title>Kurultai beta</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header id="headerJs">
+            <div class="container">
+                <div class="menuInner">
+                    <a href="#"><div class="menuLogo"><img src="images/header/logo.svg" alt="logo"></div></a>
+                    <div class="search">
+                        <img src="images/header/logotext.svg" alt="">
+                    </div>
+                    <div class="menuRight">
+                        <div class="ava">
+                            <a href="profile.html" class="avaImg"><img src="images/header/ava.svg" alt="image"></a>
+                            <div class="avaArow"><img src="images/header/down.svg" alt="image"></div>
+                        </div>
+                        <div class="menuActions" >
+                            <div class="menuActionsE"><img src="images/header/setting.svg" alt="image"></div>
+                            <div class="menuActionsE"><img src="images/header/lamp.svg" alt="image"></div>
+                            <div class="menuActionsE"><img src="images/header/notification.svg" alt="image"></div>
+                        </div >
+                    </div>
+                    <div class="menuBurger" id="menu">
+                        <span></span>
+                    </div>
+                    <div class="burgerActive hide" >
+                        <div class="ava forProfile" >
+                            <div class="avaImg"><img src="images/header/ava.svg" alt="image"></div>
+                        </div>
+                        <div class="menuActions" >
+                            <div class="menuActionsEb"><img src="images/header/setting.svg" alt="image"></div>
+                            <div class="menuActionsEb"><img src="images/header/lamp.svg" alt="image"></div>
+                            <div class="menuActionsEb"><img src="images/header/notification.svg" alt="image"></div>
+                        </div >
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="main">
+                    <section class="profile">
+                        <div class="profileList">
+                            <ul>
+                                <li>
+                                    <a href="indexActive.html">
+                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Лента</h4>
+                                    </a>
+                                </li>
+                                <li class="listActive">
+                                    <a href="chats.html">
+                                        <div> <span>2</span><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Сообщения</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="delegats.html">
+                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Делегаты</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="rubrics.html">
+                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Рубрики</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">
+                                        <div><img src="images/profile/profile.svg" alt="list"></div>
+                                        <h4>Профиль</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="profileSettings">
+                            <h3>Настройки</h3>
+                            <ul>
+                                <li>
+                                    <a href="settings.html">
+                                        <div><img src="images/profile/settings.svg" alt=""></div>
+                                        <h4>Настройки</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="security.html">
+                                        <div><img src="images/profile/security.svg" alt=""></div>
+                                        <h4>Безопасность</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html">
+                                        <div><img src="images/profile/quit.svg" alt=""></div>
+                                        <h4>Выйти</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="chats">
+                        <div class="chatsHead">
+                            <form action="">
+                                <div class="searchButton"><img src="images/chats/chat-search.svg" alt=""></div>
+                                <input id="search" placeholder="Поиск по чатам..." type="search">
+                            </form>
+                            <div class="chatsHeadActions">
+                                <div class="call"><img src="images/chats/call.svg" alt=""></div>
+                                <div class="triple"><img src="images/people/triple.svg" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="chatsBlock">
+                            <a href="chat1.html" class="chatsBlockE">
+                                <div class="content">
+                                    <div class="foto"><img src="images/chats/chat1.svg" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>Обсуждение (Политика)</h3>
+                                        <p>Дастан: <span>Подключитесь</span></p>
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <p>19:00</p>
+                                    <span class="count">23</span>
+                                </div>
+                            </a>
+                           
+                            <a href="#" class="chatsBlockE">
+                                <div class="content">
+                                    <div class="foto"><img src="images/chats/chat2.svg" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>Починка дорог (обсуждение)</h3>
+                                        <p>Даяна: <span>я занята</span></p>
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <p>Вчера</p>
+                                    <span class="count">6</span>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="chatsBlockE">
+                                <div class="content">
+                                    <div class="foto"><img src="images/chats/chat3.svg" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>Никита Исмаилов<h3>
+                                        <p>Бакыт: <span>не могу сегодня</span></p>
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <p>14:23</p>
+                                    <!-- <span class="count">23</span> -->
+                                </div>
+                            </a>
+                            <a href="#" class="chatsBlockE" id="introJs">
+                                <div class="content">
+                                    <div class="foto"><img src="images/chats/chat4.svg" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>Ибрагим Каранбаев</h3>
+                                        <p>Ибрагим: <span>Как дела</span></p>
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <p>6 января</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+                    <section class="SortChat">
+                        <ul>
+                            <li class="chatActive">Все чаты</li>
+                            <li>Непрочитанные</li>
+                            <li>Архив</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer id="introJs"  class="footer">
+            <div class="footerInner">
+                <a href="indexActive.html">
+                    <div><img src="images/modileFooter/homeDef.svg" alt=""></div>
+                </a>
+                <a href="peopleMob.html">
+                    <div><img src="images/modileFooter/people.svg" alt=""></div>
+                </a>
+                <a href="chats.html">
+                    <div><img src="images/modileFooter/messageActive.svg" alt=""></div>
+                </a>
+                <a href="profile.html">
+                    <div><img src="images/modileFooter/profile.svg" alt=""></div>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="js/app.js"></script>
+</html>

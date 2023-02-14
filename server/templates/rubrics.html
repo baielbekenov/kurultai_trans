@@ -1,0 +1,469 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rubrics.css' %}">
+{% endblock %}
+{% block content %}
+
+        <main>
+            <div class="container">
+                <div class="main">
+                    <section class="profile">
+                        <div class="profileList">
+                            <ul>
+                                <li>
+                                    <a href="{% url 'home' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>Лента</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'chats' %}">
+                                        <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>Сообщения</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'delegats' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>Делегаты</h4>
+                                    </a>
+                                </li>
+                                <li class="listActive">
+                                    <a href="{% url 'rubrics' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>Рубрики</h4>
+                                    </a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li>
+                                    <a href="{% url 'profile' user.pk %}">
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
+                                        <h4>Профиль</h4>
+                                    </a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        {% if user.is_superuser %}
+                        <div class="profileSettings">
+                            <h3>{% translate 'Management' %}</h3>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'createchats' %}">
+                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Createchats' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'createnews' %}">
+                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
+                                        <h4>{% translate 'CreateNews' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}">
+                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <h4>{% translate 'CreatePost' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'commentlist' %}">
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Comments' %}</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                        <div class="profileSettings">
+                            <h3>{% translate 'Settings' %}</h3>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'settings' %}">
+                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Settings' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'security' %}">
+                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Security' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}">
+                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Logout' %}</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="rubrics">
+                        <div class="component">
+                            <h2>Люди</h2>
+                            <div class="lists">
+                                <ul>
+                                    <li>Делегаты</li>
+                                    <li>Тор Ага</li>
+                                    <li>Заместител</li>
+                                    <li>Катчы</li>
+                                </ul>
+                                <ul>
+                                    <li>Делегаты</li>
+                                    <li>Тор Ага</li>
+                                    <li>Заместител</li>
+                                    <li>Катчы</li>
+                                </ul>
+                                <ul>
+                                    <li>Делегаты</li>
+                                    <li>Тор Ага</li>
+                                    <li>Заместител</li>
+                                    <li>Катчы</li>
+                                </ul>
+                                <ul>
+                                    <li>Делегаты</li>
+                                    <li>Тор Ага</li>
+                                    <li>Заместител</li>
+                                    <li>Катчы</li>
+                                </ul>
+                                <ul>
+                                    <li>Делегаты</li>
+                                    <li>Тор Ага</li>
+                                    <li>Заместител</li>
+                                    <li>Катчы</li>
+                                </ul>
+                                <ul>
+                                    <li>Делегаты</li>
+                                    <li>Тор Ага</li>
+                                    <li>Заместител</li>
+                                    <li>Катчы</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="component">
+                            <h2>Делегаты</h2>
+                        </div>
+                        <div class="rubricsBody">
+                            <div class="rubricsNews">
+                                <div class="news">
+                                    <div class="newsImage">
+                                        <img src="{% static 'images/news/choice.png' %}" alt="news">
+                                        <div class="newsText">
+                                            <h2>Что выбирает народ для себя голосование на выбор недвижимости</h2>
+                                            <p>Title titleTitle titleTitle titleTitle tittle titleTitle titleTitltle titleTitle titleTitltle titleTitle titleTitlle</p>
+                                        </div>
+                                    </div>
+                                    <!-- <button class="btnYellow">Обсуждение</button> -->
+                                    <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                                    
+                                    <div class="prevEnd"></div>
+                                    <div class="newsEnd">
+                                        <div class="like">
+                                            <img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt="">
+                                            <img src="{% static 'images/news/like.svg' %}" alt="">
+                                            <!-- <span>Понравилось</span> -->
+                                            <div class="likeCount">
+                                                <span>34k людям понравилось</span>
+                                            </div>
+                                        </div>
+                                        <div class="share">
+                                            <img src="{% static 'images/news/share.svg' %}" alt="">
+                                            <span>Поделиться</span>
+                                        </div>
+                                    </div>
+                                    
+                                </div >
+                                <div class="news">   
+                                    <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                                    <div class="prevEnd"></div>
+                                    <div class="newsEnd">
+                                        <div class="like">
+                                            <img src="{% static 'images/news/likeN.svg' %}" alt="">
+                                            <img class="likeActive" src="{% static 'images/news/like.svg' %}" alt="">
+                                            <!-- <span>Понравилось</span> -->
+                                            <div class="likeCount">
+                                                <span>34k людям понравилось</span>
+                                            </div>
+                                        </div>
+                                        <div class="share">
+                                            <img src="{% static 'images/news/share.svg' %}" alt="">
+                                            <span>Поделиться</span>
+                                        </div>
+                                    </div>
+                                </div >
+                                <div class="news">
+                                    <div class="newsImage">
+                                        <img src="{% static 'images/news/choice.png' %}" alt="news">
+                                        <div class="newsText">
+                                            <h2>Что выбирает народ для себя голосование на выбор недвижимости</h2>
+                                            <p>Title titleTitle titleTitle titleTitle tittle titleTitle titleTitltle titleTitle titleTitltle titleTitle titleTitlle</p>
+                                        </div>
+                                    </div>
+                                    <!-- <button class="btnYellow">Обсуждение</button> -->
+                                    <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                                    
+                                    <div class="prevEnd"></div>
+                                    <div class="newsEnd">
+                                        <div class="like">
+                                            <img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt="">
+                                            <img src="{% static 'images/news/like.svg' %}" alt="">
+                                            <!-- <span>Понравилось</span> -->
+                                            <div class="likeCount">
+                                                <span>34k людям понравилось</span>
+                                            </div>
+                                        </div>
+                                        <div class="share">
+                                            <img src="{% static 'images/news/share.svg' %}" alt="">
+                                            <span>Поделиться</span>
+                                        </div>
+                                    </div>
+                                    
+                                </div >
+                                <div class="news">   
+                                    <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                                    <div class="prevEnd"></div>
+                                    <div class="newsEnd">
+                                        <div class="like">
+                                            <img src="{% static 'images/news/likeN.svg' %}" alt="">
+                                            <img class="likeActive" src="{% static 'images/news/like.svg' %}" alt="">
+                                            <!-- <span>Понравилось</span> -->
+                                            <div class="likeCount">
+                                                <span>34k людям понравилось</span>
+                                            </div>
+                                        </div>
+                                        <div class="share">
+                                            <img src="{% static 'images/news/share.svg' %}" alt="">
+                                            <span>Поделиться</span>
+                                        </div>
+                                    </div>
+                                </div >
+                            </div>
+
+                            <div class="rubricsRight">
+                                <div class="reitings">
+                                    <h3>Рейтинговые обсуждения</h3>
+                                    <div class="infoDiscus">
+                                        <a href="chat1.html" class="chatsBlockE">
+                                            <div class="foto"><img src="{% static 'images/chats/chat1.svg' %}" alt="chat"></div>
+                                            <div class="title">
+                                                <h3>Обсуждение (Политика)</h3>
+                                                <p>Дастан: <span>Подключитесь</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="chat1.html" class="chatsBlockE">
+                                            <div class="foto"><img src="{% static 'images/chats/chatBlue.svg' %}" alt="chat"></div>
+                                            <div class="title">
+                                                <h3>Обсуждение (Политика)</h3>
+                                                <p>Дастан: <span>Подключитесь</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="chat1.html" class="chatsBlockE">
+                                            <div class="foto"><img src="{% static 'images/chats/chat4.svg' %}" alt="chat"></div>
+                                            <div class="title">
+                                                <h3>Обсуждение (Политика)</h3>
+                                                <p>Дастан: <span>Подключитесь</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="chat1.html" class="chatsBlockE">
+                                            <div class="foto"><img src="{% static 'images/delegats/chatPink.svg' %}" alt="chat"></div>
+                                            <div class="title">
+                                                <h3>Обсуждение (Политика)</h3>
+                                                <p>Дастан: <span>Подключитесь</span></p>
+                                            </div>
+                                        </a>
+                                        <a href="chat1.html" class="chatsBlockE">
+                                            <div class="foto"><img src="{% static 'images/delegats/chatGreen.svg' %}" alt="chat"></div>
+                                            <div class="title">
+                                                <h3>Обсуждение (Политика)</h3>
+                                                <p>Дастан: <span>Подключитесь</span></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="question">
+                                    <h3>Вы хотите задать вопрос? заполните анкету и его обсудят</h3>
+                                    <button>Задать вопрос</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="RegistrPop hide">
+                        <div id="modalReg" class="modal">
+                            <div class="close"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
+                            <div id="backReg" class="back hide"><img src="{% static 'images/security/back1.svg' %}" alt=""></div>
+                            <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
+                            <form action="{% url 'register' %}" class="right" method="post">
+                                <h2>Регистрация</h2>
+                                <div class="formDate">
+                                    <div class="pole">
+                                        {% csrf_token %}
+                                        <label for="firstName">Логин</label>
+                                        {{ register_form.username }}
+                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="firstName">Имя</label>
+                                        {{ register_form.first_name }}
+                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="lastName">Фамилия</label>
+                                        {{ register_form.last_name }}
+                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="dateTime">Дата рождения</label>
+                                        {{ register_form.birth_of_date }}
+                                    </div>
+                                    <div class="pole">
+                                        <label for="email">Email почта</label>
+                                        {{ register_form.email }}
+                                        <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="new">Пароль</label>
+                                        {{ register_form.password1 }}
+                                        <span class="eyeForNew"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="pass">Подтверждение</label>
+                                        {{ register_form.password2 }}
+                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>
+                                    </div>
+                                </div>
+                                <input class="submitBtn" type="submit" value="Зарегестрироваться">
+                                <p>У вас есть аккаунт? <span id="voiti">Войти</span></p>
+                            </form>
+                            <div class="regMob1">
+                                <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
+                                <form action="{% url 'register' %}" class="mobForm1" method="post">
+                                    <h2>Регистрация</h2>
+                                    <div class="formDate">
+                                        <div class="pole">
+                                            <label for="mob1firstName">Имя</label>
+                                            {{ register_form.first_name }}
+                                            {% csrf_token %}
+                                            <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                        </div>
+                                        <div class="pole">
+                                            <label for="mob1lastName">Фамилия</label>
+                                            {{ register_form.first_name }}
+                                            <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                        </div>
+                                        <div class="pole">
+                                            <label for="mob1dateTime">Дата рождения</label>
+                                            {{ register_form.first_name }}
+                                        </div>
+                                        <div class="pole">
+                                            <label for="mob1email">Email почта</label>
+                                            {{ register_form.first_name }}
+                                            <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
+                                        </div>
+                                    </div>
+                                    <input class="submitBtn" type="submit" value="Далее">
+                                </form>
+                            </div>
+                            <div class="regMob2 hide">
+                                <div class="img"><img src="{% static 'images/security/welcome.png" alt="welcome"></div>
+                                <form action="" class="mobForm2">
+                                    <h2>Регистрация</h2>
+                                    <div class="formDate">
+                                        <div class="pole">
+                                            <label for="newMob">Пароль</label>
+                                            {{ register_form.first_name }}
+                                            <span class="eyeForMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
+                                        </div>
+                                        <div class="pole">
+                                            <label for="passMob">Подтверждение</label>
+                                            {{ register_form.first_name }}
+                                            <span class="eyeForPassMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
+                                        </div>
+                                        <p>У вас есть аккаунт? <span id="voiti1">Войти</span></p>
+                                        <input class="submitBtn" type="submit" value="Зарегестрироваться">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                   <section class="AftorizPop hide">
+                        <div id="modalAftoriz" class="modal">
+                            <div class="close2"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
+                            <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
+                            <form action="{% url 'login' %}" class="aftorizRight" method="post">
+                                <h2>Авторизация</h2>
+                                <div class="formDatas">
+                                    <div class="pole">
+                                        <label for="das">Логин</label>
+                                        {{ login_form.username }}
+                                        {% csrf_token %}
+                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="password">Пароль</label>
+                                        {{ login_form.password }}
+                                        <span class="eyeForpasword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <a href="{% url 'reset_password' %}">Забыли пароль?</a>
+                                </div>
+                                <input class="submitBtn" type="submit" value="Войти">
+                                <p>У вас нет аккаунта? <span id="registracia">Регистрация</span></p>
+                            </form>
+                            <div class="AMob2">
+                                <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
+                                <form id="formAmobail" action="{% url 'login' %}" method="post" class="formDate">
+                                    <h2>Авторизация</h2>
+                                    {% csrf_token %}
+                                    <div class="pole">
+                                        <label for="das">Ваш логин</label>
+                                        {{ login_form.username }}
+                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="password">Пароль</label>
+                                        {{ login_form.password }}
+                                        <span class="eyeMobpassword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <a href="{% url 'reset_password' %}">Забыли пароль?</a>
+                                    <p class="notAc">У вас нет аккаунта? <span id="registracia2">Регистрация</span></p>
+                                    <input class="submitBtn" type="submit" value="Войти">
+
+                                </form>
+                            </div>
+                            <div class="error hide">
+                                <div class="img"><img src="{% static 'images/security/error.svg' %}" alt=""></div>
+                                <p>Данного аккаунта не существует</p>
+                                <div class="closeRed"><img src="{% static 'images/security/closeRed.svg' %}" alt=""></div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+            </div>
+        </main>
+    <footer class="footer">
+            <div class="footerInner">
+                <a href="{% url 'home' %}">
+                    <div><img src="{% static 'images/modileFooter/home.svg' %}" alt=""></div>
+                </a>
+                <a href="{% url 'delegats' %}">
+                    <div><img src="{% static 'images/modileFooter/people.svg' %}" alt=""></div>
+                </a>
+                <a href="{% url 'chats' %}">
+                    <div><img src="{% static 'images/modileFooter/message.svg' %}" alt=""></div>
+                </a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'profile' user.pk %}">
+                    <div><img src="{% static 'images/modileFooter/profile.svg' %}" alt=""></div>
+                </a>
+                {% else %}
+                <a href="{% url 'home' %}">
+                    <div><img src="{% static 'images/modileFooter/profile.svg' %}" alt=""></div>
+                </a>
+                {% endif %}
+            </div>
+        </footer>
+{% endblock %}

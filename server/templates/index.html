@@ -1,0 +1,379 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aftorizHeader.css' %}">
+{% endblock %}
+{% block content %}
+        <main>
+            <div class="container">
+                <div class="main">
+                    <section class="profile">
+                        <div class="profileList">
+                            <ul>
+                                <li class="listActive">
+                                    <a href="index.html">
+                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Лента</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html">
+                                        <div> <span>2</span><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Сообщения</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html">
+                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Делегаты</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html">
+                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Рубрики</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html">
+                                        <div><img src="images/profile/profile.svg" alt="list"></div>
+                                        <h4>Профиль</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="profileSettings">
+                            <h3>Настройки</h3>
+                            <ul>
+                                <li>
+                                    <a href="index.html">
+                                        <div><img src="images/profile/settings.svg" alt=""></div>
+                                        <h4>Настройки</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html">
+                                        <div><img src="images/profile/security.svg" alt=""></div>
+                                        <h4>Безопасность</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com">
+                                        <div><img src="images/profile/quit.svg" alt=""></div>
+                                        <h4>Выйти</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="newsBlock">
+                        <div class="news">   
+                            <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                            <div class="prevEnd"></div>
+                            <div class="newsEnd">
+                                <div class="like">
+                                    <img src="images/news/likeN.svg" alt="">
+                                    <img class="likeActive" src="images/news/like.svg" alt="">
+                                    <div class="likeCount">
+                                        <span>34k людям понравилось</span>
+                                    </div>
+                                </div>
+                                <div class="share">
+                                    <img src="images/news/share.svg" alt="">
+                                    <span>Поделиться</span>
+                                </div>
+                            </div>
+                        </div >
+                        <div class="news">
+                            <a  href="post1.html" class="newsImage" id="introJs">
+                                <img src="images/news/choice.png" alt="news">
+                                <div class="newsText">
+                                    <h2>Что выбирает народ для себя голосование на выбор недвижимости</h2>
+                                    <p>Title titleTitle titleTitle titleTitle tittle titleTitle titleTitltle titleTitle titleTitltle titleTitle titleTitlle</p>
+                                </div>
+                            </a>
+                            <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                            
+                            <div class="prevEnd"></div>
+                            <div class="newsEnd">
+                                <div class="like">
+                                    <img class="likeActive" src="images/news/likeN.svg" alt="">
+                                    <img src="images/news/like.svg" alt="">
+                                    <div class="likeCount">
+                                        <span>34k людям понравилось</span>
+                                    </div>
+                                </div>
+                                <div class="share">
+                                    <img src="images/news/share.svg" alt="">
+                                    <span>Поделиться</span>
+                                </div>
+                            </div>
+                            
+                        </div >
+                        <div class="news">   
+                            <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                            <div class="prevEnd"></div>
+                            <div class="newsEnd">
+                                <div class="like">
+                                    <img src="images/news/likeN.svg" alt="">
+                                    <img class="likeActive" src="images/news/like.svg" alt="">
+                                    <!-- <span>Понравилось</span> -->
+                                    <div class="likeCount">
+                                        <span>34k людям понравилось</span>
+                                    </div>
+                                </div>
+                                <div class="share">
+                                    <img src="images/news/share.svg" alt="">
+                                    <span>Поделиться</span>
+                                </div>
+                            </div>
+                        </div >
+                        <div class="news">
+                            <div class="newsImage">
+                                <img src="images/news/monkey.png" alt="news">
+                                <div class="newsText">
+                                    <h2>Что выбирает народ для себя голосование на выбор недвижимости</h2>
+                                    <p>Title titleTitle titleTitle titleTitle tittle titleTitle titleTitltle titleTitle titleTitltle titleTitle titleTitlle</p>
+                                </div>
+                            </div>
+                            <!-- <button class="btnYellow">Обсуждение</button> -->
+                            <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                            
+                            <div class="prevEnd"></div>
+                            <div class="newsEnd">
+                                <div class="like">
+                                    <img class="likeActive" src="images/news/likeN.svg" alt="">
+                                    <img src="images/news/like.svg" alt="">
+                                    <div class="likeCount">
+                                        <span>34k людям понравилось</span>
+                                    </div>
+                                </div>
+                                <div class="share">
+                                    <img src="images/news/share.svg" alt="">
+                                    <span>Поделиться</span>
+                                </div>
+                            </div>
+                            
+                        </div >
+                        <div class="news">   
+                            <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                            <div class="prevEnd"></div>
+                            <div class="newsEnd">
+                                <div class="like">
+                                    <img src="images/news/likeN.svg" alt="">
+                                    <img class="likeActive" src="images/news/like.svg" alt="">
+                                    <!-- <span>Понравилось</span> -->
+                                    <div class="likeCount">
+                                        <span>34k людям понравилось</span>
+                                    </div>
+                                </div>
+                                <div class="share">
+                                    <img src="images/news/share.svg" alt="">
+                                    <span>Поделиться</span>
+                                </div>
+                            </div>
+                        </div >
+                        <div class="news">
+                            <div class="newsImage">
+                                <img src="images/news/city.png" alt="news">
+                                <div class="newsText">
+                                    <h2>Что выбирает народ для себя голосование на выбор недвижимости</h2>
+                                    <p>Title titleTitle titleTitle titleTitle tittle titleTitle titleTitltle titleTitle titleTitltle titleTitle titleTitlle</p>
+                                </div>
+                            </div>
+                            <!-- <button class="btnYellow">Обсуждение</button> -->
+                            <div class="text"><p>Экономия электроэнергии. В Бишкеке будут веерно отключать уличное освещение В Бишкеке уличное освещение будет работать пофазно. Об этом сообщили в пресс-службе мэрии.</p></div>
+                            
+                            <div class="prevEnd"></div>
+                            <div class="newsEnd">
+                                <div class="like">
+                                    <img class="likeActive" src="images/news/likeN.svg" alt="">
+                                    <img src="images/news/like.svg" alt="">
+                                    <div class="likeCount">
+                                        <span>34k людям понравилось</span>
+                                    </div>
+                                </div>
+                                <div class="share">
+                                    <img src="images/news/share.svg" alt="">
+                                    <span>Поделиться</span>
+                                </div>
+                            </div>
+                            
+                        </div >
+                    </section>
+                    <section class="RegistrPop hide">
+                        <div id="modalReg" class="modal">
+                            <div class="close"><img src="images/people/plus.svg" alt=""></div>
+                            <div id="backReg" class="back hide"><img src="images/security/back1.svg" alt=""></div>
+                            <div class="left"><img src="images/security/welcome.png" alt="img"></div>
+                            <form action="" class="right">
+                                <h2>Регистрация</h2>
+                                <div class="formDate">
+                                    <div class="pole">
+                                        <label for="firstName">Имя</label>
+                                        <input required placeholder="Введите ваше имя" id="firstName" name="firstName" type="text">
+                                        <span><img src="images/security/forfio.svg" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="lastName">Фамилия</label>
+                                        <input required placeholder="Введите вашу фамилию" id="lastName" name="lastName" type="text">
+                                        <span><img src="images/security/forfio.svg" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="dateTime">Дата рождения</label>
+                                        <input required id="dateTime" name="dateTime" type="date">
+                                    </div>
+                                    <div class="pole">
+                                        <label for="email">Email почта</label>
+                                        <input required placeholder="Введите вашу почту" id="email" name="email" type="email">
+                                        <span><img src="images/security/foremail.svg" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="new">Пароль</label>
+                                        <input required id="new" placeholder="Введите ваш пароль" name="new" type="password">
+                                        <span class="eyeForNew"><img src="images/security/eye.svg" alt=""></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="pass">Подтверждение</label>
+                                        <input required id="pass" placeholder="Повторите пароль" name="pass" type="password">
+                                        <span class="eyeForPass"><img src="images/security/eye.svg" alt=""></span>
+                                    </div>
+                                </div>
+                                <input class="submitBtn" type="submit" value="Зарегестрироваться">
+                                <p>У вас есть аккаунт? <span id="voiti">Войти</span></p>
+                            </form>
+                            <div class="regMob1">
+                                <div class="img"><img src="images/security/welcome.png" alt="welcome"></div>
+                                <form action="" class="mobForm1">
+                                    <h2>Регистрация</h2>
+                                    <div class="formDate">
+                                        <div class="pole">
+                                            <label for="mob1firstName">Имя</label>
+                                            <input required placeholder="Введите ваше имя" id="mob1firstName" name="firstName" type="text">
+                                            <span><img src="images/security/forfio.svg" alt="svg"></span>
+                                        </div>
+                                        <div class="pole">
+                                            <label for="mob1lastName">Фамилия</label>
+                                            <input required placeholder="Введите вашу фамилию" id="mob1lastName" name="lastName" type="text">
+                                            <span><img src="images/security/forfio.svg" alt="svg"></span>
+                                        </div>
+                                        <div class="pole">
+                                            <label for="mob1dateTime">Дата рождения</label>
+                                            <input required id="mob1dateTime" name="dateTime" type="date">
+                                        </div>
+                                        <div class="pole">
+                                            <label for="mob1email">Email почта</label>
+                                            <input required placeholder="Введите вашу почту" id="mob1email" name="email" type="email">
+                                            <span><img src="images/security/foremail.svg" alt="svg"></span>
+                                        </div>
+                                    </div>   
+                                    <input class="submitBtn" type="submit" value="Далее">
+                                </form>
+                            </div>
+                            <div class="regMob2 hide">
+                                <div class="img"><img src="images/security/welcome.png" alt="welcome"></div>
+                                <form action="" class="mobForm2">
+                                    <h2>Регистрация</h2>
+                                    <div class="formDate">
+                                        <div class="pole">
+                                            <label for="newMob">Пароль</label>
+                                            <input required id="newMob" placeholder="Введите ваш пароль" name="new" type="password">
+                                            <span class="eyeForMob2"><img src="images/security/eye.svg" alt=""></span>
+                                        </div>
+                                        <div class="pole">
+                                            <label for="passMob">Подтверждение</label>
+                                            <input required id="passMob" placeholder="Повторите пароль" name="pass" type="password">
+                                            <span class="eyeForPassMob2"><img src="images/security/eye.svg" alt=""></span>
+                                        </div>   
+                                        <p>У вас есть аккаунт? <span id="voiti1">Войти</span></p>
+                                        <input class="submitBtn" type="submit" value="Зарегестрироваться">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="AftorizPop hide">
+                        <div id="modalAftoriz" class="modal">
+                            <div class="close2"><img src="images/people/plus.svg" alt=""></div>
+                            <a href="index.html" class="back"><img src="images/security/back1.svg" alt=""></a>
+                            <div class="left"><img src="images/security/welcome.png" alt="img"></div>
+                            <form action="" class="aftorizRight">
+                                <h2>Авторизация</h2>
+                                <div class="formDatas">
+                                    <div class="pole">
+                                        <label for="email2">Email почта</label>
+                                        <input required placeholder="Введите вашу почту" id="email2" name="email2" type="email">
+                                        <span><img src="images/security/forfio.svg" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="password">Пароль</label>
+                                        <input required id="password" placeholder="Введите ваш пароль" name="new" type="password">
+                                        <span class="eyeForpasword"><img src="images/security/eye.svg" alt="svg"></span>
+                                    </div>
+                                    <a href="resetPassword.html">Забыли пароль?</a>
+                                </div>
+                                <input class="submitBtn" type="submit" value="Войти">
+                                <p>У вас нет аккаунта? <span id="registracia">Регистрация</span></p>
+                            </form>
+                            <div class="AMob2">
+                                <div class="img"><img src="images/security/welcome.png" alt="welcome"></div>
+                                <form id="formAmobail" action="" class="formDate">
+                                    <h2>Авторизация</h2>
+                                    <div class="pole">
+                                        <label for="Mobemail2">Email почта</label>
+                                        <input required placeholder="Введите вашу почту" id="Mobemail2" name="email2" type="email">
+                                        <span><img src="images/security/forfio.svg" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
+                                        <label for="password">Пароль</label>
+                                        <input required id="Mobpassword" placeholder="Введите ваш пароль" name="new" type="password">
+                                        <span class="eyeMobpassword"><img src="images/security/eye.svg" alt="svg"></span>
+                                    </div>
+                                    <a href="resetPassword.html">Забыли пароль?</a>
+                                    <p class="notAc">У вас нет аккаунта? <span id="registracia2">Регистрация</span></p>
+                                    <input class="submitBtn" type="submit" value="Войти">
+                                        
+                                </form>
+                            </div>
+                            <div class="error hide">
+                                <div class="img"><img src="images/security/error.svg" alt=""></div>
+                                <p>Данного аккаунта не существует</p>
+                                <div class="closeRed"><img src="images/security/closeRed.svg" alt=""></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="people">
+                        <div class="peopleTitle">
+                            <h3>Люди</h3>
+                            <div class="peopleTitleActions">
+                                <div><img src="images/people/plus.svg" alt="img"></div>
+                                <div><img src="images/people/triple.svg" alt="img"></div>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Делегаты</li>
+                            <li>Тор Ага</li>
+                            <li>Заместител</li>
+                            <li>Катчы</li>
+                        </ul>
+                        <div class="peopleTitle">
+                            <h3>Рубрики</h3>
+                            <div class="peopleTitleActions">
+                                <div><img src="images/people/plus.svg" alt="img"></div>
+                                <div><img src="images/people/triple.svg" alt="img"></div>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Земельные участки</li>
+                            <li>Политика</li>
+                            <li>Спорт</li>
+                            <li>СМИ</li>
+                            <li>Жогорку кенеш</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+        {% endblock %}

@@ -1,0 +1,431 @@
+main
+    padding-top: 13px
+    padding-bottom: 20px
+    background: #F0F2F5
+    @media (max-width: 740px) 
+        padding-top: 23px
+    @media (max-width: 550px)
+        padding-bottom: 0
+        .container
+            padding: 0
+    .main
+        padding-top: 100px
+        display: flex
+        justify-content: center
+        align-items: start
+        gap: 15px
+        @media (max-width: 1300px) 
+            margin-right: 80px
+        @media (max-width: 1200px) 
+            margin-right: 170px
+        @media (max-width: 1020px) 
+            margin-right: 86px
+        @media (max-width: 920px) 
+            margin-right: 50px
+        @media (max-width: 770px) 
+            margin-right: 0
+            justify-content: end
+        @media (max-width: 550px)
+            width: 100%
+            justify-content: center
+            background: #fff
+            display: block
+
+        .chat
+            flex: 0 1 530px
+            padding: 10px 19px 10px 10px
+            background: #FFFFFF
+            box-shadow: 0px 1.33333px 33.3333px rgba(169, 222, 249, 0.24)
+            border-radius: 14.2418px
+            min-height: 730px
+            min-width: 400px
+            position: relative
+            @media (max-width: 1120px) 
+                flex: 0 1 430px
+
+            @media (max-width: 660px)
+                min-width: auto
+                padding-right: 10px
+            @media (max-width: 550px)
+                width: 100%
+                border-radius: 0
+                min-height: calc( 100vh - 100px )
+            &Head
+                display: flex
+                justify-content: space-between
+                align-items: center
+                margin-bottom: 30px
+                @media (max-width: 550px)
+                    position: fixed
+                    top: 0
+                    left: 0
+                    width: 100%
+                    padding: 8px 16px 10px 20px
+                    border-bottom:  1px solid rgba(0, 0, 0, 0.3)
+                    background: #fff
+                    margin-bottom: 0
+                @media (max-width: 420px)
+                    padding: 9px 10px
+
+                .back
+                    text-decoration: none
+                    display: flex
+                    align-items: center
+                    gap: 6px
+                    span
+                        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+                        font-weight: 400
+                        font-size: 12.1738px
+                        line-height: 14px
+                        color: rgba(0, 0, 0, 0.5)
+
+                .chatTitle
+                    text-align: center
+                    font-family: 'Arial', "Helvetica Neue", Helvetica, sans-serif
+                    font-weight: 700
+                    font-size: 12.1738px
+                    line-height: 14px
+                    color: rgba(0, 0, 0, 0.8)
+                    h3
+                        margin-bottom: 5px
+                    p
+                        color: rgba(0, 0, 0, 0.6)
+                        font-weight: 400
+                
+                .chatActions
+                    display: flex
+                    align-items: center
+                    gap: 25px
+                    @media (max-width: 420px)
+                        gap: 20px
+                    .tripleR
+                        transform: rotate(90deg)
+                        width: 5px
+                        height: 20px
+                    .group
+                        width: 35px
+                        img
+                            width: 100%
+
+            .golosovanie
+                display: none
+                @media (max-width: 550px)
+                    position: fixed
+                    width: 100%
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    left: 0
+                    background: #fff
+                    top: 50px
+                    padding-bottom: 10px
+                    border-bottom:  1px solid rgba(0, 0, 0, 0.3)
+
+                    padding-top: 10px
+                    button
+                        border: none
+                        background: #DC8400
+                        border-radius: 20px
+                        padding: 4px 43px
+                        font-weight: 700
+                        font-size: 16px
+                        line-height: 20px
+                        color: #FFFFFF
+
+            &Body
+                display: flex
+                flex-direction: column
+                gap: 15px
+                padding-bottom: 90px
+                @media (max-width: 550px)
+                    padding-top: 20px
+                .message
+                    display: flex
+                    flex-direction: column
+                    align-items: start
+                    gap: 11px
+                    font-family: 'Arial', "Helvetica Neue", Helvetica, sans-serif
+                    font-weight: 700
+                    font-size: 9.02546px
+                    line-height: 10px
+                    color: #FFFFFF
+                    .first
+                        display: flex
+                        gap: 3px
+                        a
+                            width: 40px
+                            img
+                                width: 100%
+                                border-radius: 50%
+                        span
+                            margin-left: 0
+                    span
+                        box-sizing: content-box
+                        margin-left: 41px
+                        word-wrap: break-word
+                        padding: 10px 28px
+                        max-width: 126px
+                        background: #868686
+                        border-radius: 14.8276px
+                .ownMessage
+                    display: flex
+                    flex-direction: column
+                    align-items: end
+                    gap: 11px
+                    font-family: 'Arial', "Helvetica Neue", Helvetica, sans-serif
+                    font-weight: 700
+                    font-size: 9.02546px
+                    line-height: 10px
+                    color: #FFFFFF
+                    span
+                        box-sizing: content-box
+                        margin-left: 41px
+                        word-wrap: break-word
+                        padding: 10px 28px
+                        max-width: 126px
+                        background: #DC8400
+                        border-radius: 14.8276px
+            &Down
+                position: absolute
+                bottom: 10px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                background: #F7F7F7
+                border-radius: 5px
+                gap: 10px
+                position: fixed
+                bottom: 0
+                @media (max-width: 1120px) 
+                    flex: 0 1 430px
+                    width: 420px
+                
+                @media (max-width: 550px)
+                    position: fixed
+                    width: 97%
+                    border-radius: 0
+                    bottom: 0px
+                    padding: 5px 5px 10px
+                    
+
+                .wrapperFile
+                    position: relative
+                    &:hover
+                        cursor: pointer
+                    input
+                        cursor: pointer
+                        width: 30px
+                        height: 30px
+                        box-sizing: content-box
+                        display: flex
+                        flex-direction: column
+                        opacity: 0
+                        position: absolute
+                    span
+                        width: 30px
+                        img
+                            width: 100%
+
+                & > input
+                    padding-left: 10px
+                    width: 394px
+                    font-family: 'Arial'
+                    font-weight: 400
+                    font-size: 14.1467px
+                    line-height: 22px
+                    color: #A6ADB5
+                    outline: none
+                    border: none
+                    background: #F7F7F7
+                    &:focus
+                        font-size: 16px
+                        color: #4e4f50
+                        font-weight: 600
+                .actions
+                    box-sizing: content-box
+                    display: flex
+                    align-items: center
+                    padding-top: 8px
+                    padding-bottom: 9px
+                    padding-right: 8px
+                    border-radius: 5px
+                    gap: 10px
+                    background: #F7F7F7
+                    button
+                        display: block
+                        box-sizing: content-box
+                        border: none
+                        cursor: pointer
+                        width: 22px
+                        background: none
+                        img
+                            width: 100%
+        
+        .rightSide
+            display: flex
+            flex-direction: column
+            gap: 13px
+            flex: 0 1 350px
+            position: fixed
+            right: 40px 
+            @media (max-width: 1300px) 
+                right: 20px
+            @media (max-width: 1020px) 
+                flex: 0 1 260px
+                width: 260px
+            @media (max-width: 920px) 
+                flex: 0 1 200px
+                width: 200px
+            @media (max-width: 770px) 
+                display: none
+
+            .SortChat
+                max-width: 350px
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+                padding: 9px 10px 20px
+                background: #FFFFFF
+                border-radius: 15.3648px
+                ul
+                    list-style-type: none
+                    gap: 10px
+                    display: flex
+                    flex-direction: column
+                    .chatActive
+                        margin: 0
+                        background: #F0F2F5
+                        padding: 9px 0 10px 17px
+                        border-radius: 8px
+                        color: rgba(0, 0, 0, 0.6)
+                    li
+                        margin-left: 30px
+                        font-weight: 700
+                        font-size: 12.1738px
+                        line-height: 14px
+                        color: rgba(0, 0, 0, 0.5)
+
+            .vote
+                max-width: 350px
+                background: #FFFFFF
+                box-shadow: 0px 0.620997px 0.620997px rgba(0, 0, 0, 0.1), 0px 0px 0.620997px rgba(0, 0, 0, 0.25)
+                border-radius: 9.37812px
+                padding: 14px 13px
+                font-family: 'Arial', sans-serif
+
+                h2
+                    font-weight: 700
+                    font-size: 14px
+                    line-height: 12px
+                    color: rgba(5, 5, 5, 0.8)
+                    padding-bottom: 11px
+                    padding-left: 7px
+                    border-bottom: 0.620997px solid #CED0D4
+                .text
+                    margin: 12px 0 0 7px
+                    font-family: 'Segoe UI', Arial, sans-serif
+                    font-weight: 400
+                    font-size: 12px
+                    line-height: 16px
+                    color: #050505
+                    margin-left: 7px
+                &Form
+                    margin-top: 36px
+                    font-family: 'Segoe UI', Arial, sans-serif
+                    padding-left: 7px
+                    display: flex
+                    flex-direction: column
+                    gap: 13px
+                    .radio
+                        display: flex
+                        flex-direction: column-reverse
+                        input
+                            display: none
+                        label 
+                            display: inline-block
+                            cursor: pointer
+                            position: relative
+                            padding-bottom: 25px
+                            margin-right: 0
+                            user-select: none
+                            font-weight: 600
+                            font-size: 10px
+                            line-height: 12px
+                            color: rgba(5, 5, 5, 0.8)
+                        label:before 
+                            content: ""
+                            display: inline-block
+                            width: 16px
+                            height: 16px
+                            position: absolute
+                            left: 0
+                            bottom: 1px
+                            background: url(../images/chat1/noneClick.svg) 0 0 no-repeat
+                            background-size: cover
+
+                        input:checked + label:before
+                            background: url(../images/chat1/clicked.svg) 0 0 no-repeat
+                            background-size: cover
+
+                        
+                        label:hover:before 
+                            filter: brightness(120%)
+
+                    button
+                        cursor: pointer
+                        margin-top: 25px
+                        max-width: 320px
+                        height: 34px
+                        text-align: center
+                        background: #FFFFFF
+                        border: 0.625px solid rgba(0, 0, 0, 0.3)
+                        border-radius: 12.5px
+                        font-weight: 600
+                        font-size: 12px
+                        line-height: 34px
+                        color: rgba(0, 0, 0, 0.8)
+                        transition: .4s
+                        &:hover
+                            transform: scale(1.08)
+                
+                .rezaltsHide
+                    display: none
+                .rezalts
+                    margin: 14px 0 13px 7px
+                    h3
+                        font-family: 'Arial', sans-serif
+                        font-weight: 700
+                        font-size: 8px
+                        line-height: 12px
+                        color: rgba(5, 5, 5, 0.6)
+                        margin-bottom: 25px
+                    &Renge
+                        display: flex
+                        flex-direction: column
+                        gap: 20px
+                        &E
+                            .title
+                                display: flex
+                                justify-content: space-between
+                                font-family: 'Segoe UI', Arial, sans-serif
+                                font-size: 10px
+                                line-height: 12px
+                                color: #050505
+                                span
+                                    font-size: 8px
+                            
+                            .grey
+                                background: #D9D9D9
+                                border-radius: 13.1698px
+                                height: 4px
+                                .orange
+                                    background: #DC8400
+                                    border-radius: 13.1698px
+                                    height: 4px
+                                    width: 30%
+                            &:first-child
+                                .grey
+                                    .orange
+                                        width: 60%
+                            &:last-child
+                                .grey
+                                    .orange
+                                        width: 10%

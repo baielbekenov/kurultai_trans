@@ -1,0 +1,166 @@
+main {
+  padding-top: 13px;
+  padding-bottom: 100px;
+  background: #F0F2F5;
+}
+@media (max-width: 740px) {
+  main {
+    padding-top: 23px;
+  }
+}
+@media (max-width: 550px) {
+  main {
+    padding-top: 10px;
+  }
+}
+main .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main .main .peopleMob {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 530px;
+          flex: 0 1 530px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 15.3648px;
+  padding: 9px 12px 11px 10px;
+  margin: 0 20px 140px;
+  gap: 10px;
+}
+main .main .peopleMob .component {
+  font-family: "Arial", sans-serif;
+}
+main .main .peopleMob .componentHead {
+  padding: 9px 9px 9px 17px;
+  background: #F0F2F5;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main .main .peopleMob .componentHead h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 12.1738px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+main .main .peopleMob .componentHead .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main .main .peopleMob .componentHead .actions .minus {
+  width: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+main .main .peopleMob .componentHead .actions .minus img {
+  width: 100%;
+}
+main .main .peopleMob .component ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+main .main .peopleMob .component ul li, main .main .peopleMob .component ul a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12.1738px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+main .main .question {
+  padding: 0 36px;
+  width: 100%;
+  display: block;
+}
+main .main .question button {
+  width: 100%;
+  background: #DC8400;
+  -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.12);
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 25px;
+  text-align: center;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  color: #FFFFFF;
+  border: none;
+}
+
+.footer {
+  display: none;
+}
+@media (max-width: 550px) {
+  .footer {
+    display: block;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #000;
+  }
+}
+.footerInner {
+  padding: 20px 33px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}

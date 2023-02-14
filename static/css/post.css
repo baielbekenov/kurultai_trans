@@ -1,0 +1,466 @@
+main {
+  padding-top: 13px;
+  padding-bottom: 100px;
+  background: #F0F2F5;
+}
+@media (max-width: 740px) {
+  main {
+    padding-top: 23px;
+  }
+}
+@media (max-width: 740px) and (max-width: 550px) {
+  main {
+    padding-bottom: 0;
+  }
+  main .container {
+    padding: 0;
+  }
+}
+main .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 15px;
+}
+@media (max-width: 550px) {
+  main .main {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+main .main .backBtn {
+  display: none;
+}
+@media (max-width: 550px) {
+  main .main .backBtn {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0px 8px;
+  }
+  main .main .backBtn a {
+    text-decoration: none;
+    font-family: "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 12.1738px;
+    line-height: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 15px;
+  }
+}
+main .main .Post {
+  max-width: 712px;
+  background: #fff;
+  -webkit-box-shadow: 0px 0.943061px 0.943061px rgba(0, 0, 0, 0.1), 0px 0px 0.943061px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0.943061px 0.943061px rgba(0, 0, 0, 0.1), 0px 0px 0.943061px rgba(0, 0, 0, 0.25);
+  border-radius: 14.2418px;
+  padding: 21px 18px 25px 18px;
+}
+@media (max-width: 860px) {
+  main .main .Post {
+    padding: 20px;
+  }
+}
+@media (max-width: 550px) {
+  main .main .Post {
+    padding: 15px 18px;
+    border-radius: 0;
+  }
+}
+main .main .PostImage {
+  display: block;
+  position: relative;
+  margin-bottom: 16px;
+}
+@media (max-width: 540px) {
+  main .main .PostImage {
+    width: 100%;
+  }
+}
+@media (max-width: 460px) {
+  main .main .PostImage {
+    height: 195px;
+    border-radius: 15px;
+  }
+}
+@media (max-width: 400px) {
+  main .main .PostImage {
+    height: 185px;
+  }
+}
+main .main .PostImage img {
+  width: 100%;
+}
+@media (max-width: 800px) {
+  main .main .PostImage img {
+    height: 100%;
+  }
+}
+@media (max-width: 400px) {
+  main .main .PostImage img {
+    height: auto;
+  }
+}
+@media (max-width: 391px) {
+  main .main .PostImage img {
+    height: 100%;
+  }
+}
+main .main .PostText {
+  position: absolute;
+  font-family: "Sora", Arial, Helvetica, sans-serif;
+  left: 27px;
+  bottom: 18px;
+}
+@media (max-width: 840px) {
+  main .main .PostText {
+    left: 20px;
+    bottom: 10px;
+  }
+}
+@media (max-width: 800px) {
+  main .main .PostText {
+    left: 10px;
+  }
+}
+@media (max-width: 400px) {
+  main .main .PostText {
+    bottom: 30px;
+  }
+}
+main .main .PostText h2 {
+  margin-left: 16px;
+  margin-right: 10px;
+  position: relative;
+  font-weight: 700;
+  font-size: 18.8px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+@media (max-width: 800px) {
+  main .main .PostText h2 {
+    font-size: 16px;
+    line-height: 20px;
+    height: 60px;
+    margin-left: 16px;
+  }
+}
+@media (max-width: 600px) {
+  main .main .PostText h2 {
+    height: auto;
+  }
+}
+@media (max-width: 550px) {
+  main .main .PostText h2 {
+    width: 90%;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    font-size: 18.4415px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 374px) {
+  main .main .PostText h2 {
+    width: 100%;
+    margin-left: 10px;
+  }
+}
+main .main .PostText h2::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 6px;
+  left: -16px;
+  top: 0;
+  background: #DC8400;
+}
+@media (max-width: 740px) {
+  main .main .PostText h2::before {
+    left: -18px;
+    height: 50px;
+    width: 7px;
+  }
+}
+@media (max-width: 540px) {
+  main .main .PostText h2::before {
+    height: 100%;
+    width: 5px;
+  }
+}
+@media (max-width: 374px) {
+  main .main .PostText h2::before {
+    width: 4px;
+    left: -10px;
+  }
+}
+main .main .PostText p {
+  width: 306px;
+  font-weight: 400;
+  font-size: 11.4413px;
+  line-height: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 740px) {
+  main .main .PostText p {
+    height: 30px;
+  }
+}
+@media (max-width: 540px) {
+  main .main .PostText p {
+    width: auto;
+    height: auto;
+    font-size: 9.28256px;
+    line-height: 12px;
+  }
+}
+main .main .Post .text {
+  max-width: 664px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14.1459px;
+  line-height: 19px;
+  color: #050505;
+  margin: 16px auto 21px;
+}
+@media (max-width: 740px) {
+  main .main .Post .text {
+    margin: 30px auto 50px;
+  }
+}
+@media (max-width: 550px) {
+  main .main .Post .text {
+    margin: 20px auto 16px;
+  }
+}
+main .main .Post .prevEnd {
+  margin-bottom: 30px;
+  border: 0.943061px solid #CED0D4;
+}
+main .main .PostEnd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14.1459px;
+  line-height: 14px;
+  color: #65676B;
+}
+@media (max-width: 640px) {
+  main .main .PostEnd {
+    font-size: 12px;
+  }
+}
+main .main .PostEnd .like {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main .main .PostEnd .like > span {
+  width: 160px;
+}
+@media (max-width: 640px) {
+  main .main .PostEnd .like > span {
+    width: 120px;
+  }
+}
+@media (max-width: 420px) {
+  main .main .PostEnd .like > span {
+    display: none;
+  }
+}
+main .main .PostEnd .like > img {
+  display: none;
+}
+main .main .PostEnd .like > .likeActive {
+  display: block;
+  width: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (max-width: 640px) {
+  main .main .PostEnd .like > .likeActive {
+    width: 30px;
+    margin-right: 6px;
+  }
+}
+@media (max-width: 550px) {
+  main .main .PostEnd .like > .likeActive {
+    width: 20px;
+  }
+}
+main .main .PostEnd .like > .likeActive:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+main .main .PostEnd .likeCount {
+  font-weight: 400;
+  line-height: 19px;
+}
+main .main .PostEnd .share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main .main .PostEnd .share img {
+  width: 20px;
+}
+@media (max-width: 640px) {
+  main .main .PostEnd .share {
+    gap: 4px;
+  }
+  main .main .PostEnd .share img {
+    width: 25px;
+  }
+}
+@media (max-width: 550px) {
+  main .main .PostEnd .share img {
+    width: 20px;
+  }
+}
+main .main .PostEnd .share:hover {
+  -webkit-transform: scale(1.12);
+          transform: scale(1.12);
+}
+main .main .Post .comment {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+main .main .Post .comment h2 {
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18.1738px;
+  line-height: 20px;
+  color: rgb(51, 51, 51);
+  margin-bottom: 10px;
+}
+main .main .Post .comment form {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+main .main .Post .comment form label {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16.26394px;
+  line-height: 18px;
+  color: #323232;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+main .main .Post .comment form input, main .main .Post .comment form textarea {
+  border: none;
+  padding: 10px 13px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  font-size: 16.26394px;
+  line-height: 18px;
+  color: #323232;
+  background: #dddee7;
+  border: 0.66171px solid #F3F3F3;
+  border-radius: 5.29368px;
+  outline: none;
+}
+main .main .Post .comment form .forName {
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+main .main .Post .comment form .forComment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+main .main .Post .comment form .forComment button {
+  width: 50px;
+  border: none;
+  outline: none;
+  background: #fff;
+}
+main .main .Post .comment form .forComment button img {
+  width: 100%;
+}
+main .main .Post .comment .otherComments {
+  border: 2px solid #cbccd2;
+  padding: 10px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+}
+main .main .Post .comment .otherCommentsE {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+}
+main .main .Post .comment .otherCommentsE h3 {
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 16.1738px;
+  line-height: 18px;
+  color: rgb(51, 51, 51);
+}
+main .main .Post .comment .otherCommentsE .textComment {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #323232;
+}

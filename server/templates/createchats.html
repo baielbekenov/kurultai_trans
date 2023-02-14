@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+<link rel="stylesheet" href="{% static 'css/resetPassword.css' %}">
+
+{% endblock %}
+
+        {% block content %}
+
+        <main>
+            <div class="container">
+                <div class="main">
+                    <section class="resetP">
+                        <form id="resetPassword" action="{% url 'createchats' %}" method="post" class="right">
+                            {% csrf_token %}
+                            <h1>Создание чата</h1>
+                            <div class="pole">
+                                <label for="old">Название</label>
+                                 {{ form.title }}
+                            </div>
+                            <div class="pole">
+                                <label for="new">Описание</label>
+                                {{ form.description }}
+                            </div>
+                            <div class="pole">
+                                <label for="pass">Аватар</label>
+                                {{ form.avatar }}
+                            </div>
+                            <div class="pole">
+                                <label for="pass">Is private</label>
+                                {{ form.is_privat }}
+                            </div>
+                            <input type="submit" value="Сохранить">
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        {% endblock %}

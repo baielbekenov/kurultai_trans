@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ voting.title }}<br>
+{{ voting.content }}<br>
+{% for i in voting.questions_vote.all %}
+<br>
+<br>
+<form action="{% url 'question_vote' %}" method="post">
+<button type="submit" name="question_id" value="{{ i.id }}">{{ i.title }}</button>
+    {% csrf_token%}
+</form>
+{{ i.get_total_votes }}
+<br>
+{% endfor %}
+
+<br>
+<br>
+<a href="{% url 'create_news' voting.pk %}">опубликовать как новость</a>
+
+</body>
+</html>

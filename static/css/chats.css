@@ -1,0 +1,279 @@
+main {
+  padding-top: 13px;
+  padding-bottom: 100px;
+  background: #F0F2F5;
+}
+@media (max-width: 740px) {
+  main {
+    padding-top: 23px;
+  }
+}
+@media (max-width: 550px) {
+  main {
+    padding: 0;
+  }
+  main .container {
+    padding: 0;
+  }
+}
+main .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 15px;
+}
+@media (max-width: 550px) {
+  main .main {
+    display: block;
+  }
+}
+main .main .chats {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 530px;
+          flex: 0 1 530px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 1.33333px 33.3333px rgba(169, 222, 249, 0.24);
+          box-shadow: 0px 1.33333px 33.3333px rgba(169, 222, 249, 0.24);
+  border-radius: 14px;
+  padding: 13px 22px 300px 17px;
+  min-width: 320px;
+}
+@media (max-width: 550px) {
+  main .main .chats {
+    width: 100%;
+    border-radius: 0;
+    min-height: calc(100vh - 100px);
+  }
+}
+main .main .chatsHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 10px;
+  position: relative;
+}
+@media (max-width: 550px) {
+  main .main .chatsHead {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 16px;
+    background: #fff;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  }
+}
+main .main .chatsHead::after {
+  position: absolute;
+  content: "";
+  width: 108%;
+  left: -17px;
+  bottom: 0px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 550px) {
+  main .main .chatsHead::after {
+    display: none;
+  }
+}
+main .main .chatsHead form {
+  background: #F0F2F5;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 416px;
+          flex: 0 1 416px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 32px;
+}
+main .main .chatsHead form .searchButton {
+  padding-left: 10px;
+  width: 21px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main .main .chatsHead form .searchButton:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+main .main .chatsHead form input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 90%;
+  font-family: "Sora", sans-serif;
+  font-weight: 400;
+  font-size: 12.2465px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  padding-left: 12px;
+}
+@media (max-width: 660px) {
+  main .main .chatsHead form input {
+    width: 86%;
+  }
+}
+@media (max-width: 560px) {
+  main .main .chatsHead form input {
+    width: 80%;
+  }
+}
+main .main .chatsHead form input:focus {
+  font-size: 14px;
+  line-height: 16px;
+  color: #020202;
+}
+main .main .chatsHeadActions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+  margin-left: 8px;
+}
+@media (max-width: 550px) {
+  main .main .chatsBlock {
+    padding-top: 60px;
+  }
+}
+main .main .chatsBlockE {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 8px;
+  margin-top: 10px;
+  position: relative;
+}
+main .main .chatsBlockE::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  width: 86%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.3);
+}
+main .main .chatsBlockE .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 18px;
+}
+main .main .chatsBlockE .content .foto {
+  width: 50px;
+}
+main .main .chatsBlockE .content .foto img {
+  width: 100%;
+}
+main .main .chatsBlockE .content .title {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12.1738px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+main .main .chatsBlockE .content .title h3 {
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 12.1738px;
+}
+main .main .chatsBlockE .content .title p {
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
+}
+main .main .chatsBlockE .content .title p span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+main .main .chatsBlockE .time {
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 12.1738px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+main .main .chatsBlockE .time p {
+  margin-bottom: 10px;
+  text-align: right;
+  margin-right: 3px;
+}
+main .main .chatsBlockE .time .count {
+  background: #1DA1F2;
+  border-radius: 20px;
+  padding: 1px 12px;
+  color: #FFFFFF;
+}
+main .main .SortChat {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 350px;
+          flex: 0 1 350px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  padding: 9px 10px 20px;
+  background: #FFFFFF;
+  border-radius: 15.3648px;
+}
+@media (max-width: 670px) {
+  main .main .SortChat {
+    display: none;
+  }
+}
+main .main .SortChat ul {
+  list-style-type: none;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main .main .SortChat ul .chatActive {
+  margin: 0;
+  background: #F0F2F5;
+  padding: 9px 0 10px 17px;
+  border-radius: 8px;
+  color: rgba(0, 0, 0, 0.6);
+}
+main .main .SortChat ul li {
+  margin-left: 30px;
+  font-weight: 700;
+  font-size: 12.1738px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}

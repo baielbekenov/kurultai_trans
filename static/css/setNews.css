@@ -1,0 +1,266 @@
+@media (max-width: 550px) {
+  main .container .main {
+    height: calc(100vh - 100px);
+  }
+}
+
+.main .show {
+  display: block;
+}
+.main .hide {
+  display: none;
+}
+.main .showModal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.AftorizPop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  padding: 0 20px;
+  top: 102px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 660px) {
+  .AftorizPop {
+    top: 76px;
+  }
+}
+@media (max-width: 499px) {
+  .AftorizPop {
+    top: 0;
+    padding: 0;
+    z-index: 3;
+  }
+}
+.AftorizPop .modal {
+  padding: 80px 180px 120px 88px;
+}
+@media (max-width: 800px) {
+  .AftorizPop .modal {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 0;
+    padding: 50px 0;
+  }
+}
+@media (max-width: 800px) {
+  .AftorizPop .modal {
+    padding: 30px 0;
+  }
+}
+@media (max-width: 499px) {
+  .AftorizPop .modal {
+    padding: 45px 45px 90px 45px;
+    margin: 0;
+    height: 100%;
+    border-radius: 0px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
+
+.formNews {
+  margin: 40px auto;
+  background: #F0F2F5;
+  border-radius: 20px;
+  padding: 60px 80px 65px;
+  max-width: 1080px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  gap: 20px;
+}
+@media (max-width: 800px) {
+  .formNews {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 0;
+    padding: 50px 0;
+  }
+}
+@media (max-width: 800px) {
+  .formNews {
+    padding: 30px 0;
+  }
+}
+@media (max-width: 550px) {
+  .formNews {
+    padding: 45px 45px 90px 45px;
+    margin: 0;
+    height: 100%;
+    border-radius: 0px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    display: block;
+    width: 100%;
+  }
+}
+.formNews .back {
+  display: none;
+}
+@media (max-width: 499px) {
+  .formNews .back {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 39px;
+    left: 37px;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    width: 20px;
+    padding: 5px;
+  }
+  .formNews .back img {
+    width: 100%;
+  }
+}
+.formNews .aftorizRight {
+  max-width: 460px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.formNews .aftorizRight h2 {
+  font-weight: 700;
+  font-size: 26.3113px;
+  line-height: 37px;
+  text-align: center;
+  color: #3F3D56;
+  margin-bottom: 37px;
+}
+.formNews .aftorizRight .formDatas {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.formNews .aftorizRight .formDatas .pole {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+.formNews .aftorizRight .formDatas .pole label {
+  font-weight: 400;
+  font-size: 14.94052px;
+  line-height: 16px;
+  color: #838AA3;
+}
+.formNews .aftorizRight .formDatas .pole input {
+  width: 100%;
+  display: block;
+  padding: 16px 8px 16px 13px;
+  font-weight: 400;
+  font-size: 14.26394px;
+  line-height: 16px;
+  color: #838AA3;
+  background: #FCFCFC;
+  outline: none;
+  border: 0.66171px solid #F3F3F3;
+  border-radius: 5.29368px;
+}
+.formNews .aftorizRight .formDatas .pole .eyeForpasword {
+  cursor: pointer;
+}
+.formNews .aftorizRight .formDatas .pole span {
+  position: absolute;
+  right: 13px;
+  bottom: 13px;
+  width: 15px;
+}
+.formNews .aftorizRight .formDatas .pole span img {
+  width: 100%;
+}
+.formNews .aftorizRight .formDatas a {
+  width: 80px;
+  margin-left: auto;
+  margin-top: -10px;
+  margin-bottom: 22px;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 8.94052px;
+  padding: 4px;
+  line-height: 14px;
+  color: #FF6584;
+}
+.formNews .aftorizRight .submitBtn {
+  border: none;
+  cursor: pointer;
+  background: #DC8400;
+  border-radius: 5.29368px;
+  width: 100%;
+  display: block;
+  height: 42px;
+  line-height: 42px;
+  font-weight: 700;
+  font-size: 12.26394px;
+  letter-spacing: 0.198513px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 18px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (max-width: 550px) {
+  .formNews .aftorizRight .submitBtn {
+    font-size: 16px;
+    height: 52px;
+    line-height: 52px;
+    border-radius: 12px;
+  }
+}
+.formNews .aftorizRight .submitBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.formNews .aftorizRight p {
+  width: 210px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 10.5874px;
+  line-height: 16px;
+  color: #333745;
+}
+.formNews .aftorizRight p span {
+  padding: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #DC8400;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.formNews .aftorizRight p span:hover {
+  font-size: 13px;
+}

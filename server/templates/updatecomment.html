@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+
+
+{% endblock %}
+
+        {% block content %}
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>{{ form.news }}</div>
+            <div>{{ form.name }}</div>
+            <div>{{ form.email}}</div>
+            <div>{{ form.body }}</div>
+            <div>{{ form.created_on }}</div>
+            <div>{{ form.active }}</div>
+            <input class="submitBtn" type="submit" value="Изменить">
+        </form>
+{% endblock %}

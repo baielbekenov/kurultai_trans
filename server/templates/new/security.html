@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="fonts/Segoe/stylesheet.css">
+    <link rel="stylesheet" href="fonts/Sora/stylesheet.css">
+    <link rel="stylesheet" href="css/bundle.css">
+    <link rel="stylesheet" href="css/security.css">
+    <title>Kurultai beta</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header id="headerJs">
+            <div class="container">
+                <div class="menuInner">
+                    <a href="#"><div class="menuLogo"><img src="images/header/logo.svg" alt="logo"></div></a>
+                    <div class="search">
+                        <img src="images/header/logotext.svg" alt="">
+                    </div>
+                    <div class="menuRight">
+                        <div class="ava">
+                            <a href="profile.html" class="avaImg"><img src="images/header/ava.svg" alt="image"></a>
+                            <div class="avaArow"><img src="images/header/down.svg" alt="image"></div>
+                        </div>
+                        <div class="menuActions" >
+                            <div class="menuActionsE"><img src="images/header/setting.svg" alt="image"></div>
+                            <div class="menuActionsE"><img src="images/header/lamp.svg" alt="image"></div>
+                            <div class="menuActionsE"><img src="images/header/notification.svg" alt="image"></div>
+                        </div >
+                    </div>
+                    <div class="menuBurger" id="menu">
+                        <span></span>
+                    </div>
+                    <div class="burgerActive hide" >
+                        <div class="ava forProfile" >
+                            <div class="avaImg"><img src="images/header/ava.svg" alt="image"></div>
+                        </div>
+                        <div class="menuActions" >
+                            <div class="menuActionsEb"><img src="images/header/setting.svg" alt="image"></div>
+                            <div class="menuActionsEb"><img src="images/header/lamp.svg" alt="image"></div>
+                            <div class="menuActionsEb"><img src="images/header/notification.svg" alt="image"></div>
+                        </div >
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="main">
+                    <section class="profile">
+                        <div class="profileList">
+                            <ul>
+                                <li>
+                                    <a href="indexActive.html">
+                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Лента</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="chats.html">
+                                        <div> <span>2</span><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Сообщения</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="delegats.html">
+                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Делегаты</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="rubrics.html">
+                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <h4>Рубрики</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">
+                                        <div><img src="images/profile/profile.svg" alt="list"></div>
+                                        <h4>Профиль</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="profileSettings">
+                            <h3>Настройки</h3>
+                            <ul>
+                                <li>
+                                    <a href="settings.html">
+                                        <div><img src="images/profile/settings.svg" alt=""></div>
+                                        <h4>Настройки</h4>
+                                    </a>
+                                </li>
+                                <li class="listActive">
+                                    <a href="security.html">
+                                        <div><img src="images/profile/security.svg" alt=""></div>
+                                        <h4>Безопасность</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html">
+                                        <div><img src="images/profile/quit.svg" alt=""></div>
+                                        <h4>Выйти</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <section class="headMob">
+                        <a href="profile.html" class="back"><img src="images/security/back1.svg" alt=""></a>
+                        <h2>Безапосность</h2>
+                    </section>
+
+                    <section class="security">
+                        <h3>Безопасность</h3>
+                        <form action="" class="securityForm">
+                            <div class="securityFormE">
+                                <label for="email">Email:</label>
+                                <input placeholder="bakyt_1234@gmail.com" id="email" name="email" type="email">
+                                <button id="change">Изменить</button>
+                            </div>
+                           <a href="resetPassword.html">Сбросить пароль</a>
+                            <div id="introJs" class="securityActions">
+                                <input class="reset" type="reset" value="Отменить">
+                                <input class="save" type="submit" value="Сохранить">
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="securityNav">
+                        <h3>Настройки</h3>
+                        <ul>
+                            <li><a href="setting.html">Основные</a></li>
+                            <li class="settingNavActive"><a href="security.html">Безопасность<a ></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="js/app.js"></script>
+<script>
+    // for change
+    document.getElementById('change').onclick=(e)=>{e.preventDefault()}
+</script>
+</html>

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-Regular.eot');
+    src: url('Sora-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Sora-Regular.woff2') format('woff2'),
+        url('Sora-Regular.woff') format('woff'),
+        url('Sora-Regular.ttf') format('truetype'),
+        url('Sora-Regular.svg#Sora-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-Bold.eot');
+    src: url('Sora-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Sora-Bold.woff2') format('woff2'),
+        url('Sora-Bold.woff') format('woff'),
+        url('Sora-Bold.ttf') format('truetype'),
+        url('Sora-Bold.svg#Sora-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
