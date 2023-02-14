@@ -109,10 +109,10 @@
                     
                     <section class="headMob">
                         <a href="profile.html" class="back"><img src="images/security/back1.svg" alt=""></a>
-                        <h2>Основные настройки</h2>
+                        <h2>{% trans 'Basic settings' %}</h2>
                     </section>
                     <section id="introJs" class="setting">
-                        <h3>Настройки</h3>
+                        <h3>{% trans 'Settings' %}</h3>
                         <form action="{% url 'settings' %}" class="settingForm" enctype="multipart/form-data" method="post">
                             {% csrf_token %}
                         <div class="avatar">
@@ -128,201 +128,209 @@
                         </div>
 
                             <div class="settingFormE">
-                                <label for="userName">username:</label>
+                                <label for="userName">{% trans 'Username:' %}</label>
                                 {{ form.username }}
                             </div>
                             <div class="settingFormE">
-                                <label for="firstName">Имя:</label>
+                                <label for="firstName">{% trans 'First Name:' %}</label>
                                 {{ form.first_name }}
                             </div>
                             <div class="settingFormE">
-                                <label for="lastName">Фамилия:</label>
+                                <label for="lastName">{% trans 'Last Name:' %}</label>
                                 {{ form.last_name }}
                             </div>
                             <div class="settingFormE forTextarea">
-                                <label for="about">Краткая информация:</label>
+                                <label for="about">{% trans 'Short Information:' %}</label>
                                 {{ form.description }}
                             </div>
                             <div class="settingFormDate">
-                                <label>Место рождения:</label>
+                                <label>{% trans 'Place of birth:' %}</label>
                                 {{ form.birth_of_place }}
                             </div>
                             <div class="settingFormE">
-                                <label>Почта:</label>
+                                <label>Email:</label>
                                 {{ form.email }}
                             </div>
                             <div class="settingFormE">
-                                <label for="lastName">Место проживания:</label>
+                                <label for="lastName">{% trans 'Living place:' %}</label>
                                 {{ form.living_place }}
                             </div>
                             <div class="settingFormE">
-                                <label for="lastName">Нация:</label>
+                                <label for="lastName">{% trans 'Nation:' %}</label>
                                 {{ form.nation }}
                             </div>
                             <div class="settingFormE">
-                                <label for="lastName">Профессия:</label>
+                                <label for="lastName">{% trans 'Occupation:' %}</label>
                                 {{ form.occupation }}
                             </div>
                             <div class="settingFormE">
-                                <label for="lastName">Номер телефона:</label>
+                                <label for="lastName">{% trans 'Phone number:' %}</label>
                                 {{ form.phone_number }}
                             </div>
                             <div class="settingFormE">
-                                <label for="lastName">Регион:</label>
+                                <label for="lastName">{% trans 'Region:' %}</label>
                                 {{ form.region }}
                             </div>
 
                             <div class="settingActions">
-                                <input class="reset" type="reset" value="Отменить">
-                                <input class="save" type="submit" value="Сохранить">
+                                <input class="reset" type="reset" value="{% trans 'Cancel' %}">
+                                <input class="save" type="submit" value="{% trans 'Save' %}">
                             </div>
                         </form>
                     </section>
 
                     <section class="settingNav">
-                        <h3>Настройки</h3>
+                        <h3>{% trans 'Settings' %}</h3>
                         <ul>
-                            <li class="settingNavActive"><a href="setting.html">Основные</a></li>
-                            <li><a href="security.html">Безопасность<a ></li>
+                            <li class="settingNavActive"><a href="setting.html">{% trans 'Basics' %}</a></li>
+                            <li><a href="security.html">{% trans 'Security' %}<a></li>
                         </ul>
                     </section>
                     <section class="RegistrPop hide">
                         <div id="modalReg" class="modal">
-                            <div class="close"><img src="{% static 'images/people/plus.svg" alt=""></div>
+                            <div class="close"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
                             <div id="backReg" class="back hide"><img src="{% static 'images/security/back1.svg' %}" alt=""></div>
                             <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
-                            <form action="" class="right">
-                                <h2>Регистрация</h2>
+                            <form action="{% url 'register' %}" class="right" method="post">
+                                <h2>{% trans 'Registration' %}</h2>
                                 <div class="formDate">
                                     <div class="pole">
-                                        <label for="firstName">Имя</label>
-                                        <input required placeholder="Введите ваше имя" id="firstName" name="firstName" type="text">
+                                        {% csrf_token %}
+                                        <label for="firstName">{% trans 'Username' %}</label>
+                                        {{ register_form.username }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="lastName">Фамилия</label>
-                                        <input required placeholder="Введите вашу фамилию" id="lastName" name="lastName" type="text">
+                                        <label for="firstName">{% trans 'First Name' %}</label>
+                                        {{ register_form.first_name }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="dateTime">Дата рождения</label>
-                                        <input required id="dateTime" name="dateTime" type="date">
+                                        <label for="lastName">{% trans 'Last Name' %}</label>
+                                        {{ register_form.last_name }}
+                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="email">Email почта</label>
-                                        <input required placeholder="Введите вашу почту" id="email" name="email" type="email">
+                                        <label for="dateTime">{% trans 'Date of birth' %}</label>
+                                        {{ register_form.birth_of_date }}
+                                    </div>
+                                    <div class="pole">
+                                        <label for="email">Email</label>
+                                        {{ register_form.email }}
                                         <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="new">Пароль</label>
-                                        <input required id="new" placeholder="Введите ваш пароль" name="new" type="password">
+                                        <label for="new">{% trans 'Password' %}</label>
+                                        {{ register_form.password1 }}
                                         <span class="eyeForNew"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="pass">Подтверждение</label>
-                                        <input required id="pass" placeholder="Повторите пароль" name="pass" type="password">
-                                        <span class="eyeForPass"><img src="i{% static 'mages/security/eye.svg' %}" alt=""></span>
+                                        <label for="pass">{% trans 'Password confirmation' %}</label>
+                                        {{ register_form.password2 }}
+                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>
                                     </div>
                                 </div>
-                                <input class="submitBtn" type="submit" value="Зарегестрироваться">
-                                <p>У вас есть аккаунт? <span id="voiti">Войти</span></p>
+                                <input class="submitBtn" type="submit" value="{% trans 'Register' %}">
+                                <p>{% trans 'Do you have an account?' %} <span id="voiti">{% trans 'Register' %}</span></p>
                             </form>
                             <div class="regMob1">
                                 <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
-                                <form action="" class="mobForm1">
-                                    <h2>Регистрация</h2>
+                                <form action="{% url 'register' %}" class="mobForm1" method="post">
+                                    <h2>{% trans 'Register' %}</h2>
                                     <div class="formDate">
                                         <div class="pole">
-                                            <label for="mob1firstName">Имя</label>
-                                            <input required placeholder="Введите ваше имя" id="mob1firstName" name="firstName" type="text">
+                                            <label for="mob1firstName">{% trans 'First Name' %}</label>
+                                            {{ register_form.first_name }}
+                                            {% csrf_token %}
                                             <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                         </div>
                                         <div class="pole">
-                                            <label for="mob1lastName">Фамилия</label>
-                                            <input required placeholder="Введите вашу фамилию" id="mob1lastName" name="lastName" type="text">
+                                            <label for="mob1lastName">{% trans 'Last Name' %}</label>
+                                            {{ register_form.last_name }}
                                             <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                         </div>
                                         <div class="pole">
-                                            <label for="mob1dateTime">Дата рождения</label>
-                                            <input required id="mob1dateTime" name="dateTime" type="date">
+                                            <label for="mob1dateTime">{% trans 'Date of birth' %}</label>
+                                            {{ register_form.birth_of_date }}
                                         </div>
                                         <div class="pole">
-                                            <label for="mob1email">Email почта</label>
-                                            <input required placeholder="Введите вашу почту" id="mob1email" name="email" type="email">
+                                            <label for="mob1email">Email</label>
+                                            {{ register_form.email }}
                                             <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
                                         </div>
                                     </div>
-                                    <input class="submitBtn" type="submit" value="Далее">
+                                    <input class="submitBtn" type="submit" value="{% trans 'Next' %}">
                                 </form>
                             </div>
                             <div class="regMob2 hide">
                                 <div class="img"><img src="{% static 'images/security/welcome.png" alt="welcome"></div>
                                 <form action="" class="mobForm2">
-                                    <h2>Регистрация</h2>
+                                    <h2>{% trans 'Register' %}</h2>
                                     <div class="formDate">
                                         <div class="pole">
-                                            <label for="newMob">Пароль</label>
-                                            <input required id="newMob" placeholder="Введите ваш пароль" name="new" type="password">
+                                            <label for="newMob">{% trans 'Password' %}</label>
+                                            {{ register_form.password }}
                                             <span class="eyeForMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                         </div>
                                         <div class="pole">
-                                            <label for="passMob">Подтверждение</label>
-                                            <input required id="passMob" placeholder="Повторите пароль" name="pass" type="password">
+                                            <label for="passMob">{% trans 'Password confirmation' %}</label>
+                                            {{ register_form.password1 }}
                                             <span class="eyeForPassMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                         </div>
-                                        <p>У вас есть аккаунт? <span id="voiti1">Войти</span></p>
-                                        <input class="submitBtn" type="submit" value="Зарегестрироваться">
+                                        <p>{% trans 'Do you have an account?' %} <span id="voiti1">{% trans 'Sign in' %}</span></p>
+                                        <input class="submitBtn" type="submit" value="{% trans 'Register' %}">
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </section>
-                    <section class="AftorizPop hide">
+                   <section class="AftorizPop hide">
                         <div id="modalAftoriz" class="modal">
                             <div class="close2"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
-                            <a href="index.html" class="back"><img src="{% static 'images/security/back1.svg' %}" alt=""></a>
                             <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
-                            <form action="" class="aftorizRight">
-                                <h2>Авторизация</h2>
+                            <form action="{% url 'login' %}" class="aftorizRight" method="post">
+                                <h2>{% trans 'Authorization' %}</h2>
                                 <div class="formDatas">
                                     <div class="pole">
-                                        <label for="email2">Email почта</label>
-                                        <input required placeholder="Введите вашу почту" id="email2" name="email2" type="email">
+                                        <label for="das">{% trans 'Username' %}</label>
+                                        {{ login_form.username }}
+                                        {% csrf_token %}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="password">Пароль</label>
-                                        <input required id="password" placeholder="Введите ваш пароль" name="new" type="password">
+                                        <label for="password">{% trans 'Password' %}</label>
+                                        {{ login_form.password }}
                                         <span class="eyeForpasword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
                                     </div>
-                                    <a href="resetPassword.html">Забыли пароль?</a>
+                                    <a href="{% url 'reset_password' %}">{% trans 'Forgot password?' %}</a>
                                 </div>
-                                <input class="submitBtn" type="submit" value="Войти">
-                                <p>У вас нет аккаунта? <span id="registracia">Регистрация</span></p>
+                                <input class="submitBtn" type="submit" value="{% trans 'Sign in' %}">
+                                <p>{% trans 'Do you have an account?' %}<span id="registracia">{% trans 'Register' %}</span></p>
                             </form>
                             <div class="AMob2">
                                 <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
-                                <form id="formAmobail" action="" class="formDate">
-                                    <h2>Авторизация</h2>
+                                <form id="formAmobail" action="{% url 'login' %}" method="post" class="formDate">
+                                    <h2>{% trans 'Authorization' %}</h2>
+                                    {% csrf_token %}
                                     <div class="pole">
-                                        <label for="Mobemail2">Email почта</label>
-                                        <input required placeholder="Введите вашу почту" id="Mobemail2" name="email2" type="email">
+                                        <label for="das">{% trans 'Username' %}</label>
+                                        {{ login_form.username }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="password">Пароль</label>
-                                        <input required id="Mobpassword" placeholder="Введите ваш пароль" name="new" type="password">
+                                        <label for="password">{% trans 'Password' %}</label>
+                                        {{ login_form.password }}
                                         <span class="eyeMobpassword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
                                     </div>
-                                    <a href="resetPassword.html">Забыли пароль?</a>
-                                    <p class="notAc">У вас нет аккаунта? <span id="registracia2">Регистрация</span></p>
-                                    <input class="submitBtn" type="submit" value="Войти">
+                                    <a href="{% url 'reset_password' %}">{% trans 'Forgot password?' %}</a>
+                                    <p class="notAc">{% trans 'Do you have an account?' %}<span id="registracia2">{% trans 'Register' %}</span></p>
+                                    <input class="submitBtn" type="submit" value="{% trans 'Sign in' %}">
 
                                 </form>
                             </div>
                             <div class="error hide">
-                                <div class="img"><img src="images/security/error.svg' %}" alt=""></div>
-                                <p>Данного аккаунта не существует</p>
+                                <div class="img"><img src="{% static 'images/security/error.svg' %}" alt=""></div>
+                                <p>{% trans 'Such account doesnt exist' %}</p>
                                 <div class="closeRed"><img src="{% static 'images/security/closeRed.svg' %}" alt=""></div>
                             </div>
                         </div>

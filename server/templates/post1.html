@@ -292,7 +292,7 @@
                                 {% csrf_token %}
                                 <div class="forName">
                                     <div>
-                                        <label for="text">Имя: </label>
+                                        <label for="text">{% trans 'First Name:' %}</label>
                                         {{ comment_form.name }}
                                     </div>
                                     <div>
@@ -325,11 +325,11 @@
                             <div>
                                 <span>
                                     {% if page_obj.has_previous %}
-                                        <a href="?page={{ page_obj.previous_page_number }}" >Previous</a>
+                                        <a href="?page={{ page_obj.previous_page_number }}" >{% trans 'Previous' %}</a>
                                     {% endif %}
                                         <span>{{ page_obj.number }}</span>
                                     {% if page_obj.has_next %}
-                                    <a href="?page={{ page_obj.next_page_number }}" >Next</a>
+                                    <a href="?page={{ page_obj.next_page_number }}" >{% trans 'Next' %}</a>
                                     {% endif %}
                                 </span>
                             </div>
