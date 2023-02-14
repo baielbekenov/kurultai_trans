@@ -194,9 +194,10 @@
 <!--                                </div >-->
                                 {% endfor %}
 
-                                <a href="/admin/server/question/add/"><p class="text">Добавить вариант</p></a>
+                                <a href="{% url 'add_questions' chat.voting_chat.pk %}"><p class="text">Добавить вариант</p></a>
                             <br>
                                 <a href="{% url 'create_news' chat.voting_chat.pk %}">Добавить результаты</a>
+                                <a href="{% url 'end_chat' chat.pk %}">Закрыть беседу</a>
 <!--                            </form>-->
                             <div class="rezalts rezaltsHide">
                                 <h3>Результаты:</h3>
@@ -239,7 +240,7 @@
 
 
 
-                                <a href="/admin/server/voting/add/">Добавить опрос</a>
+                                <a href="{% url 'create_voting' chat.pk %}">Добавить опрос</a>
                             </form>
                             <div class="rezalts rezaltsHide">
                                 <h3>Результаты:</h3>

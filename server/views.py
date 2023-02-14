@@ -28,7 +28,7 @@ from django.views import generic
 
 class NewsListView(generic.ListView):
     template_name = 'indexActive.html'
-    model = Voting
+    model = News
     queryset = News.objects.all()
     context_object_name = 'news'
 
@@ -81,7 +81,7 @@ def chat_detail(request, pk):
 
 
 def chat_list(request):
-    chats = Chat.objects.filter(users__id__exact=request.user.id)
+    chats = Chat.objects.filter(users__id__exact=request.user.id, is_active=True)
     return render(request, 'chats.html', {'chats': chats})
 
 
@@ -293,7 +293,7 @@ class NewsRubListView(generic.ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        query = Account.objects.filter(is_delegat=True)
+        query = News.objects.all()
         filter = NewsFilterForm(self.request.GET, queryset=query)
         query = filter.qs
         return query
@@ -342,4 +342,34 @@ def createchats(request):
         return render(request, 'createchats.html', context)
     return HttpResponse('Impossible to enter page!')
 
+
+def create_voting(request, pk):
+    chat = get_object_or_404(Chat, id=pk)
+    if request.method == 'POST':
+        form = VotingForm(request.POST)
+        das = form.save(commit=False)
+        das.chat = chat
+        das.save()
+        return redirect(reverse('chat_detail', args=[pk]))
+    form = VotingForm
+    return render(request, 'add_voting.html', {'form': form, 'chat': chat})
+
+
+def add_questions(request, pk):
+    voting = get_object_or_404(Voting, id=pk)
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        das = form.save(commit=False)
+        das.voting = voting
+        das.save()
+        return redirect(reverse('chat_detail', args=[voting.chat.id]))
+    form = VotingForm
+    return render(request, 'add_voting.html', {'form': form, 'chat': voting})
+
+
+def end_chat(request, pk):
+    chat = get_object_or_404(Chat, id=pk)
+    chat.is_active = False
+    chat.save()
+    return redirect(reverse('chat_detail', args=[chat.id]))
 

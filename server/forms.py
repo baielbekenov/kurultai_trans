@@ -81,3 +81,15 @@ class ChatCreateForm(forms.ModelForm):
     class Meta:
         model = Chat
         fields = ('title', 'description', 'avatar', 'is_privat')
+
+
+class VotingForm(forms.ModelForm):
+    class Meta:
+        model = Voting
+        fields = ('title', 'content')
+
+
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Question
+        fields = ('title', )
