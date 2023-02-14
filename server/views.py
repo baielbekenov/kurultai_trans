@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from .forms import *
-from .filters import UserFilterForm
+from .filters import UserFilterForm, NewsFilterForm
 from django.core.mail import send_mail
 from django.contrib.auth.forms import AuthenticationForm, PasswordResetForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
@@ -37,6 +37,7 @@ class NewsListView(generic.ListView):
         context['register_form'] = UserRegisterForm
         print(context['register_form'])
         print('orin')
+        context['rubrics'] = Rubrics.objects.all()
         context['text'] = _('Dastan')
         context['login_form'] = AuthenticationForm
         return context
@@ -112,6 +113,7 @@ class DelegatListView(generic.ListView):
         context['filter'] = UserFilterForm().form
         print('yes')
         context['regions'] = Region.objects.all()
+        context['chats'] = Chat.objects.filter(is_active=False)
         print(context['filter'])
         return context
 
@@ -173,7 +175,7 @@ def loginpage(request):
 def logoutpage(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
-    return redirect('/')
+    return redirect(reverse('home'))
 
 
 class PasswordsChangeView(PasswordChangeView):
@@ -280,6 +282,31 @@ def rubrics(request):
 
     context = {'rubrics': rubrics}
     return render(request, 'rubrics.html', context)
+
+
+class NewsRubListView(generic.ListView):
+    model = News
+    queryset = News.objects.all()
+    context_object_name = 'news'
+    template_name = 'rubrics.html'
+    filter_class = NewsFilterForm
+    paginate_by = 10
+
+    def get_queryset(self):
+        query = Account.objects.filter(is_delegat=True)
+        filter = NewsFilterForm(self.request.GET, queryset=query)
+        query = filter.qs
+        return query
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(NewsRubListView, self).get_context_data(**kwargs)
+        context['filter'] = NewsFilterForm().form
+        print('yes')
+        context['rubrics'] = Rubrics.objects.all()
+        context['chats'] = Chat.objects.filter(is_active=False)
+        print(context['filter'])
+        return context
+
 
 def set_news(request):
     return render(request, 'new/setNews.html')

@@ -160,41 +160,15 @@
                             <div class="reitings">
                                 <h3>Рейтинговые обсуждения</h3>
                                 <div class="infoDiscus">
-                                    <a href="chat1.html" class="chatsBlockE">
-                                        <div class="foto"><img src="{% static 'images/chats/chat1.svg' %}" alt="chat"></div>
+                                    {% for i in chats %}
+
+                                        <div class="foto"><img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'images/chats/chat2.svg' %}{% endif %}" alt="chat"></div>
                                         <div class="title">
-                                            <h3>Обсуждение (Политика)</h3>
-                                            <p>Дастан: <span>Подключитесь</span></p>
+                                            <h3>{{ i.title }}</h3>
+
                                         </div>
-                                    </a>
-                                    <a href="chat1.html" class="chatsBlockE">
-                                        <div class="foto"><img src="{% static 'images/chats/chatBlue.svg' %}" alt="chat"></div>
-                                        <div class="title">
-                                            <h3>Обсуждение (Политика)</h3>
-                                            <p>Дастан: <span>Подключитесь</span></p>
-                                        </div>
-                                    </a>
-                                    <a href="chat1.html" class="chatsBlockE">
-                                        <div class="foto"><img src="{% static 'images/chats/chat4.svg' %}" alt="chat"></div>
-                                        <div class="title">
-                                            <h3>Обсуждение (Политика)</h3>
-                                            <p>Дастан: <span>Подключитесь</span></p>
-                                        </div>
-                                    </a>
-                                    <a href="chat1.html" class="chatsBlockE">
-                                        <div class="foto"><img src="{% static 'images/delegats/chatPink.svg' %}" alt="chat"></div>
-                                        <div class="title">
-                                            <h3>Обсуждение (Политика)</h3>
-                                            <p>Дастан: <span>Подключитесь</span></p>
-                                        </div>
-                                    </a>
-                                    <a href="chat1.html" class="chatsBlockE">
-                                        <div class="foto"><img src="{% static 'images/delegats/chatGreen.svg' %}" alt="chat"></div>
-                                        <div class="title">
-                                            <h3>Обсуждение (Политика)</h3>
-                                            <p>Дастан: <span>Подключитесь</span></p>
-                                        </div>
-                                    </a>
+
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>

@@ -85,11 +85,13 @@ class Question(models.Model):
 
 
 class News(models.Model):
+    rubric = models.ForeignKey(Rubrics, on_delete=models.SET_NULL, blank=True, null=True)
     title = models.CharField(max_length=123)
     preview = models.CharField(max_length=244)
     content = models.TextField()
     voting = models.ForeignKey(Voting, on_delete=models.CASCADE, blank=True, null=True)
     image = models.ImageField(upload_to='news/')
+    is_active = models.BooleanField(default=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -150,6 +152,9 @@ class Message(models.Model):
         Chat,
         on_delete=models.CASCADE
     )
+
+    def __str__(self):
+        return self.content
 
     class Meta:
         verbose_name = 'Сообщение'

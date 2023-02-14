@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 <link rel="stylesheet" href="{% static 'css/news.css' %}">
 <link rel="stylesheet" href="{% static 'css/bundle.css' %}">
-
+<link rel="stylesheet" href="{% static 'css/rubrics.css' %}">
 <link rel="stylesheet" href="{% static 'css/aftorizHeader.css' %}">
 
 {% endblock %}
@@ -25,12 +25,14 @@
                                         <h4>{% translate 'Newsline' %}</h4>
                                     </a>
                                 </li>
+                                {% if user.is_delegat %}
                                 <li>
                                     <a href="{% url 'chats' %}">
                                         <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>{% translate 'Messages' %}</h4>
                                     </a>
                                 </li>
+                                {% endif %}
                                 <li>
                                     <a href="{% url 'delegats' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
@@ -85,6 +87,7 @@
                             </ul>
                         </div>
                         {% endif %}
+                        {% if user.is_authenticated %}
                         <div class="profileSettings">
                             <h3>{% translate 'Settings' %}</h3>
                             <ul>
@@ -108,6 +111,7 @@
                                 </li>
                             </ul>
                         </div>
+                        {% endif %}
                     </section>
                     <section class="newsBlock">
                         {% for i in news %}
@@ -319,10 +323,22 @@
                             </div>
                         </div>
                         <ul>
-                            <li>Делегаты</li>
-                            <li>Тор Ага</li>
-                            <li>Заместител</li>
-                            <li>Катчы</li>
+                            <a href="{% url 'delegats' %}?is_delegat"><li>Делегаты</li></a>
+                            <a href="{% url 'delegats' %}?is_tor_aga"><li>Тор Ага</li></a>
+                            <a href="{% url 'delegats' %}?is_zam"><li>Заместител</li></a>
+                            <a href="{% url 'delegats' %}?is_katchy"><li>Катчы</li></a>
+                        </ul>
+                       <div class="peopleTitle">
+                            <h3>Области</h3>
+                            <div class="peopleTitleActions">
+                                <div><img src="{% static 'images/people/plus.svg' %}" alt="img"></div>
+                                <div><img src="{% static 'images/people/triple.svg' %}" alt="img"></div>
+                            </div>
+                        </div>
+                        <ul>
+                            {% for i in regions %}
+                            <a href="{% url 'delegats' %}?region={{ i.id }}"><li>{{ i.title }}</li></a>
+                            {% endfor %}
                         </ul>
                         <div class="peopleTitle">
                             <h3>Рубрики</h3>
@@ -332,13 +348,13 @@
                             </div>
                         </div>
                         <ul>
-                            <li>Земельные участки</li>
-                            <li>Политика</li>
-                            <li>Спорт</li>
-                            <li>СМИ</li>
-                            <li>Жогорку кенеш</li>
+                            {% for i in rubrics %}
+                            <a href="{% url 'rubrics' %}?rubric={{ i.id }}"><li>{{ i.title }}</li></a>
+                            {% endfor %}
                         </ul>
+
                     </section>
+
                 </div>
             </div>
         </main>
