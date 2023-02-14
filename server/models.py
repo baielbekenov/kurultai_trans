@@ -91,7 +91,7 @@ class News(models.Model):
     content = models.TextField()
     voting = models.ForeignKey(Voting, on_delete=models.CASCADE, blank=True, null=True)
     image = models.ImageField(upload_to='news/')
-    is_active = models.BooleanField(default=True, blank=True)
+
 
     def __str__(self):
         return self.title
@@ -126,6 +126,7 @@ class Chat(models.Model):
         blank=True
     )
     users = models.ManyToManyField(Account, related_name='chats_user')
+    is_active = models.BooleanField(default=True, blank=True)
 
     def __str__(self):
         return self.title

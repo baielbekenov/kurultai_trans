@@ -91,7 +91,7 @@ def security(request):
 
 def profile(request, pk):
     account = get_object_or_404(Account, id=pk)
-    return render(request, 'profile.html', {'account': account})
+    return render(request, 'profile.html', {'account': account, 'chats': Chat.objects.filter(is_active=True)})
 
 
 class DelegatListView(generic.ListView):
@@ -113,7 +113,7 @@ class DelegatListView(generic.ListView):
         context['filter'] = UserFilterForm().form
         print('yes')
         context['regions'] = Region.objects.all()
-        context['chats'] = Chat.objects.filter(is_active=False)
+        context['chats'] = Chat.objects.filter(is_active=True)
         print(context['filter'])
         return context
 
@@ -303,7 +303,7 @@ class NewsRubListView(generic.ListView):
         context['filter'] = NewsFilterForm().form
         print('yes')
         context['rubrics'] = Rubrics.objects.all()
-        context['chats'] = Chat.objects.filter(is_active=False)
+        context['chats'] = Chat.objects.filter(is_active=True)
         print(context['filter'])
         return context
 

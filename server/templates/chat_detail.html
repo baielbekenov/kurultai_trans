@@ -18,38 +18,40 @@
                                 <li>
                                     <a href="{% url 'home' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Лента</h4>
+                                        <h4>{% translate 'Newsline' %}</h4>
                                     </a>
                                 </li>
+                                {% if user.is_delegat %}
                                 <li class="listActive">
                                     <a href="{% url 'chats' %}">
                                         <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Сообщения</h4>
+                                        <h4>{% translate 'Messages' %}</h4>
                                     </a>
                                 </li>
+                                {% endif %}
                                 <li>
                                     <a href="{% url 'delegats' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Делегаты</h4>
+                                        <h4>{% translate 'Delegates' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'rubrics' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Рубрики</h4>
+                                        <h4>{% translate 'Rubrics' %}</h4>
                                     </a>
                                 </li>
                                 {% if user.is_authenticated %}
                                 <li>
                                     <a href="{% url 'profile' user.pk %}">
                                         <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
-                                        <h4>Профиль</h4>
+                                        <h4>{% translate 'Profile' %}</h4>
                                     </a>
                                 </li>
                                 {% endif %}
+
                             </ul>
                         </div>
-
                         {% if user.is_superuser %}
                         <div class="profileSettings">
                             <h3>{% translate 'Management' %}</h3>
@@ -81,6 +83,7 @@
                             </ul>
                         </div>
                         {% endif %}
+                        {% if user.is_authenticated %}
                         <div class="profileSettings">
                             <h3>{% translate 'Settings' %}</h3>
                             <ul>
@@ -104,6 +107,7 @@
                                 </li>
                             </ul>
                         </div>
+                        {% endif %}
                     </section>
 
 
