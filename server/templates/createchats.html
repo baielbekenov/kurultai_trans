@@ -16,24 +16,24 @@
                     <section class="resetP">
                         <form id="resetPassword" action="{% url 'createchats' %}" method="post" class="right">
                             {% csrf_token %}
-                            <h1>Создание чата</h1>
+                            <h1>{% trans 'Chat creation' %}</h1>
                             <div class="pole">
-                                <label for="old">Название</label>
+                                <label for="old">{% trans 'Name' %}</label>
                                  {{ form.title }}
                             </div>
                             <div class="pole">
-                                <label for="new">Описание</label>
+                                <label for="new">{% trans 'Description' %}</label>
                                 {{ form.description }}
                             </div>
                             <div class="pole">
-                                <label for="pass">Аватар</label>
+                                <label for="pass">{% trans 'Avatar' %}</label>
                                 {{ form.avatar }}
                             </div>
                             <div class="pole">
-                                <label for="pass">Is private</label>
+                                <label for="pass">{% trans 'Is private' %}</label>
                                 {{ form.is_privat }}
                             </div>
-                            <input type="submit" value="Сохранить">
+                            <input type="submit" value="{% trans 'Create chat' %}">
                         </form>
                     </section>
                 </div>

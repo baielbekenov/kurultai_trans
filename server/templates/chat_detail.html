@@ -1,0 +1,332 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/bundleForChat.css' %}">
+<link rel="stylesheet" href="{% static 'css/chat1.css' %}">
+
+
+{% endblock %}
+
+{% block content %}
+        <main>
+            <div class="container">
+                <div class="main">
+                    <section class="profile">
+                        <div class="profileList">
+                            <ul>
+                                <li>
+                                    <a href="{% url 'home' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Newsline' %}</h4>
+                                    </a>
+                                </li>
+                                {% if user.is_delegat %}
+                                <li class="listActive">
+                                    <a href="{% url 'chats' %}">
+                                        <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Messages' %}</h4>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                <li>
+                                    <a href="{% url 'delegats' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Delegates' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'rubrics' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Rubrics' %}</h4>
+                                    </a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li>
+                                    <a href="{% url 'profile' user.pk %}">
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Profile' %}</h4>
+                                    </a>
+                                </li>
+                                {% endif %}
+
+                            </ul>
+                        </div>
+                        {% if user.is_superuser %}
+                        <div class="profileSettings">
+                            <h3>{% translate 'Management' %}</h3>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'createchats' %}">
+                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Createchats' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'createnews' %}">
+                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
+                                        <h4>{% translate 'CreateNews' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}">
+                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <h4>{% translate 'CreatePost' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'commentlist' %}">
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Comments' %}</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                        <div class="profileSettings">
+                            <h3>{% translate 'Settings' %}</h3>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'settings' %}">
+                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Settings' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'security' %}">
+                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Security' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}">
+                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Logout' %}</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </section>
+
+
+
+                    <section id="introJs"  class="chat">
+                        <div class="chatHead">
+                            <a href="{% url 'chats' %}" class="back"><img src="{% static 'images/chat1/back.svg' %}" alt=""> <span>{% trans 'Back' %}</span></a>
+                            <div class="chatTitle">
+                                <h3>{{ chat.title }}</h3>
+                                <p>{{ chat.users.count }} {% trans 'people in chat' %}</p>
+                            </div>
+                            <chat class="chatActions">
+                                <div><img src="{% static 'images/chats/call.svg' %}" alt="call"></div>
+                                <div class="tripleR"><img src="{% static 'images/people/triple.svg' %}" alt="call"></div>
+                                <div class="group"><img src="{% static 'images/chats/chat1.svg' %}" alt="call"></div>
+                            </chat>
+                        </div>
+                        <div class="golosovanie"><button>{% trans 'Vote' %}</button></div>
+                        <div class="chatBody" id="messages">
+
+                            {% for i in messages %}
+
+                            {% if i.user.id == user.id %}
+                            <div class="ownMessage">
+                                <span>{{ i.content }}</span>
+
+
+                            </div>
+                            {% else %}
+                            <div class="message">
+                                <div class="first">
+                                    <a href="#"><img src="{% static 'images/chat1/person1.svg' %}" alt="ava"></a>
+                                    <span>{{ i.content }}</span>
+
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+
+                        <form class="chatDown" id="form">
+<!--                            <div class="wrapperFile">-->
+<!--                                <input type="file" multiple>-->
+<!--                                <span><img src="{% static 'images/chat1/files.svg' %}" alt=""></span>-->
+<!--                            </div>-->
+                            <input placeholder="{% trans 'Write a message' %}"  type="text" name="message">
+                            <div class="actions">
+                                <button><img src="{% static 'images/chat1/microfon.svg' %}" alt="microfon"></button>
+                                <button class="submit"><img src="{% static 'images/chat1/send.svg' %}" alt="microfon"></button>
+                            </div>
+                        </form>
+
+                    </section>
+
+                    <section class="rightSide">
+                        <div class="SortChat">
+                            <ul>
+                                <li class="chatActive">{% trans 'All chats' %}</li>
+                                <li>{% trans 'Unread' %}</li>
+                                <li>{% trans 'Archive' %}</li>
+                            </ul>
+                        </div>
+                        {% if chat.voting_chat %}
+                        <div class="vote">
+                            <h2>{% trans 'Vote' %}</h2>
+                            <br>
+                            <h4 class="text">{{ chat.voting_chat.title }}</h4>
+                            <p class="text">{{ chat.voting_chat.content }}</p>
+<!--                            <form action="" class="voteForm">-->
+                                {% for i in chat.voting_chat.questions_vote.all %}
+                                <form action="{% url 'question_vote' %}" method="post" class="voteForm">
+                                    {% if user in i.users.all %}
+                                    <button style="color: #B36116" type="submit" name="question_id" value="{{ i.id }}">{{ i.title }} - {{ i.get_total_votes }}</button>
+                                    {% else %}
+                                    <button type="submit" name="question_id" value="{{ i.id }}">{{ i.title }} - {{ i.get_total_votes }}</button>
+                                    {% endif %}
+
+                                    {% csrf_token%}
+                                </form>
+
+<!--                                <div  class="radio">-->
+<!--                                    <input required type="radio" id="Choice1" name="build" value="yes">-->
+<!--                                    <label for="Choice1">{{ i.title }}</label>-->
+<!--                                </div >-->
+                                {% endfor %}
+
+                                <a href="/admin/server/question/add/"><p class="text">{% trans 'Add option' %}</p></a>
+                            <br>
+                                <a href="{% url 'create_news' chat.voting_chat.pk %}">{% trans 'Add result' %}</a>
+<!--                            </form>-->
+                            <div class="rezalts rezaltsHide">
+                                <h3>{% trans 'Result:' %}</h3>
+                                <div class="rezaltsRenge">
+                                    <div class="rezaltsRengeE">
+                                        <div class="title">
+                                            <p>Удалить тик ток</p>
+                                            <span>60%</span>
+                                        </div>
+                                        <div class="grey">
+                                            <div class="orange"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rezaltsRengeE">
+                                        <div class="title">
+                                            <p>Отдать народу</p>
+                                            <span>30%</span>
+                                        </div>
+                                        <div class="grey">
+                                            <div class="orange"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rezaltsRengeE">
+                                        <div class="title">
+                                            <p>Простроить больницу</p>
+                                            <span>10%</span>
+                                        </div>
+                                        <div class="grey">
+                                            <div class="orange"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="vote">
+                            <h2>{% trans 'Vote' %}</h2>
+                            <p class="text">{% trans 'This discussion does not have a poll.' %}</p>
+                            <form action="" class="voteForm">
+
+
+
+                                <a href="/admin/server/voting/add/">{% trans 'Add poll' %}</a>
+                            </form>
+                            <div class="rezalts rezaltsHide">
+                                <h3>Результаты:</h3>
+                                <div class="rezaltsRenge">
+                                    <div class="rezaltsRengeE">
+                                        <div class="title">
+                                            <p>Удалить тик ток</p>
+                                            <span>60%</span>
+                                        </div>
+                                        <div class="grey">
+                                            <div class="orange"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rezaltsRengeE">
+                                        <div class="title">
+                                            <p>Отдать народу</p>
+                                            <span>30%</span>
+                                        </div>
+                                        <div class="grey">
+                                            <div class="orange"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rezaltsRengeE">
+                                        <div class="title">
+                                            <p>Простроить больницу</p>
+                                            <span>10%</span>
+                                        </div>
+                                        <div class="grey">
+                                            <div class="orange"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </section>
+                </div>
+            </div>
+            <script type="text/javascript">
+        let url = `ws://${window.location.host}/ws/socket-server/chat/{{chat.id}}`
+
+        const chatSocket = new WebSocket(url)
+
+        chatSocket.onmessage = function(e){
+            let data = JSON.parse(e.data)
+            console.log('Data:', data)
+
+            if(data.type === 'chat'){
+                console.log('{{user}}')
+                let messages = document.getElementById('messages')
+                if(data.user == '{{ user }}'){
+                messages.insertAdjacentHTML('beforeend', `
+                <div class="ownMessage">
+                    <span>${ data.message }</span>
+                </div>
+                                    `)}
+                else{
+                messages.insertAdjacentHTML('beforeend', `
+                <div class="message">
+                    <div class="first">
+                        <a href="#"><img src="{% static 'images/chat1/person1.svg' %}" alt="ava"></a>
+                        <span>${ data.message }</span>
+
+                    </div>
+                </div>
+                                    `)}
+
+
+            }
+        }
+
+        let form = document.getElementById('form')
+        form.addEventListener('submit', (e)=> {
+            e.preventDefault()
+            let message = e.target.message.value
+            chatSocket.send(JSON.stringify({
+                'message':message,
+                'user': "{{ user.id }}"
+            }))
+            form.reset()
+        })
+
+  </script>
+
+        </main>
+    </div>
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/vote.js' %}"></script>
+
+{% endblock %}

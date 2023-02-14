@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 01:02+0600\n"
-"PO-Revision-Date: 2023-02-14 17:37+0000\n"
-"Last-Translator:   <admin@admin.admin>\n"
+"POT-Creation-Date: 2023-02-15 03:38+0600\n"
+"PO-Revision-Date: 2023-02-14 21:33+0000\n"
+"Last-Translator:   <asd@asd.qwe>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -77,161 +77,416 @@ msgstr ""
 msgid "Аватар"
 msgstr ""
 
-#: server/templates/chat_detail.html:21 server/templates/indexActive.html:25
+#: server/templates/chat_detail.html:21 server/templates/chats.html:20
+#: server/templates/delegats.html:18 server/templates/indexActive.html:25
+#: server/templates/post1.html:18 server/templates/profile.html:19
+#: server/templates/rubrics.html:19 server/templates/security.html:20
+#: server/templates/settings.html:18
 msgid "Newsline"
 msgstr "Лента"
 
-#: server/templates/chat_detail.html:27 server/templates/indexActive.html:31
+#: server/templates/chat_detail.html:28 server/templates/chats.html:27
+#: server/templates/delegats.html:25 server/templates/indexActive.html:32
+#: server/templates/post1.html:25 server/templates/profile.html:26
+#: server/templates/rubrics.html:26 server/templates/security.html:27
+#: server/templates/settings.html:25
 #: venv/lib/python3.8/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
 msgstr "Сообщения"
 
-#: server/templates/chat_detail.html:33 server/templates/indexActive.html:37
+#: server/templates/chat_detail.html:35 server/templates/chats.html:34
+#: server/templates/delegats.html:32 server/templates/delegats.html:114
+#: server/templates/delegats.html:144 server/templates/indexActive.html:39
+#: server/templates/indexActive.html:326 server/templates/post1.html:32
+#: server/templates/profile.html:33 server/templates/rubrics.html:33
+#: server/templates/security.html:34 server/templates/settings.html:32
 msgid "Delegates"
 msgstr "Делегаты"
 
-#: server/templates/chat_detail.html:39
-msgid "Рубрики"
-msgstr ""
-
-#: server/templates/chat_detail.html:46 server/templates/indexActive.html:50
-msgid "Profile"
-msgstr "Профиль"
-
-#: server/templates/chat_detail.html:55 server/templates/chats.html:53
-#: server/templates/delegats.html:51 server/templates/indexActive.html:59
-#: server/templates/post1.html:51 server/templates/profile.html:50
-#: server/templates/rubrics.html:52 server/templates/security.html:53
-#: server/templates/settings.html:49
-msgid "Management"
-msgstr ""
-
-#: server/templates/chat_detail.html:60 server/templates/chats.html:58
-#: server/templates/delegats.html:56 server/templates/indexActive.html:64
-#: server/templates/post1.html:56 server/templates/profile.html:55
-#: server/templates/rubrics.html:57 server/templates/security.html:58
-#: server/templates/settings.html:54
-msgid "Createchats"
-msgstr ""
-
-#: server/templates/chat_detail.html:66 server/templates/chats.html:64
-#: server/templates/delegats.html:62 server/templates/indexActive.html:70
-#: server/templates/post1.html:62 server/templates/profile.html:61
-#: server/templates/rubrics.html:63 server/templates/security.html:64
-#: server/templates/settings.html:60
-msgid "CreateNews"
-msgstr ""
-
-#: server/templates/chat_detail.html:72 server/templates/chats.html:70
-#: server/templates/delegats.html:68 server/templates/indexActive.html:76
-#: server/templates/post1.html:68 server/templates/profile.html:67
-#: server/templates/rubrics.html:69 server/templates/security.html:70
-#: server/templates/settings.html:66
-msgid "CreatePost"
-msgstr ""
-
-#: server/templates/chat_detail.html:78 server/templates/chats.html:76
-#: server/templates/delegats.html:74 server/templates/indexActive.html:82
-#: server/templates/post1.html:74 server/templates/profile.html:73
-#: server/templates/rubrics.html:75 server/templates/security.html:76
-#: server/templates/settings.html:72
-msgid "Comments"
-msgstr "Комментарии"
-
-#: server/templates/chat_detail.html:85 server/templates/chat_detail.html:90
-#: server/templates/chats.html:83 server/templates/chats.html:88
-#: server/templates/delegats.html:81 server/templates/delegats.html:86
-#: server/templates/indexActive.html:89 server/templates/indexActive.html:94
-#: server/templates/post1.html:81 server/templates/post1.html:86
-#: server/templates/profile.html:80 server/templates/profile.html:85
-#: server/templates/rubrics.html:82 server/templates/rubrics.html:87
-#: server/templates/security.html:83 server/templates/security.html:88
-#: server/templates/settings.html:79 server/templates/settings.html:84
-msgid "Settings"
-msgstr "Настройки"
-
-#: server/templates/chat_detail.html:96 server/templates/chats.html:94
-#: server/templates/delegats.html:92 server/templates/indexActive.html:100
-#: server/templates/post1.html:92 server/templates/profile.html:91
-#: server/templates/rubrics.html:93 server/templates/security.html:94
-#: server/templates/settings.html:90
-msgid "Security"
-msgstr "Безопасность"
-
-#: server/templates/chat_detail.html:102 server/templates/chats.html:100
-#: server/templates/delegats.html:98 server/templates/indexActive.html:106
-#: server/templates/post1.html:98 server/templates/profile.html:97
-#: server/templates/rubrics.html:99 server/templates/security.html:100
-#: server/templates/settings.html:96
-msgid "Logout"
-msgstr "Выйти"
-
-#: server/templates/chat_detail.html:113
-msgid "Back"
-msgstr "Назад"
-
-#: server/templates/chat_detail.html:116
-msgid "people in chat"
-msgstr "человек в чате"
-
-#: server/templates/chat_detail.html:124 server/templates/chat_detail.html:171
-#: server/templates/chat_detail.html:232
-msgid "Vote"
-msgstr "Голосование"
-
-#: server/templates/chat_detail.html:152
-msgid "Write a message"
-msgstr "Напишите сообщение"
-
-#: server/templates/chat_detail.html:164
-msgid "All chats"
-msgstr "Все чаты"
-
-#: server/templates/chat_detail.html:165
-msgid "Unread"
-msgstr "Непрочитанные"
-
-#: server/templates/chat_detail.html:166
-msgid "Archive"
-msgstr "Архив"
-
-#: server/templates/chat_detail.html:193
-msgid "Add option"
-msgstr "Добавить вариант"
-
-#: server/templates/chat_detail.html:195
-msgid "Add result"
-msgstr "Добавить результат"
-
-#: server/templates/chat_detail.html:233
-msgid "This discussion does not have a poll."
-msgstr "У этой дискуссии нет опроса"
-
-#: server/templates/chat_detail.html:238
-msgid "Add poll"
-msgstr "Добавить опрос"
-
-#: server/templates/chat_detail.html:241
-msgid "Result:"
-msgstr "Результат:"
-
-#: server/templates/indexActive.html:43
+#: server/templates/chat_detail.html:41 server/templates/chats.html:40
+#: server/templates/delegats.html:38 server/templates/indexActive.html:45
+#: server/templates/indexActive.html:344 server/templates/post1.html:38
+#: server/templates/profile.html:39 server/templates/rubrics.html:39
+#: server/templates/security.html:40 server/templates/settings.html:38
 msgid "Rubrics"
 msgstr "Рубрики"
 
-#: server/templates/indexActive.html:136
+#: server/templates/chat_detail.html:48 server/templates/chats.html:47
+#: server/templates/delegats.html:45 server/templates/indexActive.html:52
+#: server/templates/post1.html:45 server/templates/profile.html:46
+#: server/templates/rubrics.html:46 server/templates/security.html:47
+#: server/templates/settings.html:45
+msgid "Profile"
+msgstr "Профиль"
+
+#: server/templates/chat_detail.html:57 server/templates/chats.html:56
+#: server/templates/delegats.html:54 server/templates/indexActive.html:61
+#: server/templates/post1.html:54 server/templates/profile.html:55
+#: server/templates/rubrics.html:55 server/templates/security.html:56
+#: server/templates/settings.html:54
+msgid "Management"
+msgstr "Управление"
+
+#: server/templates/chat_detail.html:62 server/templates/chats.html:61
+#: server/templates/delegats.html:59 server/templates/indexActive.html:66
+#: server/templates/post1.html:59 server/templates/profile.html:60
+#: server/templates/rubrics.html:60 server/templates/security.html:61
+#: server/templates/settings.html:59
+msgid "Createchats"
+msgstr "Создать чат"
+
+#: server/templates/chat_detail.html:68 server/templates/chats.html:67
+#: server/templates/delegats.html:65 server/templates/indexActive.html:72
+#: server/templates/post1.html:65 server/templates/profile.html:66
+#: server/templates/rubrics.html:66 server/templates/security.html:67
+#: server/templates/settings.html:65
+msgid "CreateNews"
+msgstr "Создать новость"
+
+#: server/templates/chat_detail.html:74 server/templates/chats.html:73
+#: server/templates/delegats.html:71 server/templates/post1.html:71
+#: server/templates/profile.html:72 server/templates/rubrics.html:72
+#: server/templates/security.html:73 server/templates/settings.html:71
+msgid "CreatePost"
+msgstr ""
+
+#: server/templates/chat_detail.html:80 server/templates/chats.html:79
+#: server/templates/delegats.html:77 server/templates/indexActive.html:84
+#: server/templates/post1.html:77 server/templates/post1.html:283
+#: server/templates/profile.html:78 server/templates/rubrics.html:78
+#: server/templates/security.html:79 server/templates/settings.html:77
+msgid "Comments"
+msgstr "Комментарии"
+
+#: server/templates/chat_detail.html:88 server/templates/chat_detail.html:93
+#: server/templates/chats.html:87 server/templates/chats.html:92
+#: server/templates/delegats.html:85 server/templates/delegats.html:90
+#: server/templates/indexActive.html:92 server/templates/indexActive.html:97
+#: server/templates/post1.html:85 server/templates/post1.html:90
+#: server/templates/profile.html:86 server/templates/profile.html:91
+#: server/templates/rubrics.html:86 server/templates/rubrics.html:91
+#: server/templates/security.html:87 server/templates/security.html:92
+#: server/templates/settings.html:85 server/templates/settings.html:90
+msgid "Settings"
+msgstr "Настройки"
+
+#: server/templates/chat_detail.html:99 server/templates/chats.html:98
+#: server/templates/delegats.html:96 server/templates/indexActive.html:103
+#: server/templates/post1.html:96 server/templates/profile.html:97
+#: server/templates/rubrics.html:97 server/templates/security.html:98
+#: server/templates/settings.html:96
+msgid "Security"
+msgstr "Безопасность"
+
+#: server/templates/chat_detail.html:105 server/templates/chats.html:104
+#: server/templates/delegats.html:102 server/templates/indexActive.html:109
+#: server/templates/post1.html:102 server/templates/profile.html:103
+#: server/templates/rubrics.html:103 server/templates/security.html:104
+#: server/templates/settings.html:102
+msgid "Logout"
+msgstr "Выйти"
+
+#: server/templates/chat_detail.html:117 server/templates/post1.html:259
+msgid "Back"
+msgstr "Назад"
+
+#: server/templates/chat_detail.html:120
+msgid "people in chat"
+msgstr "человек в чате"
+
+#: server/templates/chat_detail.html:128 server/templates/chat_detail.html:175
+#: server/templates/chat_detail.html:236
+msgid "Vote"
+msgstr "Голосование"
+
+#: server/templates/chat_detail.html:156
+msgid "Write a message"
+msgstr "Напишите сообщение"
+
+#: server/templates/chat_detail.html:168 server/templates/chats.html:170
+msgid "All chats"
+msgstr "Все чаты"
+
+#: server/templates/chat_detail.html:169 server/templates/chats.html:171
+msgid "Unread"
+msgstr "Непрочитанные"
+
+#: server/templates/chat_detail.html:170 server/templates/chats.html:172
+msgid "Archive"
+msgstr "Архив"
+
+#: server/templates/chat_detail.html:197
+msgid "Add option"
+msgstr "Добавить вариант"
+
+#: server/templates/chat_detail.html:199
+msgid "Add result"
+msgstr "Добавить результат"
+
+#: server/templates/chat_detail.html:202
+msgid "Result:"
+msgstr "Результат:"
+
+#: server/templates/chat_detail.html:237
+msgid "This discussion does not have a poll."
+msgstr "У этой дискуссии нет опроса"
+
+#: server/templates/chat_detail.html:242
+msgid "Add poll"
+msgstr "Добавить опрос"
+
+#: server/templates/chats.html:115
+msgid "Chat search..."
+msgstr "Поиск по чатам"
+
+#: server/templates/chats.html:134
+msgid "Yesterday"
+msgstr "Вчера"
+
+#: server/templates/commentlist.html:17
+#, fuzzy
+#| msgid "Newsline"
+msgid "News"
+msgstr "Лента"
+
+#: server/templates/commentlist.html:18 server/templates/createchats.html:21
+msgid "Name"
+msgstr "Имя"
+
+#: server/templates/commentlist.html:20
+msgid "Date"
+msgstr "Дата рождения"
+
+#: server/templates/commentlist.html:21
+msgid "Status"
+msgstr "Статус"
+
+#: server/templates/commentlist.html:30
+msgid "Moderation"
+msgstr "Модерация"
+
+#: server/templates/createchats.html:19
+msgid "Chat creation"
+msgstr "Создать чат"
+
+#: server/templates/createchats.html:25
+msgid "Description"
+msgstr "Описание"
+
+#: server/templates/createchats.html:29
+msgid "Avatar"
+msgstr "Аватар"
+
+#: server/templates/createchats.html:33
+msgid "Is private"
+msgstr "Приватность"
+
+#: server/templates/createchats.html:36
+msgid "Create chat"
+msgstr "Создать чат"
+
+#: server/templates/createnews.html:20 server/templates/createrubrics.html:13
+msgid "Create"
+msgstr "Создать"
+
+#: server/templates/createrubrics.html:6
+msgid "Create rubrics"
+msgstr "Создать рубрики"
+
+#: server/templates/createrubrics.html:11
+msgid "Title:"
+msgstr "Заголовок"
+
+#: server/templates/createrubrics.html:12
+msgid "Content:"
+msgstr "Контент"
+
+#: server/templates/delegats.html:118 server/templates/indexActive.html:327
+msgid "Tor Aga"
+msgstr "Тор Ага"
+
+#: server/templates/delegats.html:123 server/templates/indexActive.html:328
+msgid "Deputy"
+msgstr "Заместитель"
+
+#: server/templates/delegats.html:128 server/templates/indexActive.html:329
+msgid "Katchy"
+msgstr "Катчы"
+
+#: server/templates/delegats.html:134
+msgid "Region"
+msgstr "Область"
+
+#: server/templates/delegats.html:166
+msgid "Rating Discussions"
+msgstr "Рейтинговые обсуждения"
+
+#: server/templates/delegats.html:187 server/templates/delegats.html:231
+#: server/templates/delegats.html:260 server/templates/delegats.html:300
+#: server/templates/delegats.html:318 server/templates/indexActive.html:174
+#: server/templates/post1.html:115
+msgid "Registration"
+msgstr "Регистрация"
+
+#: server/templates/delegats.html:191 server/templates/delegats.html:287
+msgid "Login"
+msgstr "Логин"
+
+#: server/templates/delegats.html:196 server/templates/delegats.html:234
+#: server/templates/indexActive.html:183 server/templates/indexActive.html:221
+#: server/templates/post1.html:124 server/templates/post1.html:162
+msgid "First Name"
+msgstr "Имя"
+
+#: server/templates/delegats.html:201 server/templates/delegats.html:240
+#: server/templates/indexActive.html:188 server/templates/indexActive.html:227
+#: server/templates/post1.html:129 server/templates/post1.html:168
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: server/templates/delegats.html:206 server/templates/delegats.html:245
+#: server/templates/indexActive.html:193 server/templates/indexActive.html:232
+#: server/templates/post1.html:134 server/templates/post1.html:173
+msgid "Date of birth"
+msgstr "Дата рождения"
+
+#: server/templates/delegats.html:215 server/templates/delegats.html:263
+#: server/templates/delegats.html:293 server/templates/delegats.html:313
+#: server/templates/indexActive.html:202 server/templates/indexActive.html:250
+#: server/templates/indexActive.html:280 server/templates/indexActive.html:300
+#: server/templates/post1.html:143 server/templates/post1.html:191
+#: server/templates/post1.html:221 server/templates/post1.html:241
+msgid "Password"
+msgstr "Пароль"
+
+#: server/templates/delegats.html:220 server/templates/indexActive.html:207
+#: server/templates/indexActive.html:255 server/templates/post1.html:148
+#: server/templates/post1.html:196
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: server/templates/delegats.html:226 server/templates/indexActive.html:213
+#: server/templates/indexActive.html:259 server/templates/indexActive.html:287
+#: server/templates/indexActive.html:305 server/templates/post1.html:154
+#: server/templates/post1.html:200 server/templates/post1.html:228
+#: server/templates/post1.html:246
+msgid "Do you have an account?"
+msgstr "У вас уже есть аккаунт"
+
+#: server/templates/delegats.html:226 server/templates/delegats.html:272
+#: server/templates/delegats.html:299 server/templates/delegats.html:319
+#: server/templates/indexActive.html:259 server/templates/indexActive.html:286
+#: server/templates/indexActive.html:306 server/templates/post1.html:200
+#: server/templates/post1.html:227 server/templates/post1.html:247
+msgid "Sign in"
+msgstr "Войти"
+
+#: server/templates/delegats.html:254
+msgid "Further"
+msgstr "Далее"
+
+#: server/templates/delegats.html:268
+msgid "Password Confirmation"
+msgstr "Подтвеждение пароля"
+
+#: server/templates/delegats.html:273 server/templates/indexActive.html:212
+#: server/templates/indexActive.html:213 server/templates/indexActive.html:218
+#: server/templates/indexActive.html:247 server/templates/indexActive.html:260
+#: server/templates/indexActive.html:287 server/templates/indexActive.html:305
+#: server/templates/post1.html:153 server/templates/post1.html:154
+#: server/templates/post1.html:159 server/templates/post1.html:188
+#: server/templates/post1.html:201 server/templates/post1.html:228
+#: server/templates/post1.html:246
+msgid "Register"
+msgstr "Регистрация"
+
+#: server/templates/delegats.html:284 server/templates/delegats.html:305
+#: server/templates/indexActive.html:271 server/templates/indexActive.html:292
+#: server/templates/post1.html:212 server/templates/post1.html:233
+msgid "Authorization"
+msgstr "Авторизация"
+
+#: server/templates/delegats.html:297 server/templates/delegats.html:317
+#: server/templates/indexActive.html:284 server/templates/indexActive.html:304
+#: server/templates/post1.html:225 server/templates/post1.html:245
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+#: server/templates/delegats.html:308
+msgid "Your username"
+msgstr "Ваше имя пользователя"
+
+#: server/templates/delegats.html:318
+#, fuzzy
+#| msgid "Do you have an account?"
+msgid "You dont have an account?"
+msgstr "У вас уже есть аккаунт"
+
+#: server/templates/delegats.html:325
+#, fuzzy
+#| msgid "Such account doesn"
+msgid "Such account doesnt exist!"
+msgstr "Данный аккаунт не существует"
+
+#: server/templates/indexActive.html:78
+#, fuzzy
+#| msgid "Create rubrics"
+msgid "Create rubric"
+msgstr "Создать рубрики"
+
+#: server/templates/indexActive.html:140 server/templates/indexActive.html:160
 msgid "Share"
 msgstr "Поделиться"
 
-#: server/templates/indexActive.html:156
-msgid "Поделиться"
+#: server/templates/indexActive.html:178 server/templates/indexActive.html:274
+#: server/templates/indexActive.html:295 server/templates/post1.html:119
+#: server/templates/post1.html:215 server/templates/post1.html:236
+#, fuzzy
+#| msgid "Your username"
+msgid "Username"
+msgstr "Ваше имя пользователя"
+
+#: server/templates/indexActive.html:241 server/templates/post1.html:182
+msgid "Next"
 msgstr ""
 
-#: server/views.py:40
+#: server/templates/indexActive.html:312 server/templates/post1.html:253
+#, fuzzy
+#| msgid "Such account doesn"
+msgid "Such account doesnt exist"
+msgstr "Данный аккаунт не существует"
+
+#: server/templates/indexActive.html:319
+msgid "People"
+msgstr ""
+
+#: server/templates/indexActive.html:332
+#, fuzzy
+#| msgid "Region"
+msgid "Regions"
+msgstr "Область"
+
+#: server/templates/message_send.html:13
+msgid "A confirmation email has been sent to your email"
+msgstr ""
+
+#: server/templates/message_send.html:14
+msgid "Back to home"
+msgstr ""
+
+#: server/templates/post1.html:287
+msgid "Your comment is sent"
+msgstr ""
+
+#: server/templates/post1.html:290
+msgid "Leave a comment"
+msgstr ""
+
+#: server/views.py:41
 msgid "Dastan"
 msgstr ""
 
-#: server/views.py:188
+#: server/views.py:190
 msgid "привет"
 msgstr ""
 
@@ -1520,6 +1775,9 @@ msgstr ""
 #: venv/lib/python3.8/site-packages/modeltranslation/widgets.py:26
 msgid "None"
 msgstr ""
+
+#~ msgid "You don"
+#~ msgstr "У вас нет аккаунта?"
 
 #~ msgid "Напишите сообщение"
 #~ msgstr "Write a message"
