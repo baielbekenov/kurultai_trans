@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 04:25+0600\n"
+"POT-Creation-Date: 2023-02-15 10:33+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -312,7 +312,7 @@ msgstr ""
 msgid "Katchy"
 msgstr ""
 
-#: server/templates/delegats.html:134
+#: server/templates/delegats.html:134 server/templates/indexActive.html:332
 msgid "Region"
 msgstr ""
 
@@ -523,10 +523,6 @@ msgstr ""
 
 #: server/templates/indexActive.html:319
 msgid "People"
-msgstr ""
-
-#: server/templates/indexActive.html:332
-msgid "Regions"
 msgstr ""
 
 #: server/templates/message_send.html:13

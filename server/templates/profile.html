@@ -51,7 +51,7 @@
                             </ul>
                         </div>
                         {% if user.is_superuser %}
-                        <div class="profileSettings">
+                        <div class="profileList">
                             <h3>{% translate 'Management' %}</h3>
                             <ul>
                                 <li>
@@ -68,7 +68,7 @@
                                 </li>
                                 <li>
                                     <a href="{% url 'logout' %}">
-                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt=""></div>
                                         <h4>{% translate 'CreatePost' %}</h4>
                                     </a>
                                 </li>

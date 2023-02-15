@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 04:25+0600\n"
-"PO-Revision-Date: 2023-02-14 20:42+0000\n"
+"POT-Creation-Date: 2023-02-15 10:33+0600\n"
+"PO-Revision-Date: 2023-02-15 04:35+0000\n"
 "Last-Translator:   <asd@asd.qwe>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -147,7 +147,7 @@ msgstr "Жанылык чыгаруу"
 #: server/templates/profile.html:72 server/templates/rubrics.html:72
 #: server/templates/security.html:73 server/templates/settings.html:71
 msgid "CreatePost"
-msgstr ""
+msgstr "Рубрика кошуу"
 
 #: server/templates/chat_detail.html:80 server/templates/chats.html:79
 #: server/templates/delegats.html:77 server/templates/indexActive.html:84
@@ -284,19 +284,16 @@ msgid "Is private"
 msgstr "Купуялуулук"
 
 #: server/templates/createchats.html:36
-#, fuzzy
 #| msgid "Createchats"
 msgid "Create chat"
 msgstr "Чат жасоо"
 
 #: server/templates/createnews.html:20 server/templates/createrubrics.html:13
-#, fuzzy
 #| msgid "CreateNews"
 msgid "Create"
 msgstr "Жанылык чыгаруу"
 
 #: server/templates/createrubrics.html:6
-#, fuzzy
 #| msgid "Createchats"
 msgid "Create rubrics"
 msgstr "Чат жасоо"
@@ -321,7 +318,7 @@ msgstr "Орун басары"
 msgid "Katchy"
 msgstr "Катчы"
 
-#: server/templates/delegats.html:134
+#: server/templates/delegats.html:134 server/templates/indexActive.html:332
 msgid "Region"
 msgstr "Облус"
 
@@ -530,7 +527,7 @@ msgstr "Колдонуучунун аты"
 #: server/templates/rubrics.html:256 server/templates/security.html:208
 #: server/templates/settings.html:262
 msgid "Next"
-msgstr ""
+msgstr "Алга"
 
 #: server/templates/indexActive.html:312 server/templates/post1.html:253
 #: server/templates/profile.html:282 server/templates/rubrics.html:327
@@ -542,29 +539,23 @@ msgstr "Мындай аккаунт жок"
 
 #: server/templates/indexActive.html:319
 msgid "People"
-msgstr ""
-
-#: server/templates/indexActive.html:332
-#, fuzzy
-#| msgid "Region"
-msgid "Regions"
-msgstr "Облус"
+msgstr "Адамдар"
 
 #: server/templates/message_send.html:13
 msgid "A confirmation email has been sent to your email"
-msgstr ""
+msgstr "Сиздин электрондук почтаңызга ырастоо каты жөнөтүлдү"
 
 #: server/templates/message_send.html:14 server/templates/success.html:14
 msgid "Back to home"
-msgstr ""
+msgstr "Артка кайтуу"
 
 #: server/templates/post1.html:287
 msgid "Your comment is sent"
-msgstr ""
+msgstr "Сиздин пикириниз жонотулду"
 
 #: server/templates/post1.html:290
 msgid "Leave a comment"
-msgstr ""
+msgstr "Пикир калтыруу"
 
 #: server/templates/post1.html:295 server/templates/settings.html:135
 #, fuzzy
@@ -574,25 +565,25 @@ msgstr "Аты"
 
 #: server/templates/post1.html:328
 msgid "Previous"
-msgstr ""
+msgstr "Арка"
 
 #: server/templates/profile.html:126
 msgid "Track"
-msgstr ""
+msgstr "Кароо"
 
 #: server/templates/profile.html:288
 #, fuzzy
 #| msgid "Moderation"
 msgid "Information"
-msgstr "Текшерүү"
+msgstr "Талкулоо"
 
 #: server/templates/profile.html:291 server/templates/settings.html:163
 msgid "Occupation:"
-msgstr ""
+msgstr "Кесип"
 
 #: server/templates/profile.html:292 server/templates/settings.html:159
 msgid "Nation:"
-msgstr ""
+msgstr "Улуту"
 
 #: server/templates/profile.html:293 server/templates/settings.html:171
 #, fuzzy
@@ -604,7 +595,7 @@ msgstr "Облус"
 #, fuzzy
 #| msgid "Moderation"
 msgid "Conversation"
-msgstr "Текшерүү"
+msgstr "Талкулоо"
 
 #: server/templates/resetPassword.html:16
 #: server/templates/resetPassword2.html:19
@@ -614,58 +605,61 @@ msgid "Password reset"
 msgstr "Сыр сөз"
 
 #: server/templates/resetPassword.html:18
-#, fuzzy
-#| msgid "Password"
 msgid "Old password"
-msgstr "Сыр сөз"
+msgstr "Эски сыр сөз"
 
 #: server/templates/resetPassword.html:23
-#, fuzzy
-#| msgid "Password"
 msgid "New password"
-msgstr "Сыр сөз"
+msgstr "Жаны сыр сөз"
 
 #: server/templates/resetPassword.html:32
 msgid "Perform"
-msgstr ""
+msgstr "Аткаруу"
 
 #: server/templates/resetPassword2.html:20
 msgid ""
-"To reset your password, you must confirm your email, we will send you a link "
-"so that you can reset your password"
+"To reset your password, you must confirm your email, we will send you a link"
+" so that you can reset your password"
 msgstr ""
+"Сырсөзүңүздү баштапкы абалга келтирүү үчүн сиз электрондук почтаңызды "
+"ырасташыңыз керек, биз сизге сырсөзүңүздү баштапкы абалга келтирүү үчүн "
+"шилтеме жөнөтөбүз"
 
 #: server/templates/resetPassword2.html:22
 msgid "Your"
-msgstr ""
+msgstr "Сиздин"
 
 #: server/templates/resetPassword2.html:27
 msgid "Send"
-msgstr ""
+msgstr "Жөнөтүү"
 
 #: server/templates/reset_password_confirm.html:19
 msgid "Enter a new password"
-msgstr ""
+msgstr "Жаңы сырсөз киргизиңиз"
 
 #: server/templates/reset_password_confirm.html:20
 msgid ""
 "Please enter your new password twice so we can verify that it is spelled "
 "correctly"
 msgstr ""
+"Сураныч, жаңы сырсөзүңүздү эки жолу киргизиңиз, биз анын туура жазылганын "
+"текшеребиз"
 
 #: server/templates/reset_password_confirm.html:32
 msgid "Change my password"
-msgstr ""
+msgstr "Менин сырсөзумдү өзгөртүү"
 
 #: server/templates/reset_password_sent.html:17
 msgid ""
 "An email with password recovery instructions has been sent to the email "
 "address you provided"
 msgstr ""
+"Сиз көрсөткөн электрондук почта дарегине сырсөздү калыбына келтирүү "
+"нускамалары менен электрондук кат жөнөтүлдү"
 
 #: server/templates/rubrics.html:147
 msgid "34k people like"
-msgstr ""
+msgstr "34К адамдарга жакты"
 
 #: server/templates/rubrics.html:162
 #, fuzzy
@@ -677,11 +671,11 @@ msgstr "Рейтинг талкуулары"
 msgid ""
 "Do you want to ask a question? fill out the questionnaire and it will be "
 "discussed"
-msgstr ""
+msgstr "Суроо бергиң келеби? анкетаны толтургула жана ал талкууланат"
 
 #: server/templates/rubrics.html:177
 msgid "Ask a question"
-msgstr ""
+msgstr "Суроо берүү"
 
 #: server/templates/security.html:120
 #, fuzzy
@@ -691,21 +685,19 @@ msgstr "Сыр сөздү унуттунузбу?"
 
 #: server/templates/security.html:122 server/templates/settings.html:176
 msgid "Cancel"
-msgstr ""
+msgstr "Жокко чыгаруу"
 
 #: server/templates/security.html:123 server/templates/settings.html:177
 msgid "Save"
-msgstr ""
+msgstr "Сактоо"
 
 #: server/templates/security.html:131
 msgid "Main"
-msgstr ""
+msgstr "Башкы"
 
 #: server/templates/settings.html:112
-#, fuzzy
-#| msgid "Settings"
 msgid "Basic settings"
-msgstr "Орнотуулар"
+msgstr "Негизги орнотуулар"
 
 #: server/templates/settings.html:131
 #, fuzzy
@@ -733,24 +725,24 @@ msgstr "Туулган кун"
 
 #: server/templates/settings.html:155
 msgid "Living place:"
-msgstr ""
+msgstr "Жашоо жери"
 
 #: server/templates/settings.html:167
 msgid "Phone number:"
-msgstr ""
+msgstr "Уюлдук номер"
 
 #: server/templates/settings.html:185
 msgid "Basics"
-msgstr ""
+msgstr "Башкы"
 
 #: server/templates/success.html:13
 msgid "Password successfuly has changed"
-msgstr ""
+msgstr "Сырсөз ийгиликтүү өзгөртүлдү"
 
 #: server/templates/updatecomment.html:21
 #: venv/lib/python3.8/site-packages/django/forms/widgets.py:441
 msgid "Change"
-msgstr ""
+msgstr "Озгөртүү"
 
 #: server/views.py:41
 msgid "Dastan"
@@ -866,8 +858,8 @@ msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/core/validators.py:264
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/core/validators.py:276
@@ -1058,15 +1050,15 @@ msgstr ""
 #: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1458
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1466
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1471
@@ -1085,8 +1077,8 @@ msgstr ""
 #: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1754
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1758
@@ -1245,7 +1237,8 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: venv/lib/python3.8/site-packages/django/forms/boundfield.py:176
 msgid ":?.!"
 msgstr ""
@@ -1295,7 +1288,8 @@ msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/forms/fields.py:622
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -1400,7 +1394,8 @@ msgid "The inline value did not match the parent instance."
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/forms/models.py:1435
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/forms/models.py:1574
@@ -1849,11 +1844,11 @@ msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/views/csrf.py:127
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/views/csrf.py:136
@@ -1904,8 +1899,8 @@ msgstr ""
 #: venv/lib/python3.8/site-packages/django/views/generic/dates.py:652
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/views/generic/dates.py:692
@@ -1961,10 +1956,10 @@ msgstr ""
 #: venv/lib/python3.8/site-packages/django/views/templates/default_urlconf.html:222
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/views/templates/default_urlconf.html:230
@@ -1994,6 +1989,10 @@ msgstr ""
 #: venv/lib/python3.8/site-packages/modeltranslation/widgets.py:26
 msgid "None"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Regions"
+#~ msgstr "Облус"
 
 #~ msgid "You don"
 #~ msgstr "Сизде аккаунт жок?"
