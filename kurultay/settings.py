@@ -229,6 +229,9 @@ LANGUAGES = (
     ('ky', _('Kyrgyz')),
 )
 
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
+
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
 )

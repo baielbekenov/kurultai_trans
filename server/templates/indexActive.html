@@ -57,7 +57,7 @@
                             </ul>
                         </div>
                         {% if user.is_superuser %}
-                        <div class="profileSettings">
+                        <div class="profileList">
                             <h3>{% translate 'Management' %}</h3>
                             <ul>
                                 <li>
@@ -74,7 +74,7 @@
                                 </li>
                                 <li>
                                     <a href="{% url 'logout' %}">
-                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt=""></div>
                                         <h4>{% translate 'Create rubric' %}</h4>
                                     </a>
                                 </li>
@@ -329,7 +329,7 @@
                             <a href="{% url 'delegats' %}?is_katchy"><li>{% trans 'Katchy' %}</li></a>
                         </ul>
                        <div class="peopleTitle">
-                            <h3>{% trans 'Regions' %}</h3>
+                            <h3>{% trans 'Region' %}</h3>
                             <div class="peopleTitleActions">
                                 <div><img src="{% static 'images/people/plus.svg' %}" alt="img"></div>
                                 <div><img src="{% static 'images/people/triple.svg' %}" alt="img"></div>
