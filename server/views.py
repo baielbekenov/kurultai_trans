@@ -65,11 +65,12 @@ def vote_question(request):
 @login_required()
 def create_news_voting(request, pk):
     if request.method == 'POST':
-        form = NewsForm(request.POST)
-        das = form.save(commit=False)
-        das.voting = get_object_or_404(Voting, id=pk)
-        a = das.save()
-        return redirect(das.get_absolute_url())
+        form = NewsForm(request.POST, request.FILES)
+        if form.is_valid():
+            das = form.save(commit=False)
+            das.voting = get_object_or_404(Voting, id=pk)
+            a = das.save()
+            return redirect(das.get_absolute_url())
     form = NewsForm
     return render(request, 'create_news.html', {'form': form})
 
@@ -373,3 +374,18 @@ def end_chat(request, pk):
     chat.save()
     return redirect(reverse('chat_detail', args=[chat.id]))
 
+
+def voting_detail(request, pk):
+    voting = get_object_or_404(Voting, id=pk)
+    return render(request, 'voting_detail.html', {'voting': voting})
+
+
+def create_news(request, pk):
+    chat = get_object_or_404(Chat, id=pk)
+    form = NewsForm
+    if request.method == 'POST':
+        form = NewsForm(request.POST, request.FILES).save(commit=False)
+        form.voting = chat.voting
+        form.save()
+        return redirect(reverse('news_detail', args=[form.id]))
+    return render(request, 'create_news.html', {'form': form, 'chat': chat})

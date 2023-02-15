@@ -31,6 +31,7 @@ urlpatterns = [
     path('create_voting/<int:pk>', create_voting, name='create_voting'),
     path('add_questions/<int:pk>', add_questions, name='add_questions'),
     path('end_chat/<int:pk>', end_chat, name='end_chat'),
+    path('voting_detail/<int:pk>', voting_detail, name='voting_detail'),
     path('resetPassword/', PasswordsChangeView.as_view(), name='resetPassword'),
 
     path('reset_password/', auth_views.PasswordResetView.as_view(template_name='resetPassword2.html'), name='reset_password'),

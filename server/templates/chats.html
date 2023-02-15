@@ -112,7 +112,7 @@
                         <div class="chatsHead">
                             <form action="">
                                 <div class="searchButton"><img src="{% static 'images/chats/chat-search.svg' %}" alt=""></div>
-                                <input id="search" placeholder="Поиск по чатам..." type="search">
+                                <input id="search" placeholder="{% trans 'Chat search...' %}" type="search">
                             </form>
                             <div class="chatsHeadActions">
                                 <div class="call"><img src="{% static 'images/chats/call.svg' %}" alt=""></div>
@@ -131,7 +131,7 @@
                                     </div>
                                 </div>
                                 <div class="time">
-                                    <p>Вчера</p>
+                                    <p>{% trans 'Yesterday' %}</p>
 <!--                                    <span class="count">6</span>-->
                                 </div>
                             </a>
@@ -167,9 +167,9 @@
                     </section>
                     <section class="SortChat">
                         <ul>
-                            <li class="chatActive">Все чаты</li>
-                            <li>Непрочитанные</li>
-                            <li>Архив</li>
+                            <li class="chatActive">{% trans 'All chats' %}</li>
+                            <li>{% trans 'Unread' %}</li>
+                            <li>{% trans 'Archive' %}</li>
                         </ul>
                     </section>
                 </div>

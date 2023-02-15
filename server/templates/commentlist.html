@@ -14,11 +14,11 @@
             <table class="table table-secondary" >
                 <thead>
                 <tr>
-                    <th scope="col">Пост</th>
-                    <th scope="col">Имя</th>
+                    <th scope="col">{% trans 'News' %}</th>
+                    <th scope="col">{% trans 'Name' %}</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Дата</th>
-                    <th scope="col">Статус</th>
+                    <th scope="col">{% trans 'Date' %}</th>
+                    <th scope="col">{% trans 'Status' %}</th>
                 </tr>
                 {% for comment in comment_list %}
                 <tr class="table-warning">
@@ -27,7 +27,7 @@
                     <td>{{ comment.email }}</td>
                     <td>{{ comment.created_on }}</td>
                     <td>{{ comment.active }}</td>
-                    <td><a href="{% url 'updatecomment' comment.id %}"><button class="btn btn-warning" type="button">Модерация</button></a></td>
+                    <td><a href="{% url 'updatecomment' comment.id %}"><button class="btn btn-warning" type="button">{% trans 'Moderation' %}</button></a></td>
                 </tr>
                 {% endfor %}
             </table>

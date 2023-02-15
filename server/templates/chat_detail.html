@@ -114,10 +114,10 @@
 
                     <section id="introJs"  class="chat">
                         <div class="chatHead">
-                            <a href="{% url 'chats' %}" class="back"><img src="{% static 'images/chat1/back.svg' %}" alt=""> <span>Назад</span></a>
+                            <a href="{% url 'chats' %}" class="back"><img src="{% static 'images/chat1/back.svg' %}" alt=""> <span>{% trans 'Back' %}</span></a>
                             <div class="chatTitle">
                                 <h3>{{ chat.title }}</h3>
-                                <p>{{ chat.users.count }} человека в группе</p>
+                                <p>{{ chat.users.count }} {% trans 'people in chat' %}</p>
                             </div>
                             <chat class="chatActions">
                                 <div><img src="{% static 'images/chats/call.svg' %}" alt="call"></div>
@@ -125,7 +125,7 @@
                                 <div class="group"><img src="{% static 'images/chats/chat1.svg' %}" alt="call"></div>
                             </chat>
                         </div>
-                        <div class="golosovanie"><button>Голосование</button></div>
+                        <div class="golosovanie"><a href="{% url 'voting_detail' chat.voting_chat.pk %}"><button>{% trans 'Vote' %}</button></a></div>
                         <div class="chatBody" id="messages">
 
                             {% for i in messages %}
@@ -153,7 +153,7 @@
 <!--                                <input type="file" multiple>-->
 <!--                                <span><img src="{% static 'images/chat1/files.svg' %}" alt=""></span>-->
 <!--                            </div>-->
-                            <input placeholder="Напишите сообщение"  type="text" name="message">
+                            <input placeholder="{% trans 'Write a message' %}"  type="text" name="message">
                             <div class="actions">
                                 <button><img src="{% static 'images/chat1/microfon.svg' %}" alt="microfon"></button>
                                 <button class="submit"><img src="{% static 'images/chat1/send.svg' %}" alt="microfon"></button>
@@ -165,14 +165,14 @@
                     <section class="rightSide">
                         <div class="SortChat">
                             <ul>
-                                <li class="chatActive">Все чаты</li>
-                                <li>Непрочитанные</li>
-                                <li>Архив</li>
+                                <li class="chatActive">{% trans 'All chats' %}</li>
+                                <li>{% trans 'Unread' %}</li>
+                                <li>{% trans 'Archive' %}</li>
                             </ul>
                         </div>
                         {% if chat.voting_chat %}
                         <div class="vote">
-                            <h2>Голосование</h2>
+                            <h2>{% trans 'Vote' %}</h2>
                             <br>
                             <h4 class="text">{{ chat.voting_chat.title }}</h4>
                             <p class="text">{{ chat.voting_chat.content }}</p>
@@ -194,13 +194,17 @@
 <!--                                </div >-->
                                 {% endfor %}
 
-                                <a href="{% url 'add_questions' chat.voting_chat.pk %}"><p class="text">Добавить вариант</p></a>
+                                {% if user.is_superuser %}
+                                <a href="{% url 'add_questions' chat.voting_chat.pk %}"><p class="text">{% trans 'Add option' %}</p></a>
                             <br>
-                                <a href="{% url 'create_news' chat.voting_chat.pk %}">Добавить результаты</a>
-                                <a href="{% url 'end_chat' chat.pk %}">Закрыть беседу</a>
+                                <a href="{% url 'create_news' chat.voting_chat.pk %}">{% trans 'Add result' %}</a>
+                                <a href="{% url 'end_chat' chat.pk %}">{% trans 'Close chat' %}</a>
+                            {% endif %}
+
+
 <!--                            </form>-->
                             <div class="rezalts rezaltsHide">
-                                <h3>Результаты:</h3>
+                                <h3>{% trans 'Result:' %}</h3>
                                 <div class="rezaltsRenge">
                                     <div class="rezaltsRengeE">
                                         <div class="title">
@@ -234,13 +238,13 @@
                         </div>
                         {% else %}
                         <div class="vote">
-                            <h2>Голосование</h2>
-                            <p class="text">У этой дисскуссии нет опроса.</p>
+                            <h2>{% trans 'Vote' %}</h2>
+                            <p class="text">{% trans 'This discussion does not have a poll.' %}</p>
                             <form action="" class="voteForm">
 
+                                <a href="{% url 'create_voting' chat.pk %}">{% trans 'Add poll' %}</a>
 
 
-                                <a href="{% url 'create_voting' chat.pk %}">Добавить опрос</a>
                             </form>
                             <div class="rezalts rezaltsHide">
                                 <h3>Результаты:</h3>

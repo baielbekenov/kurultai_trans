@@ -90,14 +90,14 @@ class News(models.Model):
     preview = models.CharField(max_length=244)
     content = models.TextField()
     voting = models.ForeignKey(Voting, on_delete=models.CASCADE, blank=True, null=True)
-    image = models.ImageField(upload_to='news/')
+    image = models.ImageField(upload_to='news/', blank=True, null=True)
 
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('detail_news', args=[self.pk])
+        return reverse('news_detail', args=[self.pk])
 
 
 class Chat(models.Model):
