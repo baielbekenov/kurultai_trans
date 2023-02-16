@@ -464,3 +464,63 @@ main .main .Post .comment .otherCommentsE .textComment {
   line-height: 20px;
   color: #323232;
 }
+
+.rezaltsHide {
+  display: none;
+}
+
+.rezalts {
+  margin: 14px 0 13px 7px;
+}
+.rezalts h3 {
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(5, 5, 5, 0.6);
+  margin-bottom: 15px;
+}
+.rezaltsRenge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.rezaltsRengeE .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  color: #050505;
+}
+.rezaltsRengeE .title span {
+  font-size: 14px;
+}
+.rezaltsRengeE .grey {
+  margin-top: 5px;
+  background: #D9D9D9;
+  border-radius: 13.1698px;
+  height: 10px;
+}
+.rezaltsRengeE .grey .orange {
+  background: #DC8400;
+  border-radius: 13.1698px;
+  height: 10px;
+  width: 30%;
+}
+.rezaltsRengeE:first-child .grey .orange {
+  width: 60%;
+}
+.rezaltsRengeE:last-child .grey .orange {
+  width: 10%;
+}

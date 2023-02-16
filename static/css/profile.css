@@ -117,15 +117,20 @@ main .main .mainProfHead .about {
 }
 main .main .mainProfHead .about .ava {
   width: 80px;
+  height: 80px;
+  overflow: hidden;
 }
 @media (max-width: 600px) {
   main .main .mainProfHead .about .ava {
     width: 60px;
+    height: 60px;
   }
 }
 main .main .mainProfHead .about .ava img {
   width: 100%;
   border-radius: 50%;
+  height: 100%;
+  margin: 0 auto;
 }
 main .main .mainProfHead .about .name {
   margin-bottom: 15px;
@@ -200,13 +205,17 @@ main .main .mainProfHeadMob {
   }
   main .main .mainProfHeadMob .ava {
     width: 94px;
+    height: 94px;
     border: 4px solid #fff;
     margin: -50px auto 15px;
     border-radius: 50%;
+    overflow: hidden;
   }
   main .main .mainProfHeadMob .ava img {
     width: 100%;
     border-radius: 50%;
+    height: 100%;
+    margin: 0 auto;
   }
   main .main .mainProfHeadMob h2 {
     font-family: "Arial";

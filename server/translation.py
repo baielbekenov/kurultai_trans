@@ -1,3 +1,4 @@
+import modeltranslation.translator
 from modeltranslation.translator import register, TranslationOptions
 from .models import News
 

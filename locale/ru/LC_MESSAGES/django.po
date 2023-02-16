@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 03:38+0600\n"
-"PO-Revision-Date: 2023-02-14 21:33+0000\n"
+"POT-Creation-Date: 2023-02-15 10:33+0600\n"
+"PO-Revision-Date: 2023-02-15 04:30+0000\n"
 "Last-Translator:   <asd@asd.qwe>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -107,7 +107,8 @@ msgstr "Делегаты"
 #: server/templates/delegats.html:38 server/templates/indexActive.html:45
 #: server/templates/indexActive.html:344 server/templates/post1.html:38
 #: server/templates/profile.html:39 server/templates/rubrics.html:39
-#: server/templates/security.html:40 server/templates/settings.html:38
+#: server/templates/rubrics.html:113 server/templates/security.html:40
+#: server/templates/settings.html:38
 msgid "Rubrics"
 msgstr "Рубрики"
 
@@ -133,7 +134,7 @@ msgstr "Управление"
 #: server/templates/rubrics.html:60 server/templates/security.html:61
 #: server/templates/settings.html:59
 msgid "Createchats"
-msgstr "Создать чат"
+msgstr "Добавить чат"
 
 #: server/templates/chat_detail.html:68 server/templates/chats.html:67
 #: server/templates/delegats.html:65 server/templates/indexActive.html:72
@@ -141,14 +142,14 @@ msgstr "Создать чат"
 #: server/templates/rubrics.html:66 server/templates/security.html:67
 #: server/templates/settings.html:65
 msgid "CreateNews"
-msgstr "Создать новость"
+msgstr "Добавить новость"
 
 #: server/templates/chat_detail.html:74 server/templates/chats.html:73
 #: server/templates/delegats.html:71 server/templates/post1.html:71
 #: server/templates/profile.html:72 server/templates/rubrics.html:72
 #: server/templates/security.html:73 server/templates/settings.html:71
 msgid "CreatePost"
-msgstr ""
+msgstr "Добавить рубрику"
 
 #: server/templates/chat_detail.html:80 server/templates/chats.html:79
 #: server/templates/delegats.html:77 server/templates/indexActive.html:84
@@ -166,7 +167,9 @@ msgstr "Комментарии"
 #: server/templates/profile.html:86 server/templates/profile.html:91
 #: server/templates/rubrics.html:86 server/templates/rubrics.html:91
 #: server/templates/security.html:87 server/templates/security.html:92
-#: server/templates/settings.html:85 server/templates/settings.html:90
+#: server/templates/security.html:129 server/templates/settings.html:85
+#: server/templates/settings.html:90 server/templates/settings.html:115
+#: server/templates/settings.html:183
 msgid "Settings"
 msgstr "Настройки"
 
@@ -174,7 +177,8 @@ msgstr "Настройки"
 #: server/templates/delegats.html:96 server/templates/indexActive.html:103
 #: server/templates/post1.html:96 server/templates/profile.html:97
 #: server/templates/rubrics.html:97 server/templates/security.html:98
-#: server/templates/settings.html:96
+#: server/templates/security.html:113 server/templates/security.html:132
+#: server/templates/settings.html:96 server/templates/settings.html:186
 msgid "Security"
 msgstr "Безопасность"
 
@@ -283,7 +287,7 @@ msgstr "Приватность"
 
 #: server/templates/createchats.html:36
 msgid "Create chat"
-msgstr "Создать чат"
+msgstr "Добавить чат"
 
 #: server/templates/createnews.html:20 server/templates/createrubrics.html:13
 msgid "Create"
@@ -291,7 +295,7 @@ msgstr "Создать"
 
 #: server/templates/createrubrics.html:6
 msgid "Create rubrics"
-msgstr "Создать рубрики"
+msgstr "Добавить рубрику"
 
 #: server/templates/createrubrics.html:11
 msgid "Title:"
@@ -313,7 +317,7 @@ msgstr "Заместитель"
 msgid "Katchy"
 msgstr "Катчы"
 
-#: server/templates/delegats.html:134
+#: server/templates/delegats.html:134 server/templates/indexActive.html:332
 msgid "Region"
 msgstr "Область"
 
@@ -324,7 +328,9 @@ msgstr "Рейтинговые обсуждения"
 #: server/templates/delegats.html:187 server/templates/delegats.html:231
 #: server/templates/delegats.html:260 server/templates/delegats.html:300
 #: server/templates/delegats.html:318 server/templates/indexActive.html:174
-#: server/templates/post1.html:115
+#: server/templates/post1.html:115 server/templates/profile.html:144
+#: server/templates/rubrics.html:189 server/templates/security.html:141
+#: server/templates/settings.html:195
 msgid "Registration"
 msgstr "Регистрация"
 
@@ -335,18 +341,30 @@ msgstr "Логин"
 #: server/templates/delegats.html:196 server/templates/delegats.html:234
 #: server/templates/indexActive.html:183 server/templates/indexActive.html:221
 #: server/templates/post1.html:124 server/templates/post1.html:162
+#: server/templates/profile.html:153 server/templates/profile.html:191
+#: server/templates/rubrics.html:198 server/templates/rubrics.html:236
+#: server/templates/security.html:150 server/templates/security.html:188
+#: server/templates/settings.html:204 server/templates/settings.html:242
 msgid "First Name"
 msgstr "Имя"
 
 #: server/templates/delegats.html:201 server/templates/delegats.html:240
 #: server/templates/indexActive.html:188 server/templates/indexActive.html:227
 #: server/templates/post1.html:129 server/templates/post1.html:168
+#: server/templates/profile.html:158 server/templates/profile.html:197
+#: server/templates/rubrics.html:203 server/templates/rubrics.html:242
+#: server/templates/security.html:155 server/templates/security.html:194
+#: server/templates/settings.html:209 server/templates/settings.html:248
 msgid "Last Name"
 msgstr "Фамилия"
 
 #: server/templates/delegats.html:206 server/templates/delegats.html:245
 #: server/templates/indexActive.html:193 server/templates/indexActive.html:232
 #: server/templates/post1.html:134 server/templates/post1.html:173
+#: server/templates/profile.html:163 server/templates/profile.html:202
+#: server/templates/rubrics.html:208 server/templates/rubrics.html:247
+#: server/templates/security.html:160 server/templates/security.html:199
+#: server/templates/settings.html:214 server/templates/settings.html:253
 msgid "Date of birth"
 msgstr "Дата рождения"
 
@@ -356,12 +374,24 @@ msgstr "Дата рождения"
 #: server/templates/indexActive.html:280 server/templates/indexActive.html:300
 #: server/templates/post1.html:143 server/templates/post1.html:191
 #: server/templates/post1.html:221 server/templates/post1.html:241
+#: server/templates/profile.html:172 server/templates/profile.html:220
+#: server/templates/profile.html:250 server/templates/profile.html:270
+#: server/templates/rubrics.html:217 server/templates/rubrics.html:265
+#: server/templates/rubrics.html:295 server/templates/rubrics.html:315
+#: server/templates/security.html:169 server/templates/security.html:217
+#: server/templates/security.html:247 server/templates/security.html:267
+#: server/templates/settings.html:223 server/templates/settings.html:271
+#: server/templates/settings.html:301 server/templates/settings.html:321
 msgid "Password"
 msgstr "Пароль"
 
 #: server/templates/delegats.html:220 server/templates/indexActive.html:207
 #: server/templates/indexActive.html:255 server/templates/post1.html:148
-#: server/templates/post1.html:196
+#: server/templates/post1.html:196 server/templates/profile.html:177
+#: server/templates/profile.html:225 server/templates/resetPassword.html:28
+#: server/templates/rubrics.html:222 server/templates/rubrics.html:270
+#: server/templates/security.html:174 server/templates/security.html:222
+#: server/templates/settings.html:228 server/templates/settings.html:276
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
@@ -369,7 +399,15 @@ msgstr "Подтверждение пароля"
 #: server/templates/indexActive.html:259 server/templates/indexActive.html:287
 #: server/templates/indexActive.html:305 server/templates/post1.html:154
 #: server/templates/post1.html:200 server/templates/post1.html:228
-#: server/templates/post1.html:246
+#: server/templates/post1.html:246 server/templates/profile.html:183
+#: server/templates/profile.html:229 server/templates/profile.html:257
+#: server/templates/profile.html:275 server/templates/rubrics.html:228
+#: server/templates/rubrics.html:274 server/templates/rubrics.html:302
+#: server/templates/rubrics.html:320 server/templates/security.html:180
+#: server/templates/security.html:226 server/templates/security.html:254
+#: server/templates/security.html:272 server/templates/settings.html:234
+#: server/templates/settings.html:280 server/templates/settings.html:308
+#: server/templates/settings.html:326
 msgid "Do you have an account?"
 msgstr "У вас уже есть аккаунт"
 
@@ -378,6 +416,14 @@ msgstr "У вас уже есть аккаунт"
 #: server/templates/indexActive.html:259 server/templates/indexActive.html:286
 #: server/templates/indexActive.html:306 server/templates/post1.html:200
 #: server/templates/post1.html:227 server/templates/post1.html:247
+#: server/templates/profile.html:229 server/templates/profile.html:256
+#: server/templates/profile.html:276
+#: server/templates/reset_password_complete.html:22
+#: server/templates/rubrics.html:274 server/templates/rubrics.html:301
+#: server/templates/rubrics.html:321 server/templates/security.html:226
+#: server/templates/security.html:253 server/templates/security.html:273
+#: server/templates/settings.html:280 server/templates/settings.html:307
+#: server/templates/settings.html:327
 msgid "Sign in"
 msgstr "Войти"
 
@@ -396,19 +442,41 @@ msgstr "Подтвеждение пароля"
 #: server/templates/post1.html:153 server/templates/post1.html:154
 #: server/templates/post1.html:159 server/templates/post1.html:188
 #: server/templates/post1.html:201 server/templates/post1.html:228
-#: server/templates/post1.html:246
+#: server/templates/post1.html:246 server/templates/profile.html:182
+#: server/templates/profile.html:183 server/templates/profile.html:188
+#: server/templates/profile.html:217 server/templates/profile.html:230
+#: server/templates/profile.html:257 server/templates/profile.html:275
+#: server/templates/rubrics.html:227 server/templates/rubrics.html:228
+#: server/templates/rubrics.html:233 server/templates/rubrics.html:262
+#: server/templates/rubrics.html:275 server/templates/rubrics.html:302
+#: server/templates/rubrics.html:320 server/templates/security.html:179
+#: server/templates/security.html:180 server/templates/security.html:185
+#: server/templates/security.html:214 server/templates/security.html:227
+#: server/templates/security.html:254 server/templates/security.html:272
+#: server/templates/settings.html:233 server/templates/settings.html:234
+#: server/templates/settings.html:239 server/templates/settings.html:268
+#: server/templates/settings.html:281 server/templates/settings.html:308
+#: server/templates/settings.html:326
 msgid "Register"
 msgstr "Регистрация"
 
 #: server/templates/delegats.html:284 server/templates/delegats.html:305
 #: server/templates/indexActive.html:271 server/templates/indexActive.html:292
 #: server/templates/post1.html:212 server/templates/post1.html:233
+#: server/templates/profile.html:241 server/templates/profile.html:262
+#: server/templates/rubrics.html:286 server/templates/rubrics.html:307
+#: server/templates/security.html:238 server/templates/security.html:259
+#: server/templates/settings.html:292 server/templates/settings.html:313
 msgid "Authorization"
 msgstr "Авторизация"
 
 #: server/templates/delegats.html:297 server/templates/delegats.html:317
 #: server/templates/indexActive.html:284 server/templates/indexActive.html:304
 #: server/templates/post1.html:225 server/templates/post1.html:245
+#: server/templates/profile.html:254 server/templates/profile.html:274
+#: server/templates/rubrics.html:299 server/templates/rubrics.html:319
+#: server/templates/security.html:251 server/templates/security.html:271
+#: server/templates/settings.html:305 server/templates/settings.html:325
 msgid "Forgot password?"
 msgstr "Забыли пароль?"
 
@@ -429,28 +497,38 @@ msgid "Such account doesnt exist!"
 msgstr "Данный аккаунт не существует"
 
 #: server/templates/indexActive.html:78
-#, fuzzy
-#| msgid "Create rubrics"
 msgid "Create rubric"
-msgstr "Создать рубрики"
+msgstr "Добавить рубрику"
 
 #: server/templates/indexActive.html:140 server/templates/indexActive.html:160
+#: server/templates/rubrics.html:152
 msgid "Share"
 msgstr "Поделиться"
 
 #: server/templates/indexActive.html:178 server/templates/indexActive.html:274
 #: server/templates/indexActive.html:295 server/templates/post1.html:119
 #: server/templates/post1.html:215 server/templates/post1.html:236
+#: server/templates/profile.html:148 server/templates/profile.html:244
+#: server/templates/profile.html:265 server/templates/rubrics.html:193
+#: server/templates/rubrics.html:289 server/templates/rubrics.html:310
+#: server/templates/security.html:145 server/templates/security.html:241
+#: server/templates/security.html:262 server/templates/settings.html:199
+#: server/templates/settings.html:295 server/templates/settings.html:316
 #, fuzzy
 #| msgid "Your username"
 msgid "Username"
 msgstr "Ваше имя пользователя"
 
 #: server/templates/indexActive.html:241 server/templates/post1.html:182
+#: server/templates/post1.html:332 server/templates/profile.html:211
+#: server/templates/rubrics.html:256 server/templates/security.html:208
+#: server/templates/settings.html:262
 msgid "Next"
-msgstr ""
+msgstr "Далее"
 
 #: server/templates/indexActive.html:312 server/templates/post1.html:253
+#: server/templates/profile.html:282 server/templates/rubrics.html:327
+#: server/templates/security.html:279 server/templates/settings.html:333
 #, fuzzy
 #| msgid "Such account doesn"
 msgid "Such account doesnt exist"
@@ -458,29 +536,209 @@ msgstr "Данный аккаунт не существует"
 
 #: server/templates/indexActive.html:319
 msgid "People"
-msgstr ""
-
-#: server/templates/indexActive.html:332
-#, fuzzy
-#| msgid "Region"
-msgid "Regions"
-msgstr "Область"
+msgstr "Люди"
 
 #: server/templates/message_send.html:13
 msgid "A confirmation email has been sent to your email"
-msgstr ""
+msgstr "На вашу электронную почту отправлено письмо с подтверждением"
 
-#: server/templates/message_send.html:14
+#: server/templates/message_send.html:14 server/templates/success.html:14
 msgid "Back to home"
-msgstr ""
+msgstr "Назад на главную"
 
 #: server/templates/post1.html:287
 msgid "Your comment is sent"
-msgstr ""
+msgstr "Ваш коментарий отправлен"
 
 #: server/templates/post1.html:290
 msgid "Leave a comment"
+msgstr "Оставить коментарий"
+
+#: server/templates/post1.html:295 server/templates/settings.html:135
+#, fuzzy
+#| msgid "First Name"
+msgid "First Name:"
+msgstr "Имя"
+
+#: server/templates/post1.html:328
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: server/templates/profile.html:126
+msgid "Track"
+msgstr "Следить"
+
+#: server/templates/profile.html:288
+#, fuzzy
+#| msgid "Moderation"
+msgid "Information"
+msgstr "Модерация"
+
+#: server/templates/profile.html:291 server/templates/settings.html:163
+msgid "Occupation:"
+msgstr "Профессия"
+
+#: server/templates/profile.html:292 server/templates/settings.html:159
+msgid "Nation:"
+msgstr "Нация"
+
+#: server/templates/profile.html:293 server/templates/settings.html:171
+#, fuzzy
+#| msgid "Region"
+msgid "Region:"
+msgstr "Область"
+
+#: server/templates/profile.html:297
+#, fuzzy
+#| msgid "Moderation"
+msgid "Conversation"
+msgstr "Оюсуждения"
+
+#: server/templates/resetPassword.html:16
+#: server/templates/resetPassword2.html:19
+msgid "Password reset"
+msgstr "Сброс пароля"
+
+#: server/templates/resetPassword.html:18
+msgid "Old password"
+msgstr "Старый пароль"
+
+#: server/templates/resetPassword.html:23
+msgid "New password"
+msgstr "Новый пароль"
+
+#: server/templates/resetPassword.html:32
+msgid "Perform"
+msgstr "Выполнить"
+
+#: server/templates/resetPassword2.html:20
+msgid ""
+"To reset your password, you must confirm your email, we will send you a link "
+"so that you can reset your password"
 msgstr ""
+"Чтобы сбросить пароль, вы должны подтвердить свой адрес электронной почты, "
+"мы вышлем вам ссылку, чтобы вы могли сбросить свой пароль"
+
+#: server/templates/resetPassword2.html:22
+msgid "Your"
+msgstr "Ваш"
+
+#: server/templates/resetPassword2.html:27
+msgid "Send"
+msgstr "Отправить"
+
+#: server/templates/reset_password_confirm.html:19
+msgid "Enter a new password"
+msgstr "Вводить новый пароль"
+
+#: server/templates/reset_password_confirm.html:20
+msgid ""
+"Please enter your new password twice so we can verify that it is spelled "
+"correctly"
+msgstr ""
+"Введите новый пароль дважды, чтобы мы могли проверить правильность его "
+"написания."
+
+#: server/templates/reset_password_confirm.html:32
+msgid "Change my password"
+msgstr "Изменить мой пароль"
+
+#: server/templates/reset_password_sent.html:17
+msgid ""
+"An email with password recovery instructions has been sent to the email "
+"address you provided"
+msgstr ""
+"На указанный вами адрес электронной почты отправлено письмо с инструкциями "
+"по восстановлению пароля"
+
+#: server/templates/rubrics.html:147
+msgid "34k people like"
+msgstr "34к людям понравилось"
+
+#: server/templates/rubrics.html:162
+#, fuzzy
+#| msgid "Rating Discussions"
+msgid "Rating discussions"
+msgstr "Рейтинговые обсуждения"
+
+#: server/templates/rubrics.html:176
+msgid ""
+"Do you want to ask a question? fill out the questionnaire and it will be "
+"discussed"
+msgstr "Хотите задать вопрос? заполните анкету и она будет обсуждена"
+
+#: server/templates/rubrics.html:177
+msgid "Ask a question"
+msgstr "Задать вопрос"
+
+#: server/templates/security.html:120
+#, fuzzy
+#| msgid "Forgot password?"
+msgid "Change a password"
+msgstr "Забыли пароль?"
+
+#: server/templates/security.html:122 server/templates/settings.html:176
+msgid "Cancel"
+msgstr "Отмена"
+
+#: server/templates/security.html:123 server/templates/settings.html:177
+msgid "Save"
+msgstr "Сохранить"
+
+#: server/templates/security.html:131
+msgid "Main"
+msgstr "Основные"
+
+#: server/templates/settings.html:112
+#, fuzzy
+#| msgid "Settings"
+msgid "Basic settings"
+msgstr "Настройки"
+
+#: server/templates/settings.html:131
+#, fuzzy
+#| msgid "Your username"
+msgid "Username:"
+msgstr "Ваше имя пользователя"
+
+#: server/templates/settings.html:139
+#, fuzzy
+#| msgid "Last Name"
+msgid "Last Name:"
+msgstr "Фамилия"
+
+#: server/templates/settings.html:143
+#, fuzzy
+#| msgid "Password confirmation"
+msgid "Short Information:"
+msgstr "Подтверждение пароля"
+
+#: server/templates/settings.html:147
+#, fuzzy
+#| msgid "Date of birth"
+msgid "Place of birth:"
+msgstr "Дата рождения"
+
+#: server/templates/settings.html:155
+msgid "Living place:"
+msgstr "Место проживание"
+
+#: server/templates/settings.html:167
+msgid "Phone number:"
+msgstr "Номер телефона"
+
+#: server/templates/settings.html:185
+msgid "Basics"
+msgstr "Основные"
+
+#: server/templates/success.html:13
+msgid "Password successfuly has changed"
+msgstr "Пароль успешно изменен"
+
+#: server/templates/updatecomment.html:21
+#: venv/lib/python3.8/site-packages/django/forms/widgets.py:441
+msgid "Change"
+msgstr "Изменить"
 
 #: server/views.py:41
 msgid "Dastan"
@@ -1179,10 +1437,6 @@ msgstr ""
 msgid "Currently"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/widgets.py:441
-msgid "Change"
-msgstr ""
-
 #: venv/lib/python3.8/site-packages/django/forms/widgets.py:770
 msgid "Unknown"
 msgstr ""
@@ -1775,6 +2029,11 @@ msgstr ""
 #: venv/lib/python3.8/site-packages/modeltranslation/widgets.py:26
 msgid "None"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Region"
+#~ msgid "Regions"
+#~ msgstr "Область"
 
 #~ msgid "You don"
 #~ msgstr "У вас нет аккаунта?"

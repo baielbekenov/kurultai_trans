@@ -7,6 +7,7 @@ urlpatterns = [
     path('', NewsListView.as_view(), name='home'),
     path('voting/detail/<int:pk>', VotingDetailView.as_view(), name='voting_detail'),
     path('vote/', vote_question, name='question_vote'),
+    path('vote_like/<int:pk>', vote_like, name='vote_like'),
     path('create/news/<int:pk>', create_news_voting, name='create_news'),
     path('chat/<int:pk>', chat_detail, name='chat_detail'),
     path('chats/', chat_list, name='chats'),
@@ -33,6 +34,7 @@ urlpatterns = [
     path('end_chat/<int:pk>', end_chat, name='end_chat'),
     path('voting_detail/<int:pk>', voting_detail, name='voting_detail'),
     path('resetPassword/', PasswordsChangeView.as_view(), name='resetPassword'),
+    path('managment/', managment, name='managment'),
 
     path('reset_password/', auth_views.PasswordResetView.as_view(template_name='resetPassword2.html'), name='reset_password'),
     path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name='reset_password_sent.html'), name='password_reset_done'),

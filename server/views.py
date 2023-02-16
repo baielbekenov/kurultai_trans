@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, reverse
 from .models import *
 from django.views import generic
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from .forms import *
-from .filters import UserFilterForm, NewsFilterForm
+from .filters import UserFilterForm, NewsFilterForm, ChatFilterForm
 from django.core.mail import send_mail
 from django.contrib.auth.forms import AuthenticationForm, PasswordResetForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
@@ -31,6 +31,7 @@ class NewsListView(generic.ListView):
     model = News
     queryset = News.objects.all()
     context_object_name = 'news'
+    paginate_by = 10
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(NewsListView, self).get_context_data(**kwargs)
@@ -62,6 +63,17 @@ def vote_question(request):
     return redirect(reverse('chat_detail', args=[str(question.voting.chat.id)]))
 
 
+@login_required(login_url='login')
+def vote_like(request, pk):
+    news = get_object_or_404(News, id=pk)
+
+    if request.user in news.likes.all():
+        news.likes.remove(request.user)
+    else:
+        news.likes.add(request.user)
+    return redirect(reverse('news_detail', args=[str(news.id)]))
+
+
 @login_required()
 def create_news_voting(request, pk):
     if request.method == 'POST':
@@ -81,11 +93,15 @@ def chat_detail(request, pk):
     return render(request, 'chat_detail.html', {'chat': chat, 'messages': messages})
 
 
+@login_required()
 def chat_list(request):
     chats = Chat.objects.filter(users__id__exact=request.user.id, is_active=True)
-    return render(request, 'chats.html', {'chats': chats})
+    filter = ChatFilterForm(request.GET, queryset=chats)
+    chats = filter.qs
+    return render(request, 'chats.html', {'chats': chats, 'filterchat': filter})
 
 
+@login_required()
 def security(request):
     return render(request, 'security.html')
 
@@ -124,6 +140,7 @@ def delegats(request):
     return render(request, 'delegats.html', {'users': users})
 
 
+@login_required()
 def settings(request):
     form = UserUpdateForm(instance=request.user)
     if request.method == "POST":
@@ -184,7 +201,7 @@ class PasswordsChangeView(PasswordChangeView):
     success_url = reverse_lazy('home')
     template_name = 'resetPassword.html'
 
-
+@login_required()
 def indexActive(request):
     print(Account.objects.all())
     rubrics = Rubrics.objects.all().order_by('-id')
@@ -215,6 +232,7 @@ def createrubrics(request):
     return render(request, 'createrubrics.html', context)
 
 
+@login_required()
 def deleterubrics(request, pk):
     teach = get_object_or_404(Rubrics, id=pk)
     teach.delete()
@@ -236,16 +254,25 @@ def post1(request, pk):
             new_comment = comment_form.save(commit=False)
             new_comment.news = news
             new_comment.save()
-    else:
-        comment_form = CommentForm()
+    print('das')
+    comment_form = CommentForm
+    context = {'comments': comments, 'news': news, 'page_obj': page_obj, 'new_comment': new_comment,
+               'comment_form': comment_form, 'questions': []}
+    total = 0
+    if news.voting:
+        for i in news.voting.questions_vote.all():
+            total += i.get_total_votes()
+        print(total)
+        total_procent = 100 // total
+        print(total_procent)
+        for i in news.voting.questions_vote.all():
+            context['questions'].append({'title': i.title, 'procent': i.get_total_votes() * total_procent, 'users': i.users, 'total_votes': i.get_total_votes()})
+        print(context)
+        context['total'] = total
+    return render(request, template_name, context)
 
-    return render(request, template_name, {'comments': comments,
-                                           'news': news,
-                                           'page_obj': page_obj,
-                                           'new_comment': new_comment,
-                                           'comment_form': comment_form})
 
-
+@permission_required('is_superuser')
 def commentlist(request):
     if request.user.is_superuser:
         comment_list = Comment.objects.filter(active=False)
@@ -255,27 +282,22 @@ def commentlist(request):
     return HttpResponse('Impossible to go ahead!')
 
 
+@login_required()
 def updatecomment(request, pk):
     if request.user.is_superuser:
         data = get_object_or_404(Comment, id=pk)
-        form = Comment_mode_Form(instance=data)
+        data.active = True
+        print('da')
+        data.save()
 
-        if request.method == "POST":
-            form = Comment_mode_Form(request.POST, instance=data)
-            if form.is_valid():
-                form.save()
-                return redirect('commentlist')
-        context = {
-            "form": form
-        }
-        return render(request, 'updatecomment.html', context)
+        return redirect(reverse('commentlist'))
     return HttpResponse('Imposible to ahead')
 
 
-def deletecomment(pk):
+def deletecomment(request, pk):
     comment = get_object_or_404(Comment, id=pk)
     comment.delete()
-    return redirect('index')
+    return redirect(reverse('commentlist'))
 
 
 def rubrics(request):
@@ -314,6 +336,7 @@ def set_news(request):
 
 
 
+@permission_required('is_superuser')
 def createnews(request):
     if request.user.is_superuser:
         form = NewsForm()
@@ -325,10 +348,11 @@ def createnews(request):
 
         context = {'form': form}
 
-        return render(request, 'createnews.html', context)
+        return render(request, 'create_news.html', context)
     return HttpResponse('Impossible to enter page!')
 
 
+@permission_required('is_superuser')
 def createchats(request):
     if request.user.is_superuser:
         form = ChatCreateForm()
@@ -344,6 +368,7 @@ def createchats(request):
     return HttpResponse('Impossible to enter page!')
 
 
+@permission_required('is_superuser')
 def create_voting(request, pk):
     chat = get_object_or_404(Chat, id=pk)
     if request.method == 'POST':
@@ -356,6 +381,7 @@ def create_voting(request, pk):
     return render(request, 'add_voting.html', {'form': form, 'chat': chat})
 
 
+@permission_required('is_superuser')
 def add_questions(request, pk):
     voting = get_object_or_404(Voting, id=pk)
     if request.method == 'POST':
@@ -368,6 +394,7 @@ def add_questions(request, pk):
     return render(request, 'add_voting.html', {'form': form, 'chat': voting})
 
 
+@permission_required('is_superuser')
 def end_chat(request, pk):
     chat = get_object_or_404(Chat, id=pk)
     chat.is_active = False
@@ -375,11 +402,13 @@ def end_chat(request, pk):
     return redirect(reverse('chat_detail', args=[chat.id]))
 
 
+@login_required()
 def voting_detail(request, pk):
     voting = get_object_or_404(Voting, id=pk)
     return render(request, 'voting_detail.html', {'voting': voting})
 
 
+@permission_required('is_superuser')
 def create_news(request, pk):
     chat = get_object_or_404(Chat, id=pk)
     form = NewsForm
@@ -389,3 +418,8 @@ def create_news(request, pk):
         form.save()
         return redirect(reverse('news_detail', args=[form.id]))
     return render(request, 'create_news.html', {'form': form, 'chat': chat})
+
+
+
+def managment(request):
+    return render(request, 'managment.html')

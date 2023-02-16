@@ -53,7 +53,7 @@
                             </ul>
                         </div>
                         {% if user.is_superuser %}
-                        <div class="profileSettings">
+                        <div class="profileList">
                             <h3>{% translate 'Management' %}</h3>
                             <ul>
                                 <li>
@@ -70,7 +70,7 @@
                                 </li>
                                 <li>
                                     <a href="{% url 'logout' %}">
-                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt=""></div>
                                         <h4>{% translate 'CreatePost' %}</h4>
                                     </a>
                                 </li>
@@ -125,25 +125,31 @@
                                 <div class="group"><img src="{% static 'images/chats/chat1.svg' %}" alt="call"></div>
                             </chat>
                         </div>
-                        <div class="golosovanie"><a href="{% url 'voting_detail' chat.voting_chat.pk %}"><button>{% trans 'Vote' %}</button></a></div>
+                        <div class="golosovanie"><a href="{% url 'voting_detail' chat.voting_chat.pk %}"><button>Голосование</button></a></div>
                         <div class="chatBody" id="messages">
 
                             {% for i in messages %}
 
                             {% if i.user.id == user.id %}
                             <div class="ownMessage">
-                                <span>{{ i.content }}</span>
-
+                               <div><span class="dateForMessage">{{ i.date.time }}</span><p>{{ i.content }}</p></div>
 
                             </div>
+
                             {% else %}
                             <div class="message">
                                 <div class="first">
-                                    <a href="#"><img src="{% static 'images/chat1/person1.svg' %}" alt="ava"></a>
-                                    <span>{{ i.content }}</span>
-
+                                    {% if i.user.image %}
+                                    <a href="#"><img src="{{ i.user.image.url }}" alt="ava"></a>
+                                    {% else %}
+                                    <a href="#"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="ava"></a>
+                                    {% endif %}
+                                    <div><p><span>{{ i.user.get_full_name }}</span>{{ i.content }}</p><span class="dateForMessage">{{ i.date.time }}</span></div>
                                 </div>
+
                             </div>
+
+
                             {% endif %}
                             {% endfor %}
                         </div>
@@ -285,10 +291,17 @@
             </div>
             <script type="text/javascript">
         let url = `ws://${window.location.host}/ws/socket-server/chat/{{chat.id}}`
+        let form = document.getElementById('form')
+
+
+
 
         const chatSocket = new WebSocket(url)
 
         chatSocket.onmessage = function(e){
+            scrollTo(form)
+            window.scrollTo(0, document.body.scrollHeight)
+
             let data = JSON.parse(e.data)
             console.log('Data:', data)
 
@@ -297,41 +310,58 @@
                 let messages = document.getElementById('messages')
                 if(data.user == '{{ user }}'){
                 messages.insertAdjacentHTML('beforeend', `
+
                 <div class="ownMessage">
-                    <span>${ data.message }</span>
+                   <div><span class="dateForMessage">${ data.time }</span><p>${ data.message }</p></div>
                 </div>
+
                                     `)}
                 else{
                 messages.insertAdjacentHTML('beforeend', `
+
+
                 <div class="message">
                     <div class="first">
-                        <a href="#"><img src="{% static 'images/chat1/person1.svg' %}" alt="ava"></a>
-                        <span>${ data.message }</span>
 
+                        <a href="#"><img src="${ data.image }" alt="ava"></a>
+
+                        <div><p><span>${ data.full_name }</span>${ data.message }</p><span class="dateForMessage">${ data.time }</span></div>
                     </div>
+
                 </div>
-                                    `)}
+                        `)}
 
 
             }
         }
 
-        let form = document.getElementById('form')
+
+
         form.addEventListener('submit', (e)=> {
             e.preventDefault()
-            let message = e.target.message.value
+
+            let message = e.target.message.value.trim()
+            if(message.length>0){
             chatSocket.send(JSON.stringify({
                 'message':message,
                 'user': "{{ user.id }}"
             }))
             form.reset()
+            }
         })
+
+        window.onload = () =>
+{
+    console.log('niz')
+    scrollTo(form)
+}
+window.scrollTo(0, document.body.scrollHeight)
 
   </script>
 
         </main>
     </div>
 <script src="{% static 'js/app.js' %}"></script>
-<script src="{% static 'js/vote.js' %}"></script>
+<!--<script src="{% static 'js/vote.js' %}"></script>-->
 
 {% endblock %}

@@ -52,7 +52,7 @@
                             </ul>
                         </div>
                         {% if user.is_superuser %}
-                        <div class="profileSettings">
+                        <div class="profileList">
                             <h3>{% translate 'Management' %}</h3>
                             <ul>
                                 <li>
@@ -69,7 +69,7 @@
                                 </li>
                                 <li>
                                     <a href="{% url 'logout' %}">
-                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt=""></div>
                                         <h4>{% translate 'CreatePost' %}</h4>
                                     </a>
                                 </li>
@@ -110,9 +110,11 @@
                     </section>
                     <section class="chats">
                         <div class="chatsHead">
-                            <form action="">
+                            <form action="" method="get">
                                 <div class="searchButton"><img src="{% static 'images/chats/chat-search.svg' %}" alt=""></div>
-                                <input id="search" placeholder="{% trans 'Chat search...' %}" type="search">
+                                {{ filterchat.title }}
+
+<!--                                <input id="search" placeholder="{% trans 'Chat search...' %}" >-->
                             </form>
                             <div class="chatsHeadActions">
                                 <div class="call"><img src="{% static 'images/chats/call.svg' %}" alt=""></div>

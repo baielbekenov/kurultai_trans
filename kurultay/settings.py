@@ -106,6 +106,8 @@ LOCAL_PATHS = (
     os.path.join(BASE_DIR, 'locale/')
 )
 
+LOGIN_URL = '/'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -228,6 +230,9 @@ LANGUAGES = (
     ('ru', _('Russian')),
     ('ky', _('Kyrgyz')),
 )
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),

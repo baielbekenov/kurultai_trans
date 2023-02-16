@@ -232,14 +232,19 @@ main .main .delegatsBody .peoplesI {
 }
 main .main .delegatsBody .peoplesI .ava {
   width: 50px;
+  height: 50px;
+  overflow: hidden;
 }
 @media (max-width: 550px) {
   main .main .delegatsBody .peoplesI .ava {
     width: 35px;
+    height: 35px;
   }
 }
 main .main .delegatsBody .peoplesI .ava img {
   width: 100%;
+  height: 100%;
+  margin: 0 auto;
   border-radius: 50%;
 }
 main .main .delegatsBody .peoplesI .name {

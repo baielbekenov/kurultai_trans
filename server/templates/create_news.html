@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
+
 {% block links %}
 <link rel="stylesheet" href="{% static 'css/bundle.css' %}">
 <link rel="stylesheet" href="{% static 'css/post.css' %}">
@@ -10,105 +11,8 @@
         <main>
             <div class="container">
                 <div class="main">
-                    <section class="profile">
-                        <div class="profileList">
-                            <ul>
-                                <li>
-                                    <a href="{% url 'home' %}">
-                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% translate 'Newsline' %}</h4>
-                                    </a>
-                                </li>
-                                {% if user.is_delegat %}
-                                <li class="listActive">
-                                    <a href="{% url 'chats' %}">
-                                        <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% translate 'Messages' %}</h4>
-                                    </a>
-                                </li>
-                                {% endif %}
-                                <li>
-                                    <a href="{% url 'delegats' %}">
-                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% translate 'Delegates' %}</h4>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'rubrics' %}">
-                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% translate 'Rubrics' %}</h4>
-                                    </a>
-                                </li>
-                                {% if user.is_authenticated %}
-                                <li>
-                                    <a href="{% url 'profile' user.pk %}">
-                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
-                                        <h4>{% translate 'Profile' %}</h4>
-                                    </a>
-                                </li>
-                                {% endif %}
 
-                            </ul>
-                        </div>
-                        {% if user.is_superuser %}
-                        <div class="profileSettings">
-                            <h3>{% translate 'Management' %}</h3>
-                            <ul>
-                                <li>
-                                    <a href="{% url 'createchats' %}">
-                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
-                                        <h4>{% translate 'Createchats' %}</h4>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'createnews' %}">
-                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
-                                        <h4>{% translate 'CreateNews' %}</h4>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'logout' %}">
-                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
-                                        <h4>{% translate 'CreatePost' %}</h4>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'commentlist' %}">
-                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
-                                        <h4>{% translate 'Comments' %}</h4>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        {% endif %}
-                        {% if user.is_authenticated %}
-                        <div class="profileSettings">
-                            <h3>{% translate 'Settings' %}</h3>
-                            <ul>
-                                <li>
-                                    <a href="{% url 'settings' %}">
-                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
-                                        <h4>{% translate 'Settings' %}</h4>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'security' %}">
-                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
-                                        <h4>{% translate 'Security' %}</h4>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'logout' %}">
-                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
-                                        <h4>{% translate 'Logout' %}</h4>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        {% endif %}
-                    </section>
-
-                    <section class="formNews">
+                    <section class="formNews" style="margin: 40px;">
                         <form action="" class="aftorizRight" method="post" enctype="multipart/form-data">
                                 <h2>Добавить опрос</h2>
                                 <div class="formDatas">
@@ -120,19 +24,23 @@
                                     <div class="pole">
                                         <label for="email2">Название</label>
                                         {{ form.title }}
+                                        <label for="email2">Название en</label>
+                                        {{ form.title_en }}
+                                        <label for="email2">Название ru</label>
+                                        {{ form.title_ru }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
                                         <label for="email2">Превью</label>
                                         {{ form.preview }}
+                                        <label for="email2">Превью en</label>
+                                        {{ form.preview_en }}
+                                        <label for="email2">Превью ru</label>
+                                        {{ form.preview_ru }}{% csrf_token %}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
-                                    <div class="pole">
-                                        <label for="password">Описание</label>
-                                        {{ form.content }}
-                                        {% csrf_token %}
 
-                                    </div>
+
                                     <div class="pole">
                                         <label for="email2">Фото</label>
                                         {{ form.image }}
@@ -140,11 +48,20 @@
                                     </div>
 
                                 </div>
+                            <label for="email2">Описание</label>
+                            {{ form.content }}
+                            <label for="email2">Описание en</label>
+                            {{ form.content_en }}
+                            <label for="email2">Описание ru</label>
+                            {{ form.content_ru }}
+
                                 <input class="submitBtn" type="submit" value="Создать">
 
                             </form>
+
                     </section>
                 </div>
+
             </div>
         </main>
         <footer class="footer">
@@ -163,4 +80,6 @@
                 </a>
             </div>
         </footer>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 {% endblock %}

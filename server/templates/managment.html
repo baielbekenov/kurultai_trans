@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/chats.css' %}">
+<link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+{% endblock %}
+
+
+        {% block content %}
+        <main>
+            <div class="container">
+                <div class="main">
+                    <section class="profile">
+                        <div class="profileList">
+                            <ul>
+                                <li>
+                                    <a href="{% url 'home' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Newsline' %}</h4>
+                                    </a>
+                                </li>
+                                {% if user.is_delegat %}
+                                <li class="listActive">
+                                    <a href="{% url 'chats' %}">
+                                        <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Messages' %}</h4>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                <li>
+                                    <a href="{% url 'delegats' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Delegates' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'rubrics' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Rubrics' %}</h4>
+                                    </a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li>
+                                    <a href="{% url 'profile' user.pk %}">
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Profile' %}</h4>
+                                    </a>
+                                </li>
+                                {% endif %}
+
+                            </ul>
+                        </div>
+                        {% if user.is_superuser %}
+                        <div class="profileList">
+                            <h3>{% translate 'Management' %}</h3>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'createchats' %}">
+                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Createchats' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'createnews' %}">
+                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
+                                        <h4>{% translate 'CreateNews' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt=""></div>
+                                        <h4>{% translate 'CreatePost' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'commentlist' %}">
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
+                                        <h4>{% translate 'Comments' %}</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                        <div class="profileSettings">
+                            <h3>{% translate 'Settings' %}</h3>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'settings' %}">
+                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Settings' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'security' %}">
+                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Security' %}</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}">
+                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <h4>{% translate 'Logout' %}</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </section>
+                    <section class="chats">
+
+                        <div class="chatsBlock">
+
+                            {% if user.is_superuser %}
+                            <a href="{% url 'commentlist' %}" class="chatsBlockE">
+                                <div class="content">
+                                    <div class="foto"><img src="{% static 'images/profile/settings.svg' %}" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>{% translate 'CreateNews' %}</h3>
+<!--                                        <p>Даяна: <span>я занята</span></p>-->
+                                    </div>
+                                </div>
+
+                            </a>
+                            <a href="{% url 'createnews' %}" class="chatsBlockE">
+                                <div class="content">
+                                    <div class="foto"><img src="{% static 'images/profile/settings.svg' %}" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>{% translate 'CreatePost' %}</h3>
+<!--                                        <p>Даяна: <span>я занята</span></p>-->
+                                    </div>
+                                </div>
+
+                            </a>
+
+                            <a href="{% url 'createchats' %}" class="chatsBlockE">
+                                <div class="content">
+                                    <div class="foto"><img src="{% static 'images/profile/settings.svg' %}" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>{% translate 'CreateNews' %}</h3>
+<!--                                        <p>Даяна: <span>я занята</span></p>-->
+                                    </div>
+                                </div>
+
+                            </a>
+                            {% endif %}
+                            <a href="{% url 'rubrics' %}" class="chatsBlockE">
+                                <div class="content">
+                                    <div class="foto"><img src="{% static 'images/profile/settings.svg' %}" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>{% translate 'Rubrics' %}</h3>
+<!--                                        <p>Даяна: <span>я занята</span></p>-->
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{% url 'delegats' %}" class="chatsBlockE">
+                                <div class="content">
+                                    <div class="foto"><img src="{% static 'images/profile/list.svg' %}" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>{% translate 'Delegates' %}</h3>
+<!--                                        <p>Даяна: <span>я занята</span></p>-->
+                                    </div>
+                                </div>
+                            </a>
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'profile' user.pk %}" class="chatsBlockE">
+                                <div class="content">
+                                    <div class="foto"><img src="{% static 'images/profile/profile.svg' %}" alt="chat"></div>
+                                    <div class="title">
+                                        <h3>{% translate 'Profile' %}</h3>
+<!--                                        <p>Даяна: <span>я занята</span></p>-->
+                                    </div>
+                                </div>
+                            </a>
+
+
+                            {% endif %}
+<!--                            <a href="#" class="chatsBlockE">-->
+<!--                                <div class="content">-->
+<!--                                    <div class="foto"><img src="{% static 'images/chats/chat3.svg' %}" alt="chat"></div>-->
+<!--                                    <div class="title">-->
+<!--                                        <h3>Никита Исмаилов<h3>-->
+<!--                                        <p>Бакыт: <span>не могу сегодня</span></p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="time">-->
+<!--                                    <p>14:23</p>-->
+<!--                                    &lt;!&ndash; <span class="count">23</span> &ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            -->
+<!--                            -->
+<!--                            <a href="#" class="chatsBlockE" id="introJs">-->
+<!--                                <div class="content">-->
+<!--                                    <div class="foto"><img src="{% static 'images/chats/chat4.svg' %}" alt="chat"></div>-->
+<!--                                    <div class="title">-->
+<!--                                        <h3>Ибрагим Каранбаев</h3>-->
+<!--                                        <p>Ибрагим: <span>Как дела</span></p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="time">-->
+<!--                                    <p>6 января</p>-->
+<!--                                </div>-->
+<!--                            </a>-->
+                        </div>
+                    </section>
+                    <section class="SortChat">
+                        <ul>
+                            <li class="chatActive">{% trans 'All chats' %}</li>
+                            <li>{% trans 'Unread' %}</li>
+                            <li>{% trans 'Archive' %}</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+     <footer class="footer">
+            <div class="footerInner">
+                <a href="{% url 'home' %}">
+                    <div><img src="{% static 'images/modileFooter/home.svg' %}" alt=""></div>
+                </a>
+                <a href="{% url 'delegats' %}">
+                    <div><img src="{% static 'images/modileFooter/people.svg' %}" alt=""></div>
+                </a>
+                <a href="{% url 'chats' %}">
+                    <div><img src="{% static 'images/modileFooter/message.svg' %}" alt=""></div>
+                </a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'profile' user.pk %}">
+                    <div><img src="{% static 'images/modileFooter/profile.svg' %}" alt=""></div>
+                </a>
+                {% else %}
+                <a href="{% url 'home' %}">
+                    <div><img src="{% static 'images/modileFooter/profile.svg' %}" alt=""></div>
+                </a>
+                {% endif %}
+            </div>
+        </footer>
+{% endblock %}

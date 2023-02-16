@@ -83,6 +83,8 @@ main .main .setting h3 {
 }
 main .main .setting .avatar {
   width: 100px;
+  height: 100px;
+  overflow: hidden;
   margin: 17px auto;
   position: relative;
 }
@@ -130,10 +132,13 @@ main .main .setting .avatar .forCamera img {
     border: 4px solid #fff;
     border-radius: 50%;
     width: 94px;
+    height: 94px;
   }
 }
 main .main .setting .avatar img {
   width: 100%;
+  height: 100%;
+  margin: 0 auto;
   border-radius: 50%;
 }
 main .main .settingForm {

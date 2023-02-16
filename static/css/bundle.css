@@ -333,7 +333,7 @@ header .menuInner .hide {
   position: fixed;
   right: 30px;
   bottom: 60px;
-  background: #DC8400;
+  background: #030303;
   height: 80px;
   width: 110px;
   padding-bottom: 10px;
@@ -357,18 +357,20 @@ header .menuInner .hide {
   .language {
     right: 10px;
     bottom: 80px;
-    width: 90px;
+    width: 98px;
   }
 }
 .language select {
   width: 90px;
-  background: #DC8400;
-  border: 2px solid #535292;
+  background: #030303;
+  border: 2px solid #f2f2f2;
   padding: 5px 2px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   margin-top: 10px;
+  color: #fff;
+  outline: none;
 }
 @media (max-width: 550px) {
   .language select {
@@ -382,9 +384,10 @@ header .menuInner .hide {
   cursor: pointer;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  background: #535292;
+  background: #f2f2f2;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
+  color: #030303;
 }
 .language input:hover {
   -webkit-transform: scale(1.2);

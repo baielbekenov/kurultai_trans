@@ -50,7 +50,7 @@
                             </ul>
                         </div>
                         {% if user.is_superuser %}
-                        <div class="profileSettings">
+                        <div class="profileList">
                             <h3>{% translate 'Management' %}</h3>
                             <ul>
                                 <li>
@@ -67,7 +67,7 @@
                                 </li>
                                 <li>
                                     <a href="{% url 'logout' %}">
-                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt=""></div>
                                         <h4>{% translate 'CreatePost' %}</h4>
                                     </a>
                                 </li>
@@ -106,168 +106,38 @@
                         </div>
                         {% endif %}
                     </section>
-                    <section class="RegistrPop hide">
-                        <div id="modalReg" class="modal">
-                            <div class="close"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
-                            <div id="backReg" class="back hide"><img src="{% static 'images/security/back1.svg' %}" alt=""></div>
-                            <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
-                            <form action="{% url 'register' %}" class="right" method="post">
-                                <h2>{% trans 'Registration' %}</h2>
-                                <div class="formDate">
-                                    <div class="pole">
-                                        {% csrf_token %}
-                                        <label for="firstName">{% trans 'Username' %}</label>
-                                        {{ register_form.username }}
-                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
-                                    </div>
-                                    <div class="pole">
-                                        <label for="firstName">{% trans 'First Name' %}</label>
-                                        {{ register_form.first_name }}
-                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
-                                    </div>
-                                    <div class="pole">
-                                        <label for="lastName">{% trans 'Last Name' %}</label>
-                                        {{ register_form.last_name }}
-                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
-                                    </div>
-                                    <div class="pole">
-                                        <label for="dateTime">{% trans 'Date of birth' %}</label>
-                                        {{ register_form.birth_of_date }}
-                                    </div>
-                                    <div class="pole">
-                                        <label for="email">Email</label>
-                                        {{ register_form.email }}
-                                        <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
-                                    </div>
-                                    <div class="pole">
-                                        <label for="new">{% trans 'Password' %}</label>
-                                        {{ register_form.password1 }}
-                                        <span class="eyeForNew"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
-                                    </div>
-                                    <div class="pole">
-                                        <label for="pass">{% trans 'Password confirmation' %}</label>
-                                        {{ register_form.password2 }}
-                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>
-                                    </div>
-                                </div>
-                                <input class="submitBtn" type="submit" value="{% trans 'Register' %}">
-                                <p>{% trans 'Do you have an account?' %} <span id="voiti">{% trans 'Register' %}</span></p>
-                            </form>
-                            <div class="regMob1">
-                                <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
-                                <form action="{% url 'register' %}" class="mobForm1" method="post">
-                                    <h2>{% trans 'Register' %}</h2>
-                                    <div class="formDate">
-                                        <div class="pole">
-                                            <label for="mob1firstName">{% trans 'First Name' %}</label>
-                                            {{ register_form.first_name }}
-                                            {% csrf_token %}
-                                            <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
-                                        </div>
-                                        <div class="pole">
-                                            <label for="mob1lastName">{% trans 'Last Name' %}</label>
-                                            {{ register_form.last_name }}
-                                            <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
-                                        </div>
-                                        <div class="pole">
-                                            <label for="mob1dateTime">{% trans 'Date of birth' %}</label>
-                                            {{ register_form.birth_of_date }}
-                                        </div>
-                                        <div class="pole">
-                                            <label for="mob1email">Email</label>
-                                            {{ register_form.email }}
-                                            <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
-                                        </div>
-                                    </div>
-                                    <input class="submitBtn" type="submit" value="{% trans 'Next' %}">
-                                </form>
-                            </div>
-                            <div class="regMob2 hide">
-                                <div class="img"><img src="{% static 'images/security/welcome.png" alt="welcome"></div>
-                                <form action="" class="mobForm2">
-                                    <h2>{% trans 'Register' %}</h2>
-                                    <div class="formDate">
-                                        <div class="pole">
-                                            <label for="newMob">{% trans 'Password' %}</label>
-                                            {{ register_form.password }}
-                                            <span class="eyeForMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
-                                        </div>
-                                        <div class="pole">
-                                            <label for="passMob">{% trans 'Password confirmation' %}</label>
-                                            {{ register_form.password1 }}
-                                            <span class="eyeForPassMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
-                                        </div>
-                                        <p>{% trans 'Do you have an account?' %} <span id="voiti1">{% trans 'Sign in' %}</span></p>
-                                        <input class="submitBtn" type="submit" value="{% trans 'Register' %}">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                   <section class="AftorizPop hide">
-                        <div id="modalAftoriz" class="modal">
-                            <div class="close2"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
-                            <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
-                            <form action="{% url 'login' %}" class="aftorizRight" method="post">
-                                <h2>{% trans 'Authorization' %}</h2>
-                                <div class="formDatas">
-                                    <div class="pole">
-                                        <label for="das">{% trans 'Username' %}</label>
-                                        {{ login_form.username }}
-                                        {% csrf_token %}
-                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
-                                    </div>
-                                    <div class="pole">
-                                        <label for="password">{% trans 'Password' %}</label>
-                                        {{ login_form.password }}
-                                        <span class="eyeForpasword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
-                                    </div>
-                                    <a href="{% url 'reset_password' %}">{% trans 'Forgot password?' %}</a>
-                                </div>
-                                <input class="submitBtn" type="submit" value="{% trans 'Sign in' %}">
-                                <p>{% trans 'Do you have an account?' %}<span id="registracia">{% trans 'Register' %}</span></p>
-                            </form>
-                            <div class="AMob2">
-                                <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
-                                <form id="formAmobail" action="{% url 'login' %}" method="post" class="formDate">
-                                    <h2>{% trans 'Authorization' %}</h2>
-                                    {% csrf_token %}
-                                    <div class="pole">
-                                        <label for="das">{% trans 'Username' %}</label>
-                                        {{ login_form.username }}
-                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
-                                    </div>
-                                    <div class="pole">
-                                        <label for="password">{% trans 'Password' %}</label>
-                                        {{ login_form.password }}
-                                        <span class="eyeMobpassword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
-                                    </div>
-                                    <a href="{% url 'reset_password' %}">{% trans 'Forgot password?' %}</a>
-                                    <p class="notAc">{% trans 'Do you have an account?' %}<span id="registracia2">{% trans 'Register' %}</span></p>
-                                    <input class="submitBtn" type="submit" value="{% trans 'Sign in' %}">
 
-                                </form>
-                            </div>
-                            <div class="error hide">
-                                <div class="img"><img src="{% static 'images/security/error.svg' %}" alt=""></div>
-                                <p>{% trans 'Such account doesnt exist' %}</p>
-                                <div class="closeRed"><img src="{% static 'images/security/closeRed.svg' %}" alt=""></div>
-                            </div>
-                        </div>
-                    </section>
                     <section class="backBtn">
-                            <a href="indexActive.html" class="image"><img src="images/chat1/back.svg" alt="svg"><p>{% trans 'Back' %}</p></a>
+                            <a href="{% url 'home' %}" class="image"><img src="{% static 'images/chat1/back.svg' %}" alt="svg"><p>{% trans 'Back' %}</p></a>
                     </section>
                     <section class="Post">
                         <div class="PostImage" id="introJs">
                             <img src="{{ news.image.url }}" alt="news">
-                            <div class="PostText">
+                            <div class="PostText" style="backdrop-filter: blur(10px); padding: 10px;">
                                 <h2>{{ news.title }}</h2>
                                 <p>{{ news.preview }}</p>
                             </div>
                         </div>
                             <!-- <button class="btnYellow">Обсуждение</button> -->
                         <div style="padding: 20px">{{ news.content|safe }}</div>
+                        {% if news.voting %}
+                        <div class="rezalts">
+                                <h3>Результаты: (Всего прогосовало - {{ total }})</h3>
+                                <div class="rezaltsRenge">
+                                    {% for i in questions %}
+                                    <div class="rezaltsRengeE">
+                                        <div class="title">
+                                            <p>{{ i.title }} - {{ i.total_votes }}</p>
+                                            <span>{{ i.procent }}%</span>
+                                        </div>
+                                        <div class="grey">
+                                            <div class="orange" style="width: {{ i.procent }}%;"></div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
                             <div class="rengse">
                             <div class="renge">
                                 <div class="rengeElem"></div>
@@ -284,27 +154,31 @@
                         </div>
                         <div class="PostEnd">
                             <div class="like">
-                                <img class="likeActive" src="images/news/likeN.svg" alt="">
-                                <img src="images/news/like.svg" alt="">
-                                    <!-- <span>Понравилось</span> -->
+
+                                {% if user in news.likes.all %}
+                                <a href="{% url 'vote_like' news.pk %}"><img class="likeActive" src="{% static 'images/news/like.svg' %}" alt=""></a>
+                                {% else %}
+                                <a href="{% url 'vote_like' news.pk %}"><img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt=""></a>
+                                {% endif %}
+
+
+
                                 <div class="likeCount">
-                                    <span></span>
+                                    <span>{% trans 'Понравилось' %} - {{ news.likes.count }}</span>
                                 </div>
                             </div>
-                            <div href="post1.html" class="comments">
-                                <p>{% trans 'Comments' %}<span>{{ comments.count }}</span></p>
+                            <div class="comments">
+                                <p>{% trans 'Comments' %}<span> - {{ comments.count }}</span></p>
                             </div>
                         </div>
-                        {% if new_comment %}
-                            <div class="alert alert-success" role="alert">{% trans 'Your comment is sent' %}</div>
-                        {% else %}
+
                         <div class="comment">
                             <h2>{% trans 'Leave a comment' %}</h2>
                             <form action="" method="post">
                                 {% csrf_token %}
                                 <div class="forName">
                                     <div>
-                                        <label for="text">Имя: </label>
+                                        <label for="text">{% trans 'First Name:' %}</label>
                                         {{ comment_form.name }}
                                     </div>
                                     <div>
@@ -319,7 +193,7 @@
                             </form>
 
                         </div>
-                        {% endif %}
+
 
                         <div class="comment">
                             <h2>{{ comments.count }} comments</h2>
@@ -337,11 +211,11 @@
                             <div>
                                 <span>
                                     {% if page_obj.has_previous %}
-                                        <a href="?page={{ page_obj.previous_page_number }}" >Previous</a>
+                                        <a href="?page={{ page_obj.previous_page_number }}" >{% trans 'Previous' %}</a>
                                     {% endif %}
                                         <span>{{ page_obj.number }}</span>
                                     {% if page_obj.has_next %}
-                                    <a href="?page={{ page_obj.next_page_number }}" >Next</a>
+                                    <a href="?page={{ page_obj.next_page_number }}" >{% trans 'Next' %}</a>
                                     {% endif %}
                                 </span>
                             </div>

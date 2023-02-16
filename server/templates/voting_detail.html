@@ -125,7 +125,7 @@
                             {% for i in voting.questions_vote.all %}
                                 <form action="{% url 'question_vote' %}" method="post" class="voteForm">
                                     {% if user in i.users.all %}
-                                    <button style="color: #B36116 cursor: pointer;
+                                    <button style="color: #B36116; cursor: pointer;
     margin-top: 25px;
     max-width: 320px;
     height: 34px;

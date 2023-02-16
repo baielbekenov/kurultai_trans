@@ -57,7 +57,7 @@
                             </ul>
                         </div>
                         {% if user.is_superuser %}
-                        <div class="profileSettings">
+                        <div class="profileList">
                             <h3>{% translate 'Management' %}</h3>
                             <ul>
                                 <li>
@@ -74,7 +74,7 @@
                                 </li>
                                 <li>
                                     <a href="{% url 'logout' %}">
-                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt=""></div>
                                         <h4>{% translate 'Create rubric' %}</h4>
                                     </a>
                                 </li>
@@ -119,7 +119,7 @@
                         <div class="news">
                             <a  href="{% url 'news_detail' i.pk %}" class="newsImage" id="introJs">
                                 <img src="{{ i.image.url }}" alt="news">
-                                <div class="newsText">
+                                <div class="newsText" style="backdrop-filter: blur(10px); padding: 10px;">
                                     <h2>{{ i.title }}</h2>
                                     <p>{{ i.preview }}</p>
                                 </div>
@@ -129,17 +129,20 @@
                             <div class="prevEnd"></div>
                             <div class="newsEnd">
                                 <div class="like">
-                                    <img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt="">
-                                    <img src="{% static 'images/news/like.svg' %}" alt="">
+                                    {% if user in i.likes.all %}
+                                    <a href="{% url 'vote_like' i.pk %}"><img class="likeActive" src="{% static 'images/news/like.svg' %}" alt=""></a>
+                                    {% else %}
+                                    <a href="{% url 'vote_like' i.pk %}"><img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt=""></a>
+                                    {% endif %}
                                     <div class="likeCount">
-                                        <span></span>
+                                        <span>{{ i.like.count }} {% trans 'людям понравилось' %}</span>
                                     </div>
                                 </div>
-                                <div class="share">
-                                    <img src="{% static 'images/news/share.svg' %}" alt="">
-                                    <span>{% translate 'Share' %}</span>
-                                </div>
+                                <a href="post1.html" class="comments">
+                                    <p>{% trans 'Комментарии' %} <span>{{ i.comments.count }}</span></p>
+                                </a>
                             </div>
+
 
                         </div >
 
@@ -160,9 +163,21 @@
                                     <span>{% trans 'Share' %}</span>
                                 </div>
                             </div>
-                        </div >
+
+                        </div>
                         {% endif %}
                         {% endfor %}
+                        <div>
+                                <span>
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page={{ page_obj.previous_page_number }}" >{% trans 'Previous' %}</a>
+                                    {% endif %}
+                                        <span>{{ page_obj.number }}</span>
+                                    {% if page_obj.has_next %}
+                                    <a href="?page={{ page_obj.next_page_number }}" >{% trans 'Next' %}</a>
+                                    {% endif %}
+                                </span>
+                            </div>
 
                     </section>
                    <section class="RegistrPop hide">
@@ -213,10 +228,16 @@
                                 <p>{% trans 'Do you have an account?' %} <span id="voiti">{% trans 'Register' %}</span></p>
                             </form>
                             <div class="regMob1">
-                                <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
+
                                 <form action="{% url 'register' %}" class="mobForm1" method="post">
                                     <h2>{% trans 'Register' %}</h2>
                                     <div class="formDate">
+                                        <div class="pole">
+                                            <label for="mob1firstName">{% trans 'Username' %}</label>
+                                            {{ register_form.username }}
+                                            {% csrf_token %}
+                                            <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                        </div>
                                         <div class="pole">
                                             <label for="mob1firstName">{% trans 'First Name' %}</label>
                                             {{ register_form.first_name }}
@@ -237,6 +258,16 @@
                                             {{ register_form.email }}
                                             <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
                                         </div>
+                                        <div class="pole">
+                                        <label for="pass">{% trans 'Password' %}</label>
+                                        {{ register_form.password1 }}
+                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>
+                                    </div>
+                                        <div class="pole">
+                                        <label for="pass">{% trans 'Password confirmation' %}</label>
+                                        {{ register_form.password2 }}
+                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>
+                                    </div>
                                     </div>
                                     <input class="submitBtn" type="submit" value="{% trans 'Next' %}">
                                 </form>
@@ -329,7 +360,7 @@
                             <a href="{% url 'delegats' %}?is_katchy"><li>{% trans 'Katchy' %}</li></a>
                         </ul>
                        <div class="peopleTitle">
-                            <h3>{% trans 'Regions' %}</h3>
+                            <h3>{% trans 'Region' %}</h3>
                             <div class="peopleTitleActions">
                                 <div><img src="{% static 'images/people/plus.svg' %}" alt="img"></div>
                                 <div><img src="{% static 'images/people/triple.svg' %}" alt="img"></div>

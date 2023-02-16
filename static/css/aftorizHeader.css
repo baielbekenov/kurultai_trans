@@ -147,6 +147,7 @@ header .menuInner .menuRight {
 }
 header .menuInner .menuRight .ava {
   width: 68px;
+  height: 68px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,6 +192,67 @@ header .menuInner .menuRight .menuActionsE {
   transition: 0.3s;
 }
 header .menuInner .menuRight .menuActionsE:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+header .menuInner .language {
+  position: fixed;
+  right: 30px;
+  bottom: 60px;
+  background: #DC8400;
+  height: 80px;
+  width: 110px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 6px;
+  color: #fff;
+  z-index: 3;
+}
+@media (max-width: 550px) {
+  header .menuInner .language {
+    right: 10px;
+    bottom: 80px;
+    width: 90px;
+  }
+}
+header .menuInner .language select {
+  width: 90px;
+  background: #DC8400;
+  border: 2px solid #535292;
+  padding: 5px 2px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+@media (max-width: 550px) {
+  header .menuInner .language select {
+    width: 70px;
+  }
+}
+header .menuInner .language input {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background: #535292;
+  font-size: 14px;
+  font-weight: 500;
+}
+header .menuInner .language input:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
@@ -501,7 +563,7 @@ header .menuInner .menuRight .menuActionsE:hover {
 }
 .modal .right .formDate .pole label {
   font-weight: 400;
-  font-size: 7.94052px;
+  font-size: 12.94052px;
   line-height: 10px;
   color: #838AA3;
 }
@@ -510,7 +572,7 @@ header .menuInner .menuRight .menuActionsE:hover {
   display: block;
   padding: 16px 8px 16px 13px;
   font-weight: 400;
-  font-size: 9.26394px;
+  font-size: 13.26394px;
   line-height: 14px;
   color: #838AA3;
   background: #FCFCFC;
@@ -637,7 +699,7 @@ header .menuInner .menuRight .menuActionsE:hover {
 }
 .modal .aftorizRight .formDatas .pole label {
   font-weight: 400;
-  font-size: 7.94052px;
+  font-size: 12.94052px;
   line-height: 10px;
   color: #838AA3;
 }
@@ -646,7 +708,7 @@ header .menuInner .menuRight .menuActionsE:hover {
   display: block;
   padding: 16px 8px 16px 13px;
   font-weight: 400;
-  font-size: 9.26394px;
+  font-size: 13.26394px;
   line-height: 14px;
   color: #838AA3;
   background: #FCFCFC;
@@ -667,13 +729,13 @@ header .menuInner .menuRight .menuActionsE:hover {
   width: 100%;
 }
 .modal .aftorizRight .formDatas a {
-  width: 80px;
+  width: 100px;
   margin-left: auto;
   margin-top: -10px;
   margin-bottom: 22px;
   text-decoration: none;
   font-weight: 400;
-  font-size: 8.94052px;
+  font-size: 10.94052px;
   padding: 4px;
   line-height: 14px;
   color: #FF6584;

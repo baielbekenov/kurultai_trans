@@ -3,384 +3,12 @@
 {% load i18n %}
 {% block links %}
 <link rel="stylesheet" href="{% static 'css/bundle.css' %}">
-    <link rel="stylesheet" href="{% static 'css/news.css' %}">
-    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/news.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
 {% endblock %}
 {% block content %}
-<!--        <main>-->
-<!--            <div class="container">-->
-<!--                <div class="main">-->
-<!--                    <section class="profile">-->
-<!--                        <div class="profileList">-->
-<!--                            <ul>-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'home' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>-->
-<!--                                        <h4>{% translate 'Newsline' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                {% if user.is_delegat %}-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'chats' %}">-->
-<!--                                        <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>-->
-<!--                                        <h4>{% translate 'Messages' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                {% endif %}-->
-<!--                                <li class="listActive">-->
-<!--                                    <a href="{% url 'delegats' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>-->
-<!--                                        <h4>{% translate 'Delegates' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'rubrics' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>-->
-<!--                                        <h4>{% translate 'Rubrics' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                {% if user.is_authenticated %}-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'profile' user.pk %}">-->
-<!--                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>-->
-<!--                                        <h4>{% translate 'Profile' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                {% endif %}-->
 
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                        {% if user.is_superuser %}-->
-<!--                        <div class="profileSettings">-->
-<!--                            <h3>{% translate 'Management' %}</h3>-->
-<!--                            <ul>-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'createchats' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>-->
-<!--                                        <h4>{% translate 'Createchats' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'createnews' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>-->
-<!--                                        <h4>{% translate 'CreateNews' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'logout' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>-->
-<!--                                        <h4>{% translate 'CreatePost' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'commentlist' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>-->
-<!--                                        <h4>{% translate 'Comments' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                        {% endif %}-->
-<!--                        {% if user.is_authenticated %}-->
-<!--                        <div class="profileSettings">-->
-<!--                            <h3>{% translate 'Settings' %}</h3>-->
-<!--                            <ul>-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'settings' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>-->
-<!--                                        <h4>{% translate 'Settings' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'security' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>-->
-<!--                                        <h4>{% translate 'Security' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="{% url 'logout' %}">-->
-<!--                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>-->
-<!--                                        <h4>{% translate 'Logout' %}</h4>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                        {% endif %}-->
-<!--                    </section>-->
-<!--                    <section class="headMob">-->
-<!--                        <a href="chats.html" class="back"><img src="{% static 'images/security/back1.svg' %}" alt=""></a>-->
-<!--                        <div class="popBtn"><img src="{% static 'images/profile/setting.svg' %}" alt=""></div>-->
-<!--                    </section>-->
-
-<!--                    <section class="mainProf">-->
-<!--                        <div class="mainProfHead">-->
-<!--                            <div class="about">-->
-<!--                                <div class="ava">-->
-<!--                                    {% if user.image %}-->
-<!--                                    <img src="{{ account.image.url }}" alt=""></div>-->
-<!--                                    {% else %}-->
-<!--                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt=""></div>-->
-<!--                                    {% endif %}-->
-
-<!--                                <div class="name">-->
-<!--                                    <h2>{{ account.first_name }} {{ account.last_name }} <div><img src="{% static 'images/profile/galka.svg' %}" alt=""></div></h2>-->
-<!--                                    <span>@{{ account.username }}</span>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <button class="mainProfBtn">-->
-<!--                                <img src="{% static 'images/profile/forBtn.svg' %}" alt=""> Следить-->
-<!--                            </button>-->
-<!--                        </div>-->
-
-<!--                        <div class="mainProfHeadMob">-->
-<!--                            {% if user.image %}-->
-<!--                            <div class="ava"><img src="{{ account.image.url }}" alt=""></div>-->
-<!--                            {% else %}-->
-<!--                            <div class="ava"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt=""></div>-->
-<!--                            {% endif %}-->
-<!--                            <h2>{{ account.first_name }} {{ account.last_name }}</h2>-->
-<!--                            <p class="subtitle">{{ account.description }}</p>-->
-<!--                            <ul>-->
-<!--                                <li><div><img src="{% static 'images/profile/thirdS.svg' %}" alt=""></div><span>Нация: {{ account.nation }}</span></li>-->
-<!--                                <li><div><img src="{% static 'images/profile/firstS.svg' %}" alt=""></div><span>Профессия: {{ account.occupation }}</span></li>-->
-<!--                                <li><div><img src="{% static 'images/profile/secondS.svg' %}" alt=""></div><span>Регион: {{ account.region }}</span></li>-->
-<!--                            </ul>-->
-<!--                            <div class="actions">-->
-<!--                                <button class="btnSled">Следить</button>-->
-<!--                                <button class="inet"><img src="images/profile/inetOring.svg" alt=""></button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-
-
-<!--                        <div class="news">-->
-
-<!--                            <div class="text"><p>{{ account.description }}</p></div>-->
-
-
-
-<!--                        </div >-->
-
-<!--                    </section>-->
-<!--                    <section class="RegistrPop hide">-->
-<!--                        <div id="modalReg" class="modal">-->
-<!--                            <div class="close"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>-->
-<!--                            <div id="backReg" class="back hide"><img src="{% static 'images/security/back1.svg' %}" alt=""></div>-->
-<!--                            <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>-->
-<!--                            <form action="{% url 'register' %}" class="right" method="post">-->
-<!--                                <h2>Регистрация</h2>-->
-<!--                                <div class="formDate">-->
-<!--                                    <div class="pole">-->
-<!--                                        {% csrf_token %}-->
-<!--                                        <label for="firstName">Логин</label>-->
-<!--                                        {{ register_form.username }}-->
-<!--                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="firstName">Имя</label>-->
-<!--                                        {{ register_form.first_name }}-->
-<!--                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="lastName">Фамилия</label>-->
-<!--                                        {{ register_form.last_name }}-->
-<!--                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="dateTime">Дата рождения</label>-->
-<!--                                        {{ register_form.birth_of_date }}-->
-<!--                                    </div>-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="email">Email почта</label>-->
-<!--                                        {{ register_form.email }}-->
-<!--                                        <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="new">Пароль</label>-->
-<!--                                        {{ register_form.password1 }}-->
-<!--                                        <span class="eyeForNew"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="pass">Подтверждение</label>-->
-<!--                                        {{ register_form.password2 }}-->
-<!--                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <input class="submitBtn" type="submit" value="Зарегестрироваться">-->
-<!--                                <p>У вас есть аккаунт? <span id="voiti">Войти</span></p>-->
-<!--                            </form>-->
-<!--                            <div class="regMob1">-->
-<!--                                <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>-->
-<!--                                <form action="{% url 'register' %}" class="mobForm1" method="post">-->
-<!--                                    <h2>Регистрация</h2>-->
-<!--                                    <div class="formDate">-->
-<!--                                        <div class="pole">-->
-<!--                                            <label for="mob1firstName">Имя</label>-->
-<!--                                            {{ register_form.first_name }}-->
-<!--                                            {% csrf_token %}-->
-<!--                                            <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>-->
-<!--                                        </div>-->
-<!--                                        <div class="pole">-->
-<!--                                            <label for="mob1lastName">Фамилия</label>-->
-<!--                                            {{ register_form.first_name }}-->
-<!--                                            <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>-->
-<!--                                        </div>-->
-<!--                                        <div class="pole">-->
-<!--                                            <label for="mob1dateTime">Дата рождения</label>-->
-<!--                                            {{ register_form.first_name }}-->
-<!--                                        </div>-->
-<!--                                        <div class="pole">-->
-<!--                                            <label for="mob1email">Email почта</label>-->
-<!--                                            {{ register_form.first_name }}-->
-<!--                                            <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <input class="submitBtn" type="submit" value="Далее">-->
-<!--                                </form>-->
-<!--                            </div>-->
-<!--                            <div class="regMob2 hide">-->
-<!--                                <div class="img"><img src="{% static 'images/security/welcome.png" alt="welcome"></div>-->
-<!--                                <form action="" class="mobForm2">-->
-<!--                                    <h2>Регистрация</h2>-->
-<!--                                    <div class="formDate">-->
-<!--                                        <div class="pole">-->
-<!--                                            <label for="newMob">Пароль</label>-->
-<!--                                            {{ register_form.first_name }}-->
-<!--                                            <span class="eyeForMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>-->
-<!--                                        </div>-->
-<!--                                        <div class="pole">-->
-<!--                                            <label for="passMob">Подтверждение</label>-->
-<!--                                            {{ register_form.first_name }}-->
-<!--                                            <span class="eyeForPassMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>-->
-<!--                                        </div>-->
-<!--                                        <p>У вас есть аккаунт? <span id="voiti1">Войти</span></p>-->
-<!--                                        <input class="submitBtn" type="submit" value="Зарегестрироваться">-->
-<!--                                    </div>-->
-<!--                                </form>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </section>-->
-<!--                   <section class="AftorizPop hide">-->
-<!--                        <div id="modalAftoriz" class="modal">-->
-<!--                            <div class="close2"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>-->
-<!--                            <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>-->
-<!--                            <form action="{% url 'login' %}" class="aftorizRight" method="post">-->
-<!--                                <h2>Авторизация</h2>-->
-<!--                                <div class="formDatas">-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="das">Логин</label>-->
-<!--                                        {{ login_form.username }}-->
-<!--                                        {% csrf_token %}-->
-<!--                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="password">Пароль</label>-->
-<!--                                        {{ login_form.password }}-->
-<!--                                        <span class="eyeForpasword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>-->
-<!--                                    </div>-->
-<!--                                    <a href="{% url 'reset_password' %}">Забыли пароль?</a>-->
-<!--                                </div>-->
-<!--                                <input class="submitBtn" type="submit" value="Войти">-->
-<!--                                <p>У вас нет аккаунта? <span id="registracia">Регистрация</span></p>-->
-<!--                            </form>-->
-<!--                            <div class="AMob2">-->
-<!--                                <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>-->
-<!--                                <form id="formAmobail" action="{% url 'login' %}" method="post" class="formDate">-->
-<!--                                    <h2>Авторизация</h2>-->
-<!--                                    {% csrf_token %}-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="das">Ваш логин</label>-->
-<!--                                        {{ login_form.username }}-->
-<!--                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="pole">-->
-<!--                                        <label for="password">Пароль</label>-->
-<!--                                        {{ login_form.password }}-->
-<!--                                        <span class="eyeMobpassword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>-->
-<!--                                    </div>-->
-<!--                                    <a href="{% url 'reset_password' %}">Забыли пароль?</a>-->
-<!--                                    <p class="notAc">У вас нет аккаунта? <span id="registracia2">Регистрация</span></p>-->
-<!--                                    <input class="submitBtn" type="submit" value="Войти">-->
-
-<!--                                </form>-->
-<!--                            </div>-->
-<!--                            <div class="error hide">-->
-<!--                                <div class="img"><img src="{% static 'images/security/error.svg' %}" alt=""></div>-->
-<!--                                <p>Данного аккаунта не существует</p>-->
-<!--                                <div class="closeRed"><img src="{% static 'images/security/closeRed.svg' %}" alt=""></div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </section>-->
-<!--                    <section class="info">-->
-<!--                        <h2>Информация</h2>-->
-<!--                        <div class="infoAbout">-->
-<!--                            <ul>-->
-<!--                                <li><div><img src="{% static 'images/profile/firstS.svg' %}" alt=""></div><span>Профессия: {{ account.occupation }}</span></li>-->
-<!--                                <li><div><img src="{% static 'images/profile/secondS.svg' %}" alt=""></div><span>Нация: {{ account.nation }}</span></li>-->
-<!--                                <li><div><img src="{% static 'images/profile/thirdS.svg' %}" alt=""></div><span>Регион: {{ account.region }}</span></li>-->
-<!--&lt;!&ndash;                                <li><div><img src="{% static 'images/profile/lastS.svg' %}" alt=""></div><a href="#">bakyt_saultanov.com</a></li>&ndash;&gt;-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                        <h2>Обсуждения</h2>-->
-<!--                        <div class="infoDiscus">-->
-<!--                            {% for i in chats %}-->
-
-<!--                                        <div class="foto"><img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'images/chats/chat2.svg' %}{% endif %}" alt="chat"></div>-->
-<!--                                        <div class="title">-->
-<!--                                            <h3>{{ i.title }}</h3>-->
-
-<!--                                        </div>-->
-
-<!--                                    {% endfor %}-->
-<!--                        </div>-->
-<!--                    </section>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </main>-->
-<!--    <div class="settingPop hide">-->
-<!--            <div class="modal">-->
-<!--                <div class="line"></div>-->
-<!--                <ul>-->
-<!--                    <li>-->
-<!--                        <div><img src="{% static 'images/profile/setting.svg' %}" alt=""></div>-->
-<!--                        <a href="settings.html">Основные</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div><img src="images/profile/zamok.svg" alt=""></div>-->
-<!--                        <a href="security.html">Безопасность</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div><img src="images/profile/getOut.svg" alt=""></div>-->
-<!--                        <a href="index.html">Выйти</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--<footer id="introJs"  class="footer">-->
-<!--            <div class="footerInner">-->
-<!--                <a href="{% url 'home' %}">-->
-<!--                    <div><img src="{% static 'images/modileFooter/home.svg' %}" alt=""></div>-->
-<!--                </a>-->
-<!--                <a href="{% url 'delegats' %}">-->
-<!--                    <div><img src="{% static 'images/modileFooter/people.svg' %}" alt=""></div>-->
-<!--                </a>-->
-<!--                <a href="{% url 'chats' %}">-->
-<!--                    <div><img src="{% static 'images/modileFooter/message.svg' %}" alt=""></div>-->
-<!--                </a>-->
-<!--                {% if user.is_authenticated %}-->
-<!--                <a href="{% url 'profile' user.pk %}">-->
-<!--                    <div><img src="{% static 'images/modileFooter/profile.svg' %}" alt=""></div>-->
-<!--                </a>-->
-<!--                {% else %}-->
-<!--                <a href="{% url 'home' %}">-->
-<!--                    <div><img src="{% static 'images/modileFooter/profile.svg' %}" alt=""></div>-->
-<!--                </a>-->
-<!--                {% endif %}-->
-<!--            </div>-->
-<!--        </footer>-->
-<!--<script src="{% static 'js/app.js' %}"></script>-->
-<!--<script src="{% static 'js/profileMob.js' %}"></script>-->
-<main>
+        <main id="introJs">
             <div class="container">
                 <div class="main">
                     <section class="profile">
@@ -480,8 +108,8 @@
                         </div>
                         {% endif %}
                     </section>
-                    <section class="headMob">
-                        <a href="chats.html" class="back"><img src="{% static 'images/security/back1.svg' %}" alt=""></a>
+                    <section  class="headMob">
+                        <a href="{% url 'home' %}" class="back"><img src="{% static 'images/security/back1.svg' %}" alt=""></a>
                         <div class="popBtn"><img src="{% static 'images/profile/setting.svg' %}" alt=""></div>
                     </section>
                     <section class="mainProf">
@@ -493,11 +121,10 @@
                                 <div class="ava"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt=""></div>
                                 {% endif %}
                                 <div class="name">
-                                    <h2>{{ account.first_name }} {{ account.last_name }} <div><img src="{% static 'images/profile/galka.svg' %}" alt=""></div></h2>
+                                    <h2>{{ account.first_name }} {{ account.last_name }}  <div><img src="{% static 'images/profile/galka.svg" alt=""></div></h2>
                                     <span>@{{ account.username }}</span>
                                 </div>
                             </div>
-
                         </div>
                         <div class="mainProfHeadMob">
                             {% if account.image %}
@@ -506,13 +133,13 @@
                             <div class="ava"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt=""></div>
                             {% endif %}
                             <h2>{{ account.first_name }} {{ account.last_name }}</h2>
-
+                            <p class="subtitle"></p>
                             <ul>
-                                <li><div><img src="images/profile/thirdS.svg" alt=""></div><span>{{ accounnt.nation }}</span></li>
-                                <li><div><img src="images/profile/firstS.svg" alt=""></div><span>{{ account.occupation }}</span></li>
-                                <li><div><img src="images/profile/secondS.svg" alt=""></div><span>{{ account.region }}</span></li>
+                                <li><div><img src="{% static 'images/profile/thirdS.svg' %}" alt=""></div><span>{{ accounnt.nation }}</span></li>
+                                <li><div><img src="{% static 'images/profile/firstS.svg' %}" alt=""></div><span>{{ account.occupation }}</span></li>
+                                <li><div><img src="{% static 'images/profile/secondS.svg' %}" alt=""></div><span>{{ account.region }}</span></li>
                             </ul>
-                            
+
                         </div>
 
 
@@ -520,10 +147,68 @@
                         <div class="news">
 
                             <div class="text"><p>{{ account.descrription }}</p></div>
+                            
 
+                <div class="line" style="width: 90px;
+    height: 6px;
+    margin: 0 auto 10px;
+    background: #D9D9D9;
+    border-radius: 20px;"></div>
+                <ul style="    list-style-type: none;">
+                    <li style="width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);">
+                        <div style="width: 30px;"><img style="    width: 100%;" src="{% static 'images/profile/setting.svg' %}" alt=""></div>
+                        <a style="text-decoration: none;
+    font-weight: 700;
+    font-size: 18.8029px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.8);" href="{% url 'settings' %}">Основные</a>
+                    </li>
+                    <li style="width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);">
+                        <div style="width: 30px;"><img src="{% static 'images/profile/zamok.svg' %}" alt=""></div>
+                        <a style="text-decoration: none;
+    font-weight: 700;
+    font-size: 18.8029px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.8);" href="{% url 'security' %}">Безопасность</a>
+                    </li>
+                    <li style="width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);">
+                        <div style="width: 30px;"><img src="{% static 'images/profile/getOut.svg' %}" alt=""></div>
+                        <a style="text-decoration: none;
+    font-weight: 700;
+    font-size: 18.8029px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.8);" href="{% url 'logout' %}">Выйти</a>
+                    </li>
+                </ul>
 
-
-
+                            
                         </div >
 
 
@@ -544,38 +229,29 @@
                         <h2>Информация</h2>
                         <div class="infoAbout">
                             <ul>
-                                <li><div><img src="images/profile/firstS.svg" alt=""></div><span>Депутат</span></li>
-                                <li><div><img src="images/profile/secondS.svg" alt=""></div><span>34.5к Людей следят</span></li>
-                                <li><div><img src="images/profile/thirdS.svg" alt=""></div><span>12мл просмотров</span></li>
-                                <li><div><img src="images/profile/lastS.svg" alt=""></div><a href="#">bakyt_saultanov.com</a></li>
+                                <li><div><img src="{% static 'images/profile/firstS.svg' %}" alt=""></div><span>{{ account.occupation }}</span></li>
+                                <li><div><img src="{% static 'images/profile/secondS.svg' %}" alt=""></div><span>{{ account.nation }}</span></li>
+                                <li><div><img src="{% static 'images/profile/thirdS.svg' %}" alt=""></div><span>{{ account.region }}</span></li>
+
                             </ul>
                         </div>
                         <h2>Обсуждения</h2>
                         <div class="infoDiscus">
-                            <a href="chat1.html" class="chatsBlockE">
-                                <div class="foto"><img src="images/chats/chat1.svg" alt="chat"></div>
+                            {% for i in chats %}
+                            <a href="{% url 'chats' %}" class="chatsBlockE">
+                                <div class="foto"><img src="{% static 'images/chats/chat1.svg' %}" alt="chat"></div>
                                 <div class="title">
-                                    <h3>Обсуждение (Политика)</h3>
-                                    <p>Дастан: <span>Подключитесь</span></p>
+                                    <h3>{{ i.title }}</h3>
+
                                 </div>
                             </a>
-                            <a href="chat1.html" class="chatsBlockE">
-                                <div class="foto"><img src="images/chats/chatBlue.svg" alt="chat"></div>
-                                <div class="title">
-                                    <h3>Обсуждение (Политика)</h3>
-                                    <p>Дастан: <span>Подключитесь</span></p>
-                                </div>
-                            </a>
-                            <a href="chat1.html" class="chatsBlockE">
-                                <div class="foto"><img src="images/chats/chat4.svg" alt="chat"></div>
-                                <div class="title">
-                                    <h3>Обсуждение (Политика)</h3>
-                                    <p>Дастан: <span>Подключитесь</span></p>
-                                </div>
-                            </a>
+                            {% endfor %}
+
                         </div>
                     </section>
+<!--                    </section>-->
                 </div>
+
             </div>
         </main>
         <div class="settingPop hide">
@@ -583,7 +259,7 @@
                 <div class="line"></div>
                 <ul>
                     <li>
-                        <div><img src="{% static 'images/profile/setting.svg' %}" alt=""></div>
+                        <div><img src="{% static 'images/profile/setting.svg" alt=""></div>
                         <a href="{% url 'settings' %}">Основные</a>
                     </li>
                     <li>
@@ -619,10 +295,7 @@
                 {% endif %}
             </div>
         </footer>
-    </div>
-</body>
+
 <script src="{% static 'js/app.js' %}"></script>
 <script src="{% static 'js/profileMob.js' %}"></script>
 {% endblock %}
-
-

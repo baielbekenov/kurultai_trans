@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 03:38+0600\n"
+"POT-Creation-Date: 2023-02-15 10:33+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,7 +104,8 @@ msgstr ""
 #: server/templates/delegats.html:38 server/templates/indexActive.html:45
 #: server/templates/indexActive.html:344 server/templates/post1.html:38
 #: server/templates/profile.html:39 server/templates/rubrics.html:39
-#: server/templates/security.html:40 server/templates/settings.html:38
+#: server/templates/rubrics.html:113 server/templates/security.html:40
+#: server/templates/settings.html:38
 msgid "Rubrics"
 msgstr ""
 
@@ -163,7 +164,9 @@ msgstr ""
 #: server/templates/profile.html:86 server/templates/profile.html:91
 #: server/templates/rubrics.html:86 server/templates/rubrics.html:91
 #: server/templates/security.html:87 server/templates/security.html:92
-#: server/templates/settings.html:85 server/templates/settings.html:90
+#: server/templates/security.html:129 server/templates/settings.html:85
+#: server/templates/settings.html:90 server/templates/settings.html:115
+#: server/templates/settings.html:183
 msgid "Settings"
 msgstr ""
 
@@ -171,7 +174,8 @@ msgstr ""
 #: server/templates/delegats.html:96 server/templates/indexActive.html:103
 #: server/templates/post1.html:96 server/templates/profile.html:97
 #: server/templates/rubrics.html:97 server/templates/security.html:98
-#: server/templates/settings.html:96
+#: server/templates/security.html:113 server/templates/security.html:132
+#: server/templates/settings.html:96 server/templates/settings.html:186
 msgid "Security"
 msgstr ""
 
@@ -308,7 +312,7 @@ msgstr ""
 msgid "Katchy"
 msgstr ""
 
-#: server/templates/delegats.html:134
+#: server/templates/delegats.html:134 server/templates/indexActive.html:332
 msgid "Region"
 msgstr ""
 
@@ -319,7 +323,9 @@ msgstr ""
 #: server/templates/delegats.html:187 server/templates/delegats.html:231
 #: server/templates/delegats.html:260 server/templates/delegats.html:300
 #: server/templates/delegats.html:318 server/templates/indexActive.html:174
-#: server/templates/post1.html:115
+#: server/templates/post1.html:115 server/templates/profile.html:144
+#: server/templates/rubrics.html:189 server/templates/security.html:141
+#: server/templates/settings.html:195
 msgid "Registration"
 msgstr ""
 
@@ -330,18 +336,30 @@ msgstr ""
 #: server/templates/delegats.html:196 server/templates/delegats.html:234
 #: server/templates/indexActive.html:183 server/templates/indexActive.html:221
 #: server/templates/post1.html:124 server/templates/post1.html:162
+#: server/templates/profile.html:153 server/templates/profile.html:191
+#: server/templates/rubrics.html:198 server/templates/rubrics.html:236
+#: server/templates/security.html:150 server/templates/security.html:188
+#: server/templates/settings.html:204 server/templates/settings.html:242
 msgid "First Name"
 msgstr ""
 
 #: server/templates/delegats.html:201 server/templates/delegats.html:240
 #: server/templates/indexActive.html:188 server/templates/indexActive.html:227
 #: server/templates/post1.html:129 server/templates/post1.html:168
+#: server/templates/profile.html:158 server/templates/profile.html:197
+#: server/templates/rubrics.html:203 server/templates/rubrics.html:242
+#: server/templates/security.html:155 server/templates/security.html:194
+#: server/templates/settings.html:209 server/templates/settings.html:248
 msgid "Last Name"
 msgstr ""
 
 #: server/templates/delegats.html:206 server/templates/delegats.html:245
 #: server/templates/indexActive.html:193 server/templates/indexActive.html:232
 #: server/templates/post1.html:134 server/templates/post1.html:173
+#: server/templates/profile.html:163 server/templates/profile.html:202
+#: server/templates/rubrics.html:208 server/templates/rubrics.html:247
+#: server/templates/security.html:160 server/templates/security.html:199
+#: server/templates/settings.html:214 server/templates/settings.html:253
 msgid "Date of birth"
 msgstr ""
 
@@ -351,12 +369,24 @@ msgstr ""
 #: server/templates/indexActive.html:280 server/templates/indexActive.html:300
 #: server/templates/post1.html:143 server/templates/post1.html:191
 #: server/templates/post1.html:221 server/templates/post1.html:241
+#: server/templates/profile.html:172 server/templates/profile.html:220
+#: server/templates/profile.html:250 server/templates/profile.html:270
+#: server/templates/rubrics.html:217 server/templates/rubrics.html:265
+#: server/templates/rubrics.html:295 server/templates/rubrics.html:315
+#: server/templates/security.html:169 server/templates/security.html:217
+#: server/templates/security.html:247 server/templates/security.html:267
+#: server/templates/settings.html:223 server/templates/settings.html:271
+#: server/templates/settings.html:301 server/templates/settings.html:321
 msgid "Password"
 msgstr ""
 
 #: server/templates/delegats.html:220 server/templates/indexActive.html:207
 #: server/templates/indexActive.html:255 server/templates/post1.html:148
-#: server/templates/post1.html:196
+#: server/templates/post1.html:196 server/templates/profile.html:177
+#: server/templates/profile.html:225 server/templates/resetPassword.html:28
+#: server/templates/rubrics.html:222 server/templates/rubrics.html:270
+#: server/templates/security.html:174 server/templates/security.html:222
+#: server/templates/settings.html:228 server/templates/settings.html:276
 msgid "Password confirmation"
 msgstr ""
 
@@ -364,7 +394,15 @@ msgstr ""
 #: server/templates/indexActive.html:259 server/templates/indexActive.html:287
 #: server/templates/indexActive.html:305 server/templates/post1.html:154
 #: server/templates/post1.html:200 server/templates/post1.html:228
-#: server/templates/post1.html:246
+#: server/templates/post1.html:246 server/templates/profile.html:183
+#: server/templates/profile.html:229 server/templates/profile.html:257
+#: server/templates/profile.html:275 server/templates/rubrics.html:228
+#: server/templates/rubrics.html:274 server/templates/rubrics.html:302
+#: server/templates/rubrics.html:320 server/templates/security.html:180
+#: server/templates/security.html:226 server/templates/security.html:254
+#: server/templates/security.html:272 server/templates/settings.html:234
+#: server/templates/settings.html:280 server/templates/settings.html:308
+#: server/templates/settings.html:326
 msgid "Do you have an account?"
 msgstr ""
 
@@ -373,6 +411,14 @@ msgstr ""
 #: server/templates/indexActive.html:259 server/templates/indexActive.html:286
 #: server/templates/indexActive.html:306 server/templates/post1.html:200
 #: server/templates/post1.html:227 server/templates/post1.html:247
+#: server/templates/profile.html:229 server/templates/profile.html:256
+#: server/templates/profile.html:276
+#: server/templates/reset_password_complete.html:22
+#: server/templates/rubrics.html:274 server/templates/rubrics.html:301
+#: server/templates/rubrics.html:321 server/templates/security.html:226
+#: server/templates/security.html:253 server/templates/security.html:273
+#: server/templates/settings.html:280 server/templates/settings.html:307
+#: server/templates/settings.html:327
 msgid "Sign in"
 msgstr ""
 
@@ -391,19 +437,41 @@ msgstr ""
 #: server/templates/post1.html:153 server/templates/post1.html:154
 #: server/templates/post1.html:159 server/templates/post1.html:188
 #: server/templates/post1.html:201 server/templates/post1.html:228
-#: server/templates/post1.html:246
+#: server/templates/post1.html:246 server/templates/profile.html:182
+#: server/templates/profile.html:183 server/templates/profile.html:188
+#: server/templates/profile.html:217 server/templates/profile.html:230
+#: server/templates/profile.html:257 server/templates/profile.html:275
+#: server/templates/rubrics.html:227 server/templates/rubrics.html:228
+#: server/templates/rubrics.html:233 server/templates/rubrics.html:262
+#: server/templates/rubrics.html:275 server/templates/rubrics.html:302
+#: server/templates/rubrics.html:320 server/templates/security.html:179
+#: server/templates/security.html:180 server/templates/security.html:185
+#: server/templates/security.html:214 server/templates/security.html:227
+#: server/templates/security.html:254 server/templates/security.html:272
+#: server/templates/settings.html:233 server/templates/settings.html:234
+#: server/templates/settings.html:239 server/templates/settings.html:268
+#: server/templates/settings.html:281 server/templates/settings.html:308
+#: server/templates/settings.html:326
 msgid "Register"
 msgstr ""
 
 #: server/templates/delegats.html:284 server/templates/delegats.html:305
 #: server/templates/indexActive.html:271 server/templates/indexActive.html:292
 #: server/templates/post1.html:212 server/templates/post1.html:233
+#: server/templates/profile.html:241 server/templates/profile.html:262
+#: server/templates/rubrics.html:286 server/templates/rubrics.html:307
+#: server/templates/security.html:238 server/templates/security.html:259
+#: server/templates/settings.html:292 server/templates/settings.html:313
 msgid "Authorization"
 msgstr ""
 
 #: server/templates/delegats.html:297 server/templates/delegats.html:317
 #: server/templates/indexActive.html:284 server/templates/indexActive.html:304
 #: server/templates/post1.html:225 server/templates/post1.html:245
+#: server/templates/profile.html:254 server/templates/profile.html:274
+#: server/templates/rubrics.html:299 server/templates/rubrics.html:319
+#: server/templates/security.html:251 server/templates/security.html:271
+#: server/templates/settings.html:305 server/templates/settings.html:325
 msgid "Forgot password?"
 msgstr ""
 
@@ -424,20 +492,32 @@ msgid "Create rubric"
 msgstr ""
 
 #: server/templates/indexActive.html:140 server/templates/indexActive.html:160
+#: server/templates/rubrics.html:152
 msgid "Share"
 msgstr ""
 
 #: server/templates/indexActive.html:178 server/templates/indexActive.html:274
 #: server/templates/indexActive.html:295 server/templates/post1.html:119
 #: server/templates/post1.html:215 server/templates/post1.html:236
+#: server/templates/profile.html:148 server/templates/profile.html:244
+#: server/templates/profile.html:265 server/templates/rubrics.html:193
+#: server/templates/rubrics.html:289 server/templates/rubrics.html:310
+#: server/templates/security.html:145 server/templates/security.html:241
+#: server/templates/security.html:262 server/templates/settings.html:199
+#: server/templates/settings.html:295 server/templates/settings.html:316
 msgid "Username"
 msgstr ""
 
 #: server/templates/indexActive.html:241 server/templates/post1.html:182
+#: server/templates/post1.html:332 server/templates/profile.html:211
+#: server/templates/rubrics.html:256 server/templates/security.html:208
+#: server/templates/settings.html:262
 msgid "Next"
 msgstr ""
 
 #: server/templates/indexActive.html:312 server/templates/post1.html:253
+#: server/templates/profile.html:282 server/templates/rubrics.html:327
+#: server/templates/security.html:279 server/templates/settings.html:333
 msgid "Such account doesnt exist"
 msgstr ""
 
@@ -445,15 +525,11 @@ msgstr ""
 msgid "People"
 msgstr ""
 
-#: server/templates/indexActive.html:332
-msgid "Regions"
-msgstr ""
-
 #: server/templates/message_send.html:13
 msgid "A confirmation email has been sent to your email"
 msgstr ""
 
-#: server/templates/message_send.html:14
+#: server/templates/message_send.html:14 server/templates/success.html:14
 msgid "Back to home"
 msgstr ""
 
@@ -463,6 +539,164 @@ msgstr ""
 
 #: server/templates/post1.html:290
 msgid "Leave a comment"
+msgstr ""
+
+#: server/templates/post1.html:295 server/templates/settings.html:135
+msgid "First Name:"
+msgstr ""
+
+#: server/templates/post1.html:328
+msgid "Previous"
+msgstr ""
+
+#: server/templates/profile.html:126
+msgid "Track"
+msgstr ""
+
+#: server/templates/profile.html:288
+msgid "Information"
+msgstr ""
+
+#: server/templates/profile.html:291 server/templates/settings.html:163
+msgid "Occupation:"
+msgstr ""
+
+#: server/templates/profile.html:292 server/templates/settings.html:159
+msgid "Nation:"
+msgstr ""
+
+#: server/templates/profile.html:293 server/templates/settings.html:171
+msgid "Region:"
+msgstr ""
+
+#: server/templates/profile.html:297
+msgid "Conversation"
+msgstr ""
+
+#: server/templates/resetPassword.html:16
+#: server/templates/resetPassword2.html:19
+msgid "Password reset"
+msgstr ""
+
+#: server/templates/resetPassword.html:18
+msgid "Old password"
+msgstr ""
+
+#: server/templates/resetPassword.html:23
+msgid "New password"
+msgstr ""
+
+#: server/templates/resetPassword.html:32
+msgid "Perform"
+msgstr ""
+
+#: server/templates/resetPassword2.html:20
+msgid ""
+"To reset your password, you must confirm your email, we will send you a link "
+"so that you can reset your password"
+msgstr ""
+
+#: server/templates/resetPassword2.html:22
+msgid "Your"
+msgstr ""
+
+#: server/templates/resetPassword2.html:27
+msgid "Send"
+msgstr ""
+
+#: server/templates/reset_password_confirm.html:19
+msgid "Enter a new password"
+msgstr ""
+
+#: server/templates/reset_password_confirm.html:20
+msgid ""
+"Please enter your new password twice so we can verify that it is spelled "
+"correctly"
+msgstr ""
+
+#: server/templates/reset_password_confirm.html:32
+msgid "Change my password"
+msgstr ""
+
+#: server/templates/reset_password_sent.html:17
+msgid ""
+"An email with password recovery instructions has been sent to the email "
+"address you provided"
+msgstr ""
+
+#: server/templates/rubrics.html:147
+msgid "34k people like"
+msgstr ""
+
+#: server/templates/rubrics.html:162
+msgid "Rating discussions"
+msgstr ""
+
+#: server/templates/rubrics.html:176
+msgid ""
+"Do you want to ask a question? fill out the questionnaire and it will be "
+"discussed"
+msgstr ""
+
+#: server/templates/rubrics.html:177
+msgid "Ask a question"
+msgstr ""
+
+#: server/templates/security.html:120
+msgid "Change a password"
+msgstr ""
+
+#: server/templates/security.html:122 server/templates/settings.html:176
+msgid "Cancel"
+msgstr ""
+
+#: server/templates/security.html:123 server/templates/settings.html:177
+msgid "Save"
+msgstr ""
+
+#: server/templates/security.html:131
+msgid "Main"
+msgstr ""
+
+#: server/templates/settings.html:112
+msgid "Basic settings"
+msgstr ""
+
+#: server/templates/settings.html:131
+msgid "Username:"
+msgstr ""
+
+#: server/templates/settings.html:139
+msgid "Last Name:"
+msgstr ""
+
+#: server/templates/settings.html:143
+msgid "Short Information:"
+msgstr ""
+
+#: server/templates/settings.html:147
+msgid "Place of birth:"
+msgstr ""
+
+#: server/templates/settings.html:155
+msgid "Living place:"
+msgstr ""
+
+#: server/templates/settings.html:167
+msgid "Phone number:"
+msgstr ""
+
+#: server/templates/settings.html:185
+msgid "Basics"
+msgstr ""
+
+#: server/templates/success.html:13
+msgid "Password successfuly has changed"
+msgstr ""
+
+#: server/templates/updatecomment.html:21
+#: venv/lib/python3.8/site-packages/django/forms/widgets.py:441
+msgid "Change"
 msgstr ""
 
 #: server/views.py:41
@@ -1142,10 +1376,6 @@ msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/forms/widgets.py:440
 msgid "Currently"
-msgstr ""
-
-#: venv/lib/python3.8/site-packages/django/forms/widgets.py:441
-msgid "Change"
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/forms/widgets.py:770
