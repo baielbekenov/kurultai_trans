@@ -125,7 +125,9 @@
                                 <div class="group"><img src="{% static 'images/chats/chat1.svg' %}" alt="call"></div>
                             </chat>
                         </div>
+                        {% if chat.voting_chat %}
                         <div class="golosovanie"><a href="{% url 'voting_detail' chat.voting_chat.pk %}"><button>Голосование</button></a></div>
+                        {% endif %}
                         <div class="chatBody" id="messages">
 
                             {% for i in messages %}
