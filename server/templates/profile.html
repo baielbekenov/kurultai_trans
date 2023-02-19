@@ -170,7 +170,7 @@
     font-weight: 700;
     font-size: 18.8029px;
     line-height: 22px;
-    color: rgba(0, 0, 0, 0.8);" href="{% url 'settings' %}">Основные</a>
+    color: rgba(0, 0, 0, 0.8);" href="{% url 'settings' %}">{% trans 'Basics' %}</a>
                     </li>
                     <li style="width: 100%;
     display: -webkit-box;
@@ -187,7 +187,7 @@
     font-weight: 700;
     font-size: 18.8029px;
     line-height: 22px;
-    color: rgba(0, 0, 0, 0.8);" href="{% url 'security' %}">Безопасность</a>
+    color: rgba(0, 0, 0, 0.8);" href="{% url 'security' %}">{% trans 'Security' %}</a>
                     </li>
                     <li style="width: 100%;
     display: -webkit-box;
@@ -204,7 +204,7 @@
     font-weight: 700;
     font-size: 18.8029px;
     line-height: 22px;
-    color: rgba(0, 0, 0, 0.8);" href="{% url 'logout' %}">Выйти</a>
+    color: rgba(0, 0, 0, 0.8);" href="{% url 'logout' %}">{% trans 'Logout' %}</a>
                     </li>
                 </ul>
 
@@ -213,7 +213,7 @@
 
 
                         <div class="mobDiscus">
-                            <h2>Обсуждения</h2>
+                            <h2>{% trans 'Conversation' %}</h2>
                             {% for i in chats %}
 
                                         <div class="foto"><img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'images/chats/chat2.svg' %}{% endif %}" alt="chat"></div>
@@ -226,7 +226,7 @@
                         </div>
                     </section>
                     <section class="info">
-                        <h2>Информация</h2>
+                        <h2>{% trans 'Information' %}</h2>
                         <div class="infoAbout">
                             <ul>
                                 <li><div><img src="{% static 'images/profile/firstS.svg' %}" alt=""></div><span>{{ account.occupation }}</span></li>
@@ -235,7 +235,7 @@
 
                             </ul>
                         </div>
-                        <h2>Обсуждения</h2>
+                        <h2>{% trans 'Conversation' %}</h2>
                         <div class="infoDiscus">
                             {% for i in chats %}
                             <a href="{% url 'chats' %}" class="chatsBlockE">
@@ -260,15 +260,15 @@
                 <ul>
                     <li>
                         <div><img src="{% static 'images/profile/setting.svg" alt=""></div>
-                        <a href="{% url 'settings' %}">Основные</a>
+                        <a href="{% url 'settings' %}">{% trans 'Basics' %}</a>
                     </li>
                     <li>
                         <div><img src="{% static 'images/profile/zamok.svg' %}" alt=""></div>
-                        <a href="{% url 'security' %}">Безопасность</a>
+                        <a href="{% url 'security' %}">{% trans 'Security' %}</a>
                     </li>
                     <li>
                         <div><img src="{% static 'images/profile/getOut.svg' %}" alt=""></div>
-                        <a href="{% url 'logout' %}">Выйти</a>
+                        <a href="{% url 'logout' %}">{% trans 'Logout' %}</a>
                     </li>
                 </ul>
             </div>

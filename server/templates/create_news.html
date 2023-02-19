@@ -14,48 +14,48 @@
 
                     <section class="formNews" style="margin: 40px;">
                         <form action="" class="aftorizRight" method="post" enctype="multipart/form-data">
-                                <h2>Добавить опрос</h2>
+                                <h2>{% trans 'Add pool' %}</h2>
                                 <div class="formDatas">
                                     <div class="pole">
-                                        <label for="email2">Рубрика</label>
+                                        <label for="email2">{% trans 'Rubric' %}</label>
                                         {{ form.rubric }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="email2">Название</label>
+                                        <label for="email2">{% trans 'Name' %}</label>
                                         {{ form.title }}
-                                        <label for="email2">Название en</label>
+                                        <label for="email2">{% trans 'Name' %} en</label>
                                         {{ form.title_en }}
-                                        <label for="email2">Название ru</label>
+                                        <label for="email2">{% trans 'Name' %} ru</label>
                                         {{ form.title_ru }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="email2">Превью</label>
+                                        <label for="email2">{% trans 'Preview' %}</label>
                                         {{ form.preview }}
-                                        <label for="email2">Превью en</label>
+                                        <label for="email2">{% trans 'Preview' %} en</label>
                                         {{ form.preview_en }}
-                                        <label for="email2">Превью ru</label>
+                                        <label for="email2">{% trans 'Preview' %} ru</label>
                                         {{ form.preview_ru }}{% csrf_token %}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
 
 
                                     <div class="pole">
-                                        <label for="email2">Фото</label>
+                                        <label for="email2">{% trans 'Photo' %}</label>
                                         {{ form.image }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
 
                                 </div>
-                            <label for="email2">Описание</label>
+                            <label for="email2">{% trans 'Description' %}</label>
                             {{ form.content }}
-                            <label for="email2">Описание en</label>
+                            <label for="email2">{% trans 'Description' %} en</label>
                             {{ form.content_en }}
-                            <label for="email2">Описание ru</label>
+                            <label for="email2">{% trans 'Description' %} ru</label>
                             {{ form.content_ru }}
 
-                                <input class="submitBtn" type="submit" value="Создать">
+                                <input class="submitBtn" type="submit" value="{% trans 'Create' %}">
 
                             </form>
 

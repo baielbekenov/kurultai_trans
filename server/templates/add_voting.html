@@ -110,22 +110,22 @@
 
                     <section class="formNews">
                         <form action="" class="aftorizRight" method="post">
-                                <h2>Добавить опрос</h2>
+                                <h2>{% trans 'Add pool' %}</h2>
                                 <div class="formDatas">
                                     <div class="pole">
-                                        <label for="email2">Название</label>
+                                        <label for="email2">{% trans 'Name' %}</label>
                                         {{ form.title }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
-                                        <label for="password">Описание</label>
+                                        <label for="password">{% trans 'Description' %}</label>
                                         {{ form.content }}
                                         {% csrf_token %}
 
                                     </div>
 
                                 </div>
-                                <input class="submitBtn" type="submit" value="Создать">
+                                <input class="submitBtn" type="submit" value="{% trans 'Create' %}">
 
                             </form>
                     </section>

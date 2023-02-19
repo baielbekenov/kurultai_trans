@@ -42,13 +42,13 @@
                     {% else %}
                     <div class="menuAftoriz">
 <!--                        <button class="avtorizBtn">Войти</button>-->
-                        <button class="registrBtn">Зарегистрироваться</button>
+                        <button class="registrBtn">{% trans 'Register' %}</button>
                     </div>
 
                     {% endif %}
 
                     <div class="menuAftoriz">
-                        <a href="{% url 'managment' %}"><button class="avtorizBtn">Managment</button></a>
+                        <a href="{% url 'managment' %}"><button class="avtorizBtn">{% trans 'Managment' %}</button></a>
 
                     </div>
 

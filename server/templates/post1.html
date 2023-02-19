@@ -122,7 +122,7 @@
                         <div style="padding: 20px">{{ news.content|safe }}</div>
                         {% if news.voting %}
                         <div class="rezalts">
-                                <h3>Результаты: (Всего прогосовало - {{ total }})</h3>
+                                <h3>{% trans 'Results' %}: ({% trans 'Voted' %} - {{ total }})</h3>
                                 <div class="rezaltsRenge">
                                     {% for i in questions %}
                                     <div class="rezaltsRengeE">
@@ -164,7 +164,7 @@
 
 
                                 <div class="likeCount">
-                                    <span>{% trans 'Понравилось' %} - {{ news.likes.count }}</span>
+                                    <span>{% trans 'Like' %} - {{ news.likes.count }}</span>
                                 </div>
                             </div>
                             <div class="comments">
