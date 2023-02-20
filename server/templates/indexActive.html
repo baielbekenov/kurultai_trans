@@ -2,12 +2,14 @@
 {% load static %}
 {% load i18n %}
 
+
 {% block links %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 <link rel="stylesheet" href="{% static 'css/news.css' %}">
 <link rel="stylesheet" href="{% static 'css/bundle.css' %}">
 <link rel="stylesheet" href="{% static 'css/rubrics.css' %}">
 <link rel="stylesheet" href="{% static 'css/aftorizHeader.css' %}">
+<link rel="stylesheet" href="{% static 'css/pagination.css' %}">
 
 {% endblock %}
 
@@ -135,7 +137,7 @@
                                     <a href="{% url 'vote_like' i.pk %}"><img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt=""></a>
                                     {% endif %}
                                     <div class="likeCount">
-                                        <span>{{ i.like.count }} {% trans 'людям понравилось' %}</span>
+                                        <span>{{ i.like.count }} {% trans 'people liked' %}</span>
                                     </div>
                                 </div>
                                 <a href="post1.html" class="comments">
@@ -167,17 +169,15 @@
                         </div>
                         {% endif %}
                         {% endfor %}
-                        <div>
-                                <span>
-                                    {% if page_obj.has_previous %}
-                                        <a href="?page={{ page_obj.previous_page_number }}" >{% trans 'Previous' %}</a>
-                                    {% endif %}
-                                        <span>{{ page_obj.number }}</span>
-                                    {% if page_obj.has_next %}
-                                    <a href="?page={{ page_obj.next_page_number }}" >{% trans 'Next' %}</a>
-                                    {% endif %}
-                                </span>
-                            </div>
+                        <div class="pagination">
+                            {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+                            {% endif %}
+                            <a href="#" class="active">{{ page_obj.number }}</a>
+                            {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+                            {% endif %}
+                        </div>
 
                     </section>
                    <section class="RegistrPop hide">
@@ -221,7 +221,7 @@
                                     <div class="pole">
                                         <label for="pass">{% trans 'Password confirmation' %}</label>
                                         {{ register_form.password2 }}
-                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>
+                                        <span class="eyeForPass"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                     </div>
                                 </div>
                                 <input class="submitBtn" type="submit" value="{% trans 'Register' %}">
@@ -261,19 +261,19 @@
                                         <div class="pole">
                                         <label for="pass">{% trans 'Password' %}</label>
                                         {{ register_form.password1 }}
-                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>
+                                        <span class="eyeForPass"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                     </div>
                                         <div class="pole">
                                         <label for="pass">{% trans 'Password confirmation' %}</label>
                                         {{ register_form.password2 }}
-                                        <span class="eyeForPass"><img src="{% static 'mages/security/eye.svg' %}" alt=""></span>
+                                        <span class="eyeForPass"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                     </div>
                                     </div>
                                     <input class="submitBtn" type="submit" value="{% trans 'Next' %}">
                                 </form>
                             </div>
                             <div class="regMob2 hide">
-                                <div class="img"><img src="{% static 'images/security/welcome.png" alt="welcome"></div>
+                                <div class="img"><img src="{% static 'images/security/welcome.png' %}" alt="welcome"></div>
                                 <form action="" class="mobForm2">
                                     <h2>{% trans 'Register' %}</h2>
                                     <div class="formDate">
